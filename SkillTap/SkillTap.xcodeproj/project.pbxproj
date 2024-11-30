@@ -12,6 +12,21 @@
 		7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21E02CFB5C020006DF74 /* ViewController.swift */; };
 		7DEB21E62CFB5C040006DF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB21E52CFB5C040006DF74 /* Assets.xcassets */; };
 		7DEB21E92CFB5C040006DF74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB21E72CFB5C040006DF74 /* LaunchScreen.storyboard */; };
+		7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21F42CFB85C20006DF74 /* Ables.swift */; };
+		7DEB21F92CFB864E0006DF74 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21F82CFB864E0006DF74 /* UIColor+Extensions.swift */; };
+		7DEB21FD2CFB87000006DF74 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21FC2CFB87000006DF74 /* HomeInteractor.swift */; };
+		7DEB21FF2CFB870D0006DF74 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21FE2CFB870D0006DF74 /* HomePresenter.swift */; };
+		7DEB22012CFB87290006DF74 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22002CFB87290006DF74 /* HomeRouter.swift */; };
+		7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22022CFB873C0006DF74 /* HomeViewController.swift */; };
+		7DEB22062CFB87700006DF74 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DEB22052CFB87700006DF74 /* SnapKit */; };
+		7DEB22082CFB87700006DF74 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DEB22072CFB87700006DF74 /* SnapKit-Dynamic */; };
+		7DEB220A2CFB88780006DF74 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22092CFB88780006DF74 /* HomeProtocols.swift */; };
+		7DEB220D2CFB8B220006DF74 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB220C2CFB8B220006DF74 /* BaseView.swift */; };
+		7DEB220F2CFB8B580006DF74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB220E2CFB8B580006DF74 /* HomeView.swift */; };
+		7DEB22162CFB92520006DF74 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22152CFB92520006DF74 /* UIImageView+Extensions.swift */; };
+		7DEB22182CFB95860006DF74 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22172CFB95860006DF74 /* ColorTheme.swift */; };
+		7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */; };
+		7DEB221C2CFB9E450006DF74 /* UILabel+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB221B2CFB9E450006DF74 /* UILabel+TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +37,19 @@
 		7DEB21E52CFB5C040006DF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DEB21E82CFB5C040006DF74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DEB21EA2CFB5C040006DF74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DEB21F42CFB85C20006DF74 /* Ables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ables.swift; sourceTree = "<group>"; };
+		7DEB21F82CFB864E0006DF74 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		7DEB21FC2CFB87000006DF74 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		7DEB21FE2CFB870D0006DF74 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		7DEB22002CFB87290006DF74 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		7DEB22022CFB873C0006DF74 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7DEB22092CFB88780006DF74 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		7DEB220C2CFB8B220006DF74 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		7DEB220E2CFB8B580006DF74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7DEB22152CFB92520006DF74 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		7DEB22172CFB95860006DF74 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		7DEB221B2CFB9E450006DF74 /* UILabel+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+TextField.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEB22062CFB87700006DF74 /* SnapKit in Frameworks */,
+				7DEB22082CFB87700006DF74 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +84,8 @@
 		7DEB21DB2CFB5C020006DF74 /* SkillTap */ = {
 			isa = PBXGroup;
 			children = (
+				7DEB21F22CFB85750006DF74 /* kits */,
+				7DEB21F02CFB85400006DF74 /* modules */,
 				7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */,
 				7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */,
 				7DEB21E02CFB5C020006DF74 /* ViewController.swift */,
@@ -62,6 +94,65 @@
 				7DEB21EA2CFB5C040006DF74 /* Info.plist */,
 			);
 			path = SkillTap;
+			sourceTree = "<group>";
+		};
+		7DEB21F02CFB85400006DF74 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB21F12CFB85630006DF74 /* HomeModule */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		7DEB21F12CFB85630006DF74 /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB21FC2CFB87000006DF74 /* HomeInteractor.swift */,
+				7DEB21FE2CFB870D0006DF74 /* HomePresenter.swift */,
+				7DEB22002CFB87290006DF74 /* HomeRouter.swift */,
+				7DEB22022CFB873C0006DF74 /* HomeViewController.swift */,
+				7DEB22092CFB88780006DF74 /* HomeProtocols.swift */,
+				7DEB220E2CFB8B580006DF74 /* HomeView.swift */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		7DEB21F22CFB85750006DF74 /* kits */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB220B2CFB8B130006DF74 /* corekits */,
+				7DEB21F32CFB85AB0006DF74 /* uiCommonKit */,
+			);
+			path = kits;
+			sourceTree = "<group>";
+		};
+		7DEB21F32CFB85AB0006DF74 /* uiCommonKit */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB21F72CFB86370006DF74 /* extensions */,
+				7DEB21F42CFB85C20006DF74 /* Ables.swift */,
+				7DEB22172CFB95860006DF74 /* ColorTheme.swift */,
+			);
+			path = uiCommonKit;
+			sourceTree = "<group>";
+		};
+		7DEB21F72CFB86370006DF74 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB21F82CFB864E0006DF74 /* UIColor+Extensions.swift */,
+				7DEB22152CFB92520006DF74 /* UIImageView+Extensions.swift */,
+				7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */,
+				7DEB221B2CFB9E450006DF74 /* UILabel+TextField.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		7DEB220B2CFB8B130006DF74 /* corekits */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB220C2CFB8B220006DF74 /* BaseView.swift */,
+			);
+			path = corekits;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +171,10 @@
 			dependencies = (
 			);
 			name = SkillTap;
+			packageProductDependencies = (
+				7DEB22052CFB87700006DF74 /* SnapKit */,
+				7DEB22072CFB87700006DF74 /* SnapKit-Dynamic */,
+			);
 			productName = SkillTap;
 			productReference = 7DEB21D92CFB5C020006DF74 /* SkillTap.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +203,9 @@
 				Base,
 			);
 			mainGroup = 7DEB21D02CFB5C020006DF74;
+			packageReferences = (
+				7DEB22042CFB87700006DF74 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7DEB21DA2CFB5C020006DF74 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,9 +232,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEB22162CFB92520006DF74 /* UIImageView+Extensions.swift in Sources */,
 				7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */,
+				7DEB21F92CFB864E0006DF74 /* UIColor+Extensions.swift in Sources */,
+				7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */,
+				7DEB221C2CFB9E450006DF74 /* UILabel+TextField.swift in Sources */,
+				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
 				7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */,
 				7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */,
+				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
+				7DEB220A2CFB88780006DF74 /* HomeProtocols.swift in Sources */,
+				7DEB21FD2CFB87000006DF74 /* HomeInteractor.swift in Sources */,
+				7DEB22182CFB95860006DF74 /* ColorTheme.swift in Sources */,
+				7DEB22012CFB87290006DF74 /* HomeRouter.swift in Sources */,
+				7DEB220F2CFB8B580006DF74 /* HomeView.swift in Sources */,
+				7DEB220D2CFB8B220006DF74 /* BaseView.swift in Sources */,
+				7DEB21FF2CFB870D0006DF74 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +468,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7DEB22042CFB87700006DF74 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DEB22052CFB87700006DF74 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DEB22042CFB87700006DF74 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7DEB22072CFB87700006DF74 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DEB22042CFB87700006DF74 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7DEB21D12CFB5C020006DF74 /* Project object */;
 }
