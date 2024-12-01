@@ -20,7 +20,16 @@ protocol ViewToPrensenterHomeProtocol{
 
 //MARK: PresenterToViewHomeProtocol
 protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
-    func setConfigureView(searchLigtLabelText:String)
+    func setSearchConfigureView(searchLigtLabelText:String)
+    func setFindFreelancerBanner(
+        title:String,
+        imageUrl:String,
+        subTitle:String)
+    
+    func setAdvertBanner(
+        title:String,
+        imageUrl:String,
+        subTitle:String)
     
 }
 

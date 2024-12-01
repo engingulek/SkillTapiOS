@@ -27,10 +27,35 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController : PresenterToViewHomeProtocol {
-    func setConfigureView(searchLigtLabelText: String) {
+    
+    func setSearchConfigureView(searchLigtLabelText: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
-            homeView.getConfigure( searchLigtLabelText: searchLigtLabelText)
+            homeView.getSearchConfigureView( searchLigtLabelText: searchLigtLabelText)
         }
     }
+    
+    func setFindFreelancerBanner(title: String, imageUrl: String, subTitle: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            homeView.getFindFreelancerBanner(
+                title: title,
+                imageUrl: imageUrl,
+                bannerSubTitleText: subTitle
+            )
+        }
+    }
+    
+    func setAdvertBanner(title: String, imageUrl: String, subTitle: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            homeView.getAdvertBanner(
+                title: title,
+                imageUrl: imageUrl,
+                bannerSubTitleText: subTitle
+            )
+        }
+    }
+    
+  
 }

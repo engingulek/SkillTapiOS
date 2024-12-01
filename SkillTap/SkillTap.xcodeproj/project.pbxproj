@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77AE222CFC958C00A011A3 /* Kingfisher */; };
 		7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */; };
 		7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */; };
 		7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21E02CFB5C020006DF74 /* ViewController.swift */; };
@@ -26,7 +27,8 @@
 		7DEB22162CFB92520006DF74 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22152CFB92520006DF74 /* UIImageView+Extensions.swift */; };
 		7DEB22182CFB95860006DF74 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22172CFB95860006DF74 /* ColorTheme.swift */; };
 		7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */; };
-		7DEB221C2CFB9E450006DF74 /* UILabel+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB221B2CFB9E450006DF74 /* UILabel+TextField.swift */; };
+		7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */; };
+		7DEB22242CFBAB6E0006DF74 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22232CFBAB6E0006DF74 /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +51,8 @@
 		7DEB22152CFB92520006DF74 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		7DEB22172CFB95860006DF74 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		7DEB221B2CFB9E450006DF74 /* UILabel+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+TextField.swift"; sourceTree = "<group>"; };
+		7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		7DEB22232CFBAB6E0006DF74 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */,
 				7DEB22062CFB87700006DF74 /* SnapKit in Frameworks */,
 				7DEB22082CFB87700006DF74 /* SnapKit-Dynamic in Frameworks */,
 			);
@@ -129,6 +133,7 @@
 		7DEB21F32CFB85AB0006DF74 /* uiCommonKit */ = {
 			isa = PBXGroup;
 			children = (
+				7DEB22222CFBAB530006DF74 /* combinedViews */,
 				7DEB21F72CFB86370006DF74 /* extensions */,
 				7DEB21F42CFB85C20006DF74 /* Ables.swift */,
 				7DEB22172CFB95860006DF74 /* ColorTheme.swift */,
@@ -142,7 +147,7 @@
 				7DEB21F82CFB864E0006DF74 /* UIColor+Extensions.swift */,
 				7DEB22152CFB92520006DF74 /* UIImageView+Extensions.swift */,
 				7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */,
-				7DEB221B2CFB9E450006DF74 /* UILabel+TextField.swift */,
+				7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -153,6 +158,14 @@
 				7DEB220C2CFB8B220006DF74 /* BaseView.swift */,
 			);
 			path = corekits;
+			sourceTree = "<group>";
+		};
+		7DEB22222CFBAB530006DF74 /* combinedViews */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB22232CFBAB6E0006DF74 /* BannerView.swift */,
+			);
+			path = combinedViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +187,7 @@
 			packageProductDependencies = (
 				7DEB22052CFB87700006DF74 /* SnapKit */,
 				7DEB22072CFB87700006DF74 /* SnapKit-Dynamic */,
+				7D77AE222CFC958C00A011A3 /* Kingfisher */,
 			);
 			productName = SkillTap;
 			productReference = 7DEB21D92CFB5C020006DF74 /* SkillTap.app */;
@@ -205,6 +219,7 @@
 			mainGroup = 7DEB21D02CFB5C020006DF74;
 			packageReferences = (
 				7DEB22042CFB87700006DF74 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D77AE212CFC958C00A011A3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7DEB21DA2CFB5C020006DF74 /* Products */;
 			projectDirPath = "";
@@ -236,7 +251,7 @@
 				7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */,
 				7DEB21F92CFB864E0006DF74 /* UIColor+Extensions.swift in Sources */,
 				7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */,
-				7DEB221C2CFB9E450006DF74 /* UILabel+TextField.swift in Sources */,
+				7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */,
 				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
 				7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */,
 				7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */,
@@ -247,6 +262,7 @@
 				7DEB22012CFB87290006DF74 /* HomeRouter.swift in Sources */,
 				7DEB220F2CFB8B580006DF74 /* HomeView.swift in Sources */,
 				7DEB220D2CFB8B220006DF74 /* BaseView.swift in Sources */,
+				7DEB22242CFBAB6E0006DF74 /* BannerView.swift in Sources */,
 				7DEB21FF2CFB870D0006DF74 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +486,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7D77AE212CFC958C00A011A3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.1;
+			};
+		};
 		7DEB22042CFB87700006DF74 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -481,6 +505,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7D77AE222CFC958C00A011A3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D77AE212CFC958C00A011A3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		7DEB22052CFB87700006DF74 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7DEB22042CFB87700006DF74 /* XCRemoteSwiftPackageReference "SnapKit" */;

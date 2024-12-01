@@ -22,8 +22,10 @@ class HomeView : BaseView<HomeViewController> {
     
     private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
     private lazy var searchLigtLabel : UILabel = UILabel.lightMiddleLabel()
-
+    private lazy var createWorkBanner : BannerView = BannerView()
+    private lazy var findFreelancerBannerView : BannerView = BannerView()
     
+
     override func setupView() {
         super.setupView()
         configureView()
@@ -55,14 +57,50 @@ class HomeView : BaseView<HomeViewController> {
         let searchTapGesture = UITapGestureRecognizer(target: self, action: #selector(searchViewTapped))
         searchLigtLabel.isUserInteractionEnabled = true
         searchLigtLabel.addGestureRecognizer(searchTapGesture)
+        
+
+        addSubview(createWorkBanner)
+        createWorkBanner.snp.makeConstraints { make in
+            make.top.equalTo(searchView.snp.bottom).offset(15)
+            make.leading.equalToSuperview().offset(20)
+            make.width.equalToSuperview().multipliedBy(0.4)
+            make.height.equalToSuperview().multipliedBy(0.25)
+        }
+        
+        addSubview(findFreelancerBannerView)
+        findFreelancerBannerView.snp.makeConstraints { make in
+            make.top.equalTo(searchView.snp.bottom).offset(10)
+            make.trailing.equalToSuperview().offset(-20)
+            make.width.equalToSuperview().multipliedBy(0.4)
+            make.height.equalToSuperview().multipliedBy(0.25)
+        }
     }
     
     @objc private func searchViewTapped() {
         presenter?.onTappedSearchBar()
     }
     
-    func getConfigure(searchLigtLabelText:String) {
+    func getSearchConfigureView(searchLigtLabelText:String) {
         searchLigtLabel.text = searchLigtLabelText
     }
     
+    func getFindFreelancerBanner(
+        title:String,
+        imageUrl:String,bannerSubTitleText:String){
+        findFreelancerBannerView.setBannerCongigure(
+            text: title,
+            bannerImageUrl: imageUrl,
+            bannerSubText: bannerSubTitleText
+        )
+    }
+    
+    func getAdvertBanner(title:String,
+                             imageUrl:String,
+                             bannerSubTitleText:String){
+        createWorkBanner.setBannerCongigure(text: title,
+                                            bannerImageUrl: imageUrl,
+                                            bannerSubText: bannerSubTitleText)
+    }
+    
 }
+
