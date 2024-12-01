@@ -10,7 +10,8 @@ import SnapKit
 import UIKit
 class HomeView : BaseView<HomeViewController> {
     var presenter : ViewToPrensenterHomeProtocol?
-    
+    private lazy var titleLabel : UILabel = UILabel.xltitleUILabel(bold: true)
+    private lazy var subTitleLabel : UILabel = UILabel.largeTitleUILabel(bold: false)
     private lazy var searchView : UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.black.cgColor
@@ -26,6 +27,7 @@ class HomeView : BaseView<HomeViewController> {
     private lazy var findFreelancerBannerView : BannerView = BannerView()
     
     private lazy var topOptionsCollectionView = UICollectionView.primaryCollectionView(scroolDirection: .horizontal)
+    
    
     
 
@@ -36,9 +38,19 @@ class HomeView : BaseView<HomeViewController> {
     }
 
     private func configureView(){
+        addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
+            make.leading.equalToSuperview().offset(20)
+        }
+        addSubview(subTitleLabel)
+        subTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(20)
+        }
         addSubview(searchView)
         searchView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(50)
@@ -122,6 +134,11 @@ class HomeView : BaseView<HomeViewController> {
     
     func topOptionsCollectionViewReloadData(){
         topOptionsCollectionView.reloadData()
+    }
+    
+    func setHeadTitleData(title:String,subTitle:String){
+        titleLabel.text = title
+        subTitleLabel.text = subTitle
     }
     
 }

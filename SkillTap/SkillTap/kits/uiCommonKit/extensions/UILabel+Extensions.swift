@@ -10,7 +10,24 @@ import UIKit.UILabel
 
 extension UILabel {
     
-   static func lightMiddleLabel() -> UILabel {
+    static func xltitleUILabel(bold:Bool) -> UILabel {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = bold ? .boldSystemFont(ofSize: 30) : .systemFont(ofSize: 25)
+        label.textColor = UIColor(hex: ColorTheme.primaryTextColor.color)
+        return label
+    }
+    
+    
+    static func largeTitleUILabel(bold:Bool) -> UILabel {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = bold ? .boldSystemFont(ofSize: 30) : .systemFont(ofSize: 25)
+        label.textColor = UIColor(hex: ColorTheme.primaryTextColor.color)
+        return label
+    }
+    
+    static func lightMiddleLabel() -> UILabel {
         let label = UILabel()
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 18)
@@ -33,11 +50,11 @@ extension UILabel {
     }
     
     static func cellTitleUILabel() -> UILabel {
-            let label = UILabel()
-            label.textColor = .black
-            label.font = .systemFont(ofSize: 18)
-            label.textAlignment = .center
-            return label
-        }
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 18)
+        label.textAlignment = .center
+        return label
+    }
     
 }

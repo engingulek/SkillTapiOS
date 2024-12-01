@@ -72,6 +72,14 @@ extension HomeViewController : PresenterToViewHomeProtocol {
             homeView.topOptionsCollectionViewReloadData()
         }
     }
+    
+    func setHeadData(title: String, subtitle: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            homeView.setHeadTitleData(title: title, subTitle: subtitle)
+            
+        }
+    }
 }
 
 //MARK: UICollectionViewDelegate,UICollectionViewDataSource

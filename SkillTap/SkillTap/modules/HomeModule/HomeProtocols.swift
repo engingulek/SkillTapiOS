@@ -40,6 +40,7 @@ protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
     
     func topOptionsCollectionViewPrepare()
     func topOptionsCollectionViewReloadData()
+    func setHeadData(title:String,subtitle:String)
     
 }
 

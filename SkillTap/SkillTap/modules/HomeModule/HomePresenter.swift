@@ -30,6 +30,7 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
                                   imageUrl: "https://firebasestorage.googleapis.com/v0/b/feastly-f1988.appspot.com/o/skillTap%2Fwork.png?alt=media&token=f5480e12-e40b-4545-a1ee-96951db3f7a2", subTitle: "5k adverts")
         view?.topOptionsCollectionViewPrepare()
         view?.topOptionsCollectionViewReloadData()
+        view?.setHeadData(title: "Hi,Engin", subtitle: "What you are looking for is here")
     }
     
     func onTappedSearchBar() {
