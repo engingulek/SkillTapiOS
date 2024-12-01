@@ -12,7 +12,7 @@ enum ColorTheme : String {
     /// is white
     case appBackColor  = "#FFFFFF"
     
-    // is black
+    /// is black
     case primaryTextColor = "#000000"
     
     var color : String {

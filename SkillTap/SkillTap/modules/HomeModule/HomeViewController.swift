@@ -25,8 +25,10 @@ class HomeViewController: UIViewController {
 }
 
 
-
+//MARK: PresenterToViewHomeProtocol
 extension HomeViewController : PresenterToViewHomeProtocol {
+ 
+    
     
     func setSearchConfigureView(searchLigtLabelText: String) {
         DispatchQueue.main.async { [weak self] in
@@ -57,5 +59,37 @@ extension HomeViewController : PresenterToViewHomeProtocol {
         }
     }
     
-  
+    func topOptionsCollectionViewPrepare() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            homeView.topOptionsCollectionViewPrepare()
+        }
+    }
+    
+    func topOptionsCollectionViewReloadData() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            homeView.topOptionsCollectionViewReloadData()
+        }
+    }
+}
+
+//MARK: UICollectionViewDelegate,UICollectionViewDataSource
+extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.topOptionsNumberOfItemsIn()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView
+            .dequeueReusableCell(
+                withReuseIdentifier: TopOptionCVC.identifier,
+                for: indexPath) as? TopOptionCVC else {return UICollectionViewCell()}
+        let item = presenter.topCellForItem(indexPath: indexPath)
+        cell.setItem(
+            text: item.topOption,
+            borderColor: item.borderColor,
+            textColor: item.textColor)
+        return cell
+    }
 }

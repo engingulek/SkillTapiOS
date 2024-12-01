@@ -16,6 +16,13 @@ protocol ViewToPrensenterHomeProtocol{
     
     func onTappedSearchBar()
     
+    func topOptionsNumberOfItemsIn() -> Int
+    func topCellForItem(indexPath:IndexPath) -> (
+        topOption:String,
+        borderColor:String,
+        textColor:String
+    )
+    
 }
 
 //MARK: PresenterToViewHomeProtocol
@@ -30,6 +37,9 @@ protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
         title:String,
         imageUrl:String,
         subTitle:String)
+    
+    func topOptionsCollectionViewPrepare()
+    func topOptionsCollectionViewReloadData()
     
 }
 

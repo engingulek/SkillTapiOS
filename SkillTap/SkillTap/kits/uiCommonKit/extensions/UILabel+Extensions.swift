@@ -32,4 +32,12 @@ extension UILabel {
         return label
     }
     
+    static func cellTitleUILabel() -> UILabel {
+            let label = UILabel()
+            label.textColor = .black
+            label.font = .systemFont(ofSize: 18)
+            label.textAlignment = .center
+            return label
+        }
+    
 }

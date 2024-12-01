@@ -25,10 +25,14 @@ class HomeView : BaseView<HomeViewController> {
     private lazy var createWorkBanner : BannerView = BannerView()
     private lazy var findFreelancerBannerView : BannerView = BannerView()
     
+    private lazy var topOptionsCollectionView = UICollectionView.primaryCollectionView(scroolDirection: .horizontal)
+   
+    
 
     override func setupView() {
         super.setupView()
         configureView()
+        topOptionsCollectionView.register(TopOptionCVC.self, forCellWithReuseIdentifier: TopOptionCVC.identifier)
     }
 
     private func configureView(){
@@ -58,10 +62,19 @@ class HomeView : BaseView<HomeViewController> {
         searchLigtLabel.isUserInteractionEnabled = true
         searchLigtLabel.addGestureRecognizer(searchTapGesture)
         
+        
+        addSubview(topOptionsCollectionView)
+        topOptionsCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(searchView.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(60)
+        }
+        
 
         addSubview(createWorkBanner)
         createWorkBanner.snp.makeConstraints { make in
-            make.top.equalTo(searchView.snp.bottom).offset(15)
+            make.top.equalTo(topOptionsCollectionView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.width.equalToSuperview().multipliedBy(0.4)
             make.height.equalToSuperview().multipliedBy(0.25)
@@ -69,7 +82,7 @@ class HomeView : BaseView<HomeViewController> {
         
         addSubview(findFreelancerBannerView)
         findFreelancerBannerView.snp.makeConstraints { make in
-            make.top.equalTo(searchView.snp.bottom).offset(10)
+            make.top.equalTo(topOptionsCollectionView.snp.bottom).offset(10)
             make.trailing.equalToSuperview().offset(-20)
             make.width.equalToSuperview().multipliedBy(0.4)
             make.height.equalToSuperview().multipliedBy(0.25)
@@ -100,6 +113,15 @@ class HomeView : BaseView<HomeViewController> {
         createWorkBanner.setBannerCongigure(text: title,
                                             bannerImageUrl: imageUrl,
                                             bannerSubText: bannerSubTitleText)
+    }
+    
+    func topOptionsCollectionViewPrepare(){
+        topOptionsCollectionView.delegate = controller
+        topOptionsCollectionView.dataSource = controller
+    }
+    
+    func topOptionsCollectionViewReloadData(){
+        topOptionsCollectionView.reloadData()
     }
     
 }

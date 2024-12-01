@@ -18,7 +18,6 @@ final class HomePresenter {
 
 //MARK: ViewToPrensenterHomeProtocol
 extension HomePresenter : ViewToPrensenterHomeProtocol {
-
     
     func viewDidLoad() {
         view?.setBackColorAble(color:ColorTheme.appBackColor.color)
@@ -29,11 +28,28 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         
         view?.setAdvertBanner(title: "Adverts",
                                   imageUrl: "https://firebasestorage.googleapis.com/v0/b/feastly-f1988.appspot.com/o/skillTap%2Fwork.png?alt=media&token=f5480e12-e40b-4545-a1ee-96951db3f7a2", subTitle: "5k adverts")
+        view?.topOptionsCollectionViewPrepare()
+        view?.topOptionsCollectionViewReloadData()
     }
     
     func onTappedSearchBar() {
         print("on tapped")
     }
+    
+    func topOptionsNumberOfItemsIn() -> Int {
+        return 3
+    }
+    
+    func topCellForItem(indexPath: IndexPath) -> (topOption: String,    
+                                                  borderColor:String,
+                                                  textColor:String) {
+        return (topOption:"test",
+                borderColor:ColorTheme.primaryTextColor.color,
+                textColor:ColorTheme.primaryTextColor.color
+        )
+    }
+    
+
 
 }
 
