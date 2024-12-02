@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AF22CFDE1EB00C560B4 /* SearchView.swift */; };
+		7D281AF52CFDE1FC00C560B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */; };
+		7D281AF72CFDE21400C560B4 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AF62CFDE21400C560B4 /* SearchRouter.swift */; };
+		7D281AF92CFDE22900C560B4 /* SearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AF82CFDE22900C560B4 /* SearchProtocols.swift */; };
 		7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77AE222CFC958C00A011A3 /* Kingfisher */; };
 		7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */; };
 		7D77AE272CFCA29500A011A3 /* TopOptionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D281AF22CFDE1EB00C560B4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7D281AF62CFDE21400C560B4 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		7D281AF82CFDE22900C560B4 /* SearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocols.swift; sourceTree = "<group>"; };
 		7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOptionCVC.swift; sourceTree = "<group>"; };
 		7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTheme.swift; sourceTree = "<group>"; };
@@ -75,6 +83,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D281AF12CFDE19800C560B4 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				7D281AF22CFDE1EB00C560B4 /* SearchView.swift */,
+				7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */,
+				7D281AF62CFDE21400C560B4 /* SearchRouter.swift */,
+				7D281AF82CFDE22900C560B4 /* SearchProtocols.swift */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
 		7D77AE282CFCAA9E00A011A3 /* theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +137,7 @@
 		7DEB21F02CFB85400006DF74 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				7D281AF12CFDE19800C560B4 /* SearchModule */,
 				7DEB21F12CFB85630006DF74 /* HomeModule */,
 			);
 			path = modules;
@@ -267,6 +287,7 @@
 				7DEB22162CFB92520006DF74 /* UIImageView+Extensions.swift in Sources */,
 				7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */,
 				7DEB21F92CFB864E0006DF74 /* UIColor+Extensions.swift in Sources */,
+				7D281AF92CFDE22900C560B4 /* SearchProtocols.swift in Sources */,
 				7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */,
 				7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */,
 				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
@@ -274,7 +295,10 @@
 				7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */,
 				7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
+				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
 				7DEB220A2CFB88780006DF74 /* HomeProtocols.swift in Sources */,
+				7D281AF52CFDE1FC00C560B4 /* SearchViewController.swift in Sources */,
+				7D281AF72CFDE21400C560B4 /* SearchRouter.swift in Sources */,
 				7DEB21FD2CFB87000006DF74 /* HomeInteractor.swift in Sources */,
 				7DEB22182CFB95860006DF74 /* ColorTheme.swift in Sources */,
 				7DEB22012CFB87290006DF74 /* HomeRouter.swift in Sources */,

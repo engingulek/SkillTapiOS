@@ -9,8 +9,10 @@ import Foundation
 
 final class HomePresenter {
     weak var view: PresenterToViewHomeProtocol?
-    init(view: PresenterToViewHomeProtocol?) {
+    private var router : PresenterToRouterHomeProtocol
+    init(view: PresenterToViewHomeProtocol?,router:PresenterToRouterHomeProtocol) {
         self.view = view
+        self.router = router
     }
     
 }
@@ -31,10 +33,12 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         view?.topOptionsCollectionViewPrepare()
         view?.topOptionsCollectionViewReloadData()
         view?.setHeadData(title: "Hi,Engin", subtitle: "What you are looking for is here")
+        
+        view?.changeTitle(title: "Home")
     }
     
     func onTappedSearchBar() {
-        print("on tapped")
+        router.toSearchView(view: view)
     }
     
     func topOptionsNumberOfItemsIn() -> Int {

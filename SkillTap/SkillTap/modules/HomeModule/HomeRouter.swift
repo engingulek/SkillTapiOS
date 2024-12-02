@@ -14,3 +14,11 @@ class HomeRouter {
         return viewController
     }
 }
+
+
+extension HomeRouter : PresenterToRouterHomeProtocol {
+    func toSearchView(view: PresenterToViewHomeProtocol?) {
+        let viewController = SearchRouter.createSearchModule()
+        view?.pushViewControllerAble(viewController, animated: true)
+    }
+}
