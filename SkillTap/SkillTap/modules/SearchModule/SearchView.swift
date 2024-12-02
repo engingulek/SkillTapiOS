@@ -9,8 +9,10 @@ import Foundation
 import SnapKit
 import UIKit
 
+
 class SearchView : BaseView<SearchViewController> {
     var presenter : ViewToPrensenterSearchProtocol?
+   
     private lazy var searchView : UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.black.cgColor
@@ -25,10 +27,14 @@ class SearchView : BaseView<SearchViewController> {
     
     
     private lazy var onTappedAdverstButton : UIAction = UIAction { _  in
+        self.advertsCollectionView.isHidden = false
+        self.freelancerCollectionView.isHidden = true
         self.presenter?.onTappedAdvertsButton()
        }
     
     private lazy var onTappedFreelancerButton : UIAction = UIAction { _ in
+        self.advertsCollectionView.isHidden = true
+        self.freelancerCollectionView.isHidden = false
         self.presenter?.onTappedFreelancerButton()
        }
     
@@ -39,13 +45,19 @@ class SearchView : BaseView<SearchViewController> {
     override func setupView() {
         super.setupView()
         configureView()
-        
+        advertsCollectionView.isHidden = false
+        freelancerCollectionView.isHidden = true
         searchTextField.addTarget(self, action: #selector(searchTextFieldEditChanged(_:)), for: .editingChanged)
+        advertsCollectionView.register(AdvertCVC.self, forCellWithReuseIdentifier: AdvertCVC.identifier)
+        freelancerCollectionView.register(FreelancerCVC.self, forCellWithReuseIdentifier: FreelancerCVC.identifier)
     }
     
     @objc private func searchTextFieldEditChanged(_ textField: UITextField) {
         presenter?.onChangedSearctTextField(text: textField.text)
     }
+    
+    private lazy var advertsCollectionView = UICollectionView.primaryCollectionView(tag:0,scroolDirection: .vertical)
+    private lazy var freelancerCollectionView = UICollectionView.primaryCollectionView(tag:1,scroolDirection: .vertical)
     
     private func configureView(){
         addSubview(searchView)
@@ -87,6 +99,22 @@ class SearchView : BaseView<SearchViewController> {
             make.height.equalTo(40)
             make.width.equalToSuperview().multipliedBy(0.4)
         }
+        
+        addSubview(advertsCollectionView)
+        advertsCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(advertsButton.snp.bottom).offset(10)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        addSubview(freelancerCollectionView)
+        freelancerCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(freelancersButton.snp.bottom).offset(10)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
     
@@ -107,5 +135,24 @@ class SearchView : BaseView<SearchViewController> {
         freelancersButton.setTitle(text, for: .normal)
         freelancersButton.backgroundColor = UIColor(hex: backColor)
         freelancersButton.layer.borderColor = UIColor(hex: borderColor)?.cgColor
+    }
+    
+    func advertsCollectionViewPrepare(){
+
+        advertsCollectionView.delegate = controller
+        advertsCollectionView.dataSource = controller
+    }
+    
+    func advertsCollectionViewReloadData(){
+        advertsCollectionView.reloadData()
+    }
+    
+    func freelancerCollectionViewPrepare(){
+        freelancerCollectionView.delegate = controller
+        freelancerCollectionView.dataSource = controller
+    }
+    
+    func freelancerCollectionViewReloadData(){
+        freelancerCollectionView.reloadData()
     }
 }

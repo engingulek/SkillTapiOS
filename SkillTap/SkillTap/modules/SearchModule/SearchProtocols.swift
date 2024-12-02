@@ -17,6 +17,12 @@ protocol ViewToPrensenterSearchProtocol{
     func onTappedAdvertsButton()
     func onTappedFreelancerButton()
     
+    func numberOfItems() -> Int
+    func cellForItem(selectedType:SearchType,
+                     at indexPath:IndexPath)
+    
+    func sizeForItemAt(selectedType: SearchType,width:CGFloat,height:CGFloat) -> CGSize
+        
 }
 
 //MARK: PresenterToViewSearchProtocol
@@ -32,6 +38,12 @@ protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
         textColor:String,
         backColor:String,
         borderColor:String)
+    
+    func advertsCollectionViewPrepare()
+    func freelancerCollectionViewPrepare()
+    
+    func advertsCollectionViewReload()
+    func freelancerCollectionViewReload()
     
 }
 

@@ -14,6 +14,8 @@
 		7D281AFB2CFDE63600C560B4 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AFA2CFDE63600C560B4 /* SearchPresenter.swift */; };
 		7D281AFD2CFDED6E00C560B4 /* TextTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AFC2CFDED6E00C560B4 /* TextTheme.swift */; };
 		7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281B002CFDF37C00C560B4 /* UIButton+Extensions.swift */; };
+		7D281B042CFE1E4700C560B4 /* AdvertCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281B032CFE1E4700C560B4 /* AdvertCVC.swift */; };
+		7D281B062CFE1E8D00C560B4 /* FreelancerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281B052CFE1E8D00C560B4 /* FreelancerCVC.swift */; };
 		7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77AE222CFC958C00A011A3 /* Kingfisher */; };
 		7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */; };
 		7D77AE272CFCA29500A011A3 /* TopOptionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */; };
@@ -49,6 +51,8 @@
 		7D281AFA2CFDE63600C560B4 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		7D281AFC2CFDED6E00C560B4 /* TextTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTheme.swift; sourceTree = "<group>"; };
 		7D281B002CFDF37C00C560B4 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		7D281B032CFE1E4700C560B4 /* AdvertCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertCVC.swift; sourceTree = "<group>"; };
+		7D281B052CFE1E8D00C560B4 /* FreelancerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerCVC.swift; sourceTree = "<group>"; };
 		7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOptionCVC.swift; sourceTree = "<group>"; };
 		7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTheme.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		7D281AF12CFDE19800C560B4 /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
+				7D281B022CFE1E3000C560B4 /* cells */,
 				7D281AF22CFDE1EB00C560B4 /* SearchView.swift */,
 				7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */,
 				7D281AF62CFDE21400C560B4 /* SearchRouter.swift */,
@@ -99,6 +104,15 @@
 				7D281AFA2CFDE63600C560B4 /* SearchPresenter.swift */,
 			);
 			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		7D281B022CFE1E3000C560B4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				7D281B032CFE1E4700C560B4 /* AdvertCVC.swift */,
+				7D281B052CFE1E8D00C560B4 /* FreelancerCVC.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		7D77AE282CFCAA9E00A011A3 /* theme */ = {
@@ -303,6 +317,7 @@
 				7D281AFB2CFDE63600C560B4 /* SearchPresenter.swift in Sources */,
 				7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */,
 				7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */,
+				7D281B062CFE1E8D00C560B4 /* FreelancerCVC.swift in Sources */,
 				7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
@@ -313,6 +328,7 @@
 				7DEB21FD2CFB87000006DF74 /* HomeInteractor.swift in Sources */,
 				7DEB22182CFB95860006DF74 /* ColorTheme.swift in Sources */,
 				7D281AFD2CFDED6E00C560B4 /* TextTheme.swift in Sources */,
+				7D281B042CFE1E4700C560B4 /* AdvertCVC.swift in Sources */,
 				7DEB22012CFB87290006DF74 /* HomeRouter.swift in Sources */,
 				7DEB220F2CFB8B580006DF74 /* HomeView.swift in Sources */,
 				7D77AE272CFCA29500A011A3 /* TopOptionCVC.swift in Sources */,
