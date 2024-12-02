@@ -118,7 +118,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
         case .adverts:
             return CGSize(width: width - 10, height: height / 4)
         case .freelancer:
-            return CGSize(width: width - 10, height: height / 3)
+            return CGSize(width: width - 10, height: height / 6)
         case .none:
             return CGSize(width: 0, height: 0)
         }

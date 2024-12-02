@@ -96,6 +96,7 @@ extension SearchViewController : UICollectionViewDelegate,UICollectionViewDataSo
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: AdvertCVC.identifier,
                 for: indexPath) as? AdvertCVC else {return UICollectionViewCell()}
+            cell.configureData()
             return cell
         case 1:
             presenter.cellForItem(selectedType: .freelancer, at: indexPath)

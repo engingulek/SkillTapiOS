@@ -52,9 +52,19 @@ extension UILabel {
     static func cellTitleUILabel() -> UILabel {
         let label = UILabel()
         label.textColor = .black
-        label.font = .systemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 18,weight: .semibold)
         label.textAlignment = .center
         return label
     }
+    
+    static func descTitleUILabel() -> UILabel{
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 15,weight: .light)
+        label.numberOfLines = 3
+        return label
+    }
+    
+    
     
 }

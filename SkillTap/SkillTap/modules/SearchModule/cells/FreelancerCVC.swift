@@ -12,7 +12,10 @@ class FreelancerCVC: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .red
+
+        layer.cornerRadius = 10
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
     }
     
     required init?(coder: NSCoder) {
