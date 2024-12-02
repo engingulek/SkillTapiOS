@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    //Swiftinject will be added to here
+    //TODO: Swiftinject will be added to here
     lazy var presenter : ViewToPrensenterHomeProtocol = HomePresenter(
         view: self,
         router: HomeRouter()

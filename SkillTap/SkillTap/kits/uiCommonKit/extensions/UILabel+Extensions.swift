@@ -14,7 +14,7 @@ extension UILabel {
         let label = UILabel()
         label.textColor = .black
         label.font = bold ? .boldSystemFont(ofSize: 30) : .systemFont(ofSize: 25)
-        label.textColor = UIColor(hex: ColorTheme.primaryTextColor.color)
+        label.textColor = UIColor(hex: ColorTheme.primaryColor.color)
         return label
     }
     
@@ -23,7 +23,7 @@ extension UILabel {
         let label = UILabel()
         label.textColor = .black
         label.font = bold ? .boldSystemFont(ofSize: 30) : .systemFont(ofSize: 25)
-        label.textColor = UIColor(hex: ColorTheme.primaryTextColor.color)
+        label.textColor = UIColor(hex: ColorTheme.primaryColor.color)
         return label
     }
     

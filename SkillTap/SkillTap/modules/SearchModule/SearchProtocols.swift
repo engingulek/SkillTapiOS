@@ -13,21 +13,25 @@ typealias SearchKits = UIViewAble  & NavConUIAble
 protocol ViewToPrensenterSearchProtocol{
     var view : PresenterToViewSearchProtocol? {get}
     func viewDidLoad()
-    
-    func onTappedSearchBar()
-    
-    func topOptionsNumberOfItemsIn() -> Int
-    func topCellForItem(indexPath:IndexPath) -> (
-        topOption:String,
-        borderColor:String,
-        textColor:String
-    )
+    func onChangedSearctTextField(text:String?)
+    func onTappedAdvertsButton()
+    func onTappedFreelancerButton()
     
 }
 
 //MARK: PresenterToViewSearchProtocol
 protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
-
+    
+    func setSearchTextFieldPlaceholder(_ placeholder:String)
+    func setAdvertsButtonDesign(text:String,
+                                textColor:String,
+                                backColor:String,
+                                borderColor:String)
+    func setFreelancerButtonDesign(
+        text:String,
+        textColor:String,
+        backColor:String,
+        borderColor:String)
     
 }
 

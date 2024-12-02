@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UICollectionView {
-    public static func primaryCollectionView(scroolDirection:UICollectionView.ScrollDirection) -> UICollectionView {
+     static func primaryCollectionView(scroolDirection:UICollectionView.ScrollDirection) -> UICollectionView {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
        layout.scrollDirection = scroolDirection
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

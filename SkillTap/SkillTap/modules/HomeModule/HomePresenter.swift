@@ -22,7 +22,7 @@ final class HomePresenter {
 extension HomePresenter : ViewToPrensenterHomeProtocol {
     
     func viewDidLoad() {
-        view?.setBackColorAble(color:ColorTheme.appBackColor.color)
+        view?.setBackColorAble(color:ColorTheme.secondaryColor.color)
         view?.setSearchConfigureView(searchLigtLabelText: "What do you need?")
         view?.setFindFreelancerBanner(title: "Find Freelancer",
                                 imageUrl: "https://firebasestorage.googleapis.com/v0/b/feastly-f1988.appspot.com/o/skillTap%2Ffreelancer.png?alt=media&token=04058200-9959-44ae-bc82-09cf9aa649ba",
@@ -32,9 +32,9 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
                                   imageUrl: "https://firebasestorage.googleapis.com/v0/b/feastly-f1988.appspot.com/o/skillTap%2Fwork.png?alt=media&token=f5480e12-e40b-4545-a1ee-96951db3f7a2", subTitle: "5k adverts")
         view?.topOptionsCollectionViewPrepare()
         view?.topOptionsCollectionViewReloadData()
-        view?.setHeadData(title: "Hi,Engin", subtitle: "What you are looking for is here")
+        view?.setHeadData(title: "Hi,Engin", subtitle:TextTheme.searchplaceholder.text)
         
-        view?.changeTitle(title: "Home")
+        view?.changeTitle(title: TextTheme.homeNavTitle.text)
     }
     
     func onTappedSearchBar() {
@@ -49,8 +49,8 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
                                                   borderColor:String,
                                                   textColor:String) {
         return (topOption:"test",
-                borderColor:ColorTheme.primaryTextColor.color,
-                textColor:ColorTheme.primaryTextColor.color
+                borderColor:ColorTheme.primaryColor.color,
+                textColor:ColorTheme.primaryColor.color
         )
     }
     

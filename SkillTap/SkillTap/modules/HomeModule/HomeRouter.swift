@@ -11,6 +11,9 @@ import UIKit
 class HomeRouter {
    static func createHomeModule() -> UIViewController {
         let viewController = HomeViewController()
+       let router = HomeRouter()
+       let presenter : ViewToPrensenterHomeProtocol & InteractorToPresenterHomeProtocol = HomePresenter(view: viewController, router: router)
+       viewController.presenter = presenter
         return viewController
     }
 }

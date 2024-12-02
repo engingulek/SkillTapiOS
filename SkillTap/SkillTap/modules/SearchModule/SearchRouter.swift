@@ -10,7 +10,10 @@ import UIKit
 
 class SearchRouter {
    static func createSearchModule() -> UIViewController {
-        let viewController = SearchViewController()
-        return viewController
+       let viewController = SearchViewController()
+
+      let presenter : ViewToPrensenterSearchProtocol & InteractorToPresenterSearchProtocol = SearchPresenter(view: viewController)
+      viewController.presenter = presenter
+       return viewController
     }
 }

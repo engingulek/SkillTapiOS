@@ -10,10 +10,13 @@ import Foundation
 enum ColorTheme : String {
     
     /// is white
-    case appBackColor  = "#FFFFFF"
+    case secondaryColor  = "#FFFFFF"
     
     /// is black
-    case primaryTextColor = "#000000"
+    case primaryColor = "#000000"
+    
+    /// is red
+    case thirdColor = "#FF0000"
     
     var color : String {
         return self.rawValue
