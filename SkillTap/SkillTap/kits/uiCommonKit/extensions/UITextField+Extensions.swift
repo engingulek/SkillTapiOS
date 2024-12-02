@@ -10,7 +10,7 @@ import UIKit.UITextField
 extension UITextField {
     static func searchTextField() -> UITextField {
         let textField = UITextField()
-        textField.textColor = UIColor(hex: ColorTheme.primaryTextColor.color)
+        textField.textColor = UIColor(hex: ColorTheme.primaryColor.color)
         textField.font = .systemFont(ofSize: 18)
         return textField
     }

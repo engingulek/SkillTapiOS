@@ -8,8 +8,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    lazy var presenter : ViewToPrensenterHomeProtocol = HomePresenter(view: self)
+    //TODO: Swiftinject will be added to here
+    lazy var presenter : ViewToPrensenterHomeProtocol = HomePresenter(
+        view: self,
+        router: HomeRouter()
+    )
      private lazy var homeView = HomeView(self)
 
     override func viewDidLoad() {

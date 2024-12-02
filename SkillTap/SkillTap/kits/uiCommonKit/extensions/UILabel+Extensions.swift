@@ -14,7 +14,7 @@ extension UILabel {
         let label = UILabel()
         label.textColor = .black
         label.font = bold ? .boldSystemFont(ofSize: 30) : .systemFont(ofSize: 25)
-        label.textColor = UIColor(hex: ColorTheme.primaryTextColor.color)
+        label.textColor = UIColor(hex: ColorTheme.primaryColor.color)
         return label
     }
     
@@ -23,7 +23,7 @@ extension UILabel {
         let label = UILabel()
         label.textColor = .black
         label.font = bold ? .boldSystemFont(ofSize: 30) : .systemFont(ofSize: 25)
-        label.textColor = UIColor(hex: ColorTheme.primaryTextColor.color)
+        label.textColor = UIColor(hex: ColorTheme.primaryColor.color)
         return label
     }
     
@@ -52,9 +52,19 @@ extension UILabel {
     static func cellTitleUILabel() -> UILabel {
         let label = UILabel()
         label.textColor = .black
-        label.font = .systemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 18,weight: .semibold)
         label.textAlignment = .center
         return label
     }
+    
+    static func descUILabel() -> UILabel{
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 15,weight: .light)
+        label.numberOfLines = 3
+        return label
+    }
+    
+    
     
 }
