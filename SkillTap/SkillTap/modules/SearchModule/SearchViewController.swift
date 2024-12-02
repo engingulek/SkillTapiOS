@@ -103,6 +103,7 @@ extension SearchViewController : UICollectionViewDelegate,UICollectionViewDataSo
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: FreelancerCVC.identifier,
                 for: indexPath) as? FreelancerCVC else {return UICollectionViewCell()}
+            cell.configureData()
             return cell
         default:
             return UICollectionViewCell()

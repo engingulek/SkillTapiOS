@@ -57,7 +57,7 @@ extension UILabel {
         return label
     }
     
-    static func descTitleUILabel() -> UILabel{
+    static func descUILabel() -> UILabel{
         let label = UILabel()
         label.textColor = .black
         label.font = .systemFont(ofSize: 15,weight: .light)

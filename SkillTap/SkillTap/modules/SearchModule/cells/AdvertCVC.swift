@@ -12,7 +12,7 @@ class AdvertCVC: UICollectionViewCell {
     private lazy var advertImage : UIImageView = UIImageView()
     private lazy var titleLabel : UILabel = UILabel.cellTitleUILabel()
     private lazy var dateLabel : UILabel = UILabel.smallLabelLignt()
-    private lazy var detailLabel : UILabel = UILabel.descTitleUILabel()
+    private lazy var detailLabel : UILabel = UILabel.descUILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
