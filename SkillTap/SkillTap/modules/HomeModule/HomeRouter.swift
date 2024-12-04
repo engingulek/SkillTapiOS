@@ -20,8 +20,15 @@ class HomeRouter {
 
 
 extension HomeRouter : PresenterToRouterHomeProtocol {
+
     func toSearchView(view: PresenterToViewHomeProtocol?) {
         let viewController = SearchRouter.createSearchModule()
         view?.pushViewControllerAble(viewController, animated: true)
     }
+    
+    func toSubCategoryView(view: PresenterToViewHomeProtocol?) {
+        let viewController = SubCategoryRouter.createSubCategoryModule()
+        view?.pushViewControllerAble(viewController, animated: true)
+    }
+    
 }

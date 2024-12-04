@@ -5,13 +5,13 @@
 //  Created by Engin Gülek on 2.12.2024.
 //
 
+import Foundation
+
 enum SearchType{
     case adverts
     case freelancer
     case none
 }
-
-import Foundation
 
 final class SearchPresenter {
     weak var view : PresenterToViewSearchProtocol?
