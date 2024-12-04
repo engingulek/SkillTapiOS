@@ -30,37 +30,14 @@ class HomeViewController: UIViewController {
 
 //MARK: PresenterToViewHomeProtocol
 extension HomeViewController : PresenterToViewHomeProtocol {
- 
-    
-    
+
     func setSearchConfigureView(searchLigtLabelText: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
             homeView.getSearchConfigureView( searchLigtLabelText: searchLigtLabelText)
         }
     }
-    
-    func setFindFreelancerBanner(title: String, imageUrl: String, subTitle: String) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            homeView.getFindFreelancerBanner(
-                title: title,
-                imageUrl: imageUrl,
-                bannerSubTitleText: subTitle
-            )
-        }
-    }
-    
-    func setAdvertBanner(title: String, imageUrl: String, subTitle: String) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            homeView.getAdvertBanner(
-                title: title,
-                imageUrl: imageUrl,
-                bannerSubTitleText: subTitle
-            )
-        }
-    }
+
     
     func topOptionsCollectionViewPrepare() {
         DispatchQueue.main.async { [weak self] in
@@ -83,24 +60,93 @@ extension HomeViewController : PresenterToViewHomeProtocol {
             
         }
     }
+    
+    func setCategoryTitleLabel(title: String) {
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else {return}
+            homeView.setCategoryTitleLabel(title)
+        }
+        
+    }
+    
+    func categoriesCollectioViewPreapare() {
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else {return}
+            homeView.categriesCollectionViewPrepare()
+        }
+    }
+    
+    func categoriesCollectionViewRealoadData() {
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else {return}
+            homeView.categriesCollectionViewReloadData()
+        }
+    }
 }
 
 //MARK: UICollectionViewDelegate,UICollectionViewDataSource
 extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.topOptionsNumberOfItemsIn()
+        
+        return presenter.numberOfItemsIn(tag: collectionView.tag)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView
-            .dequeueReusableCell(
-                withReuseIdentifier: TopOptionCVC.identifier,
-                for: indexPath) as? TopOptionCVC else {return UICollectionViewCell()}
-        let item = presenter.topCellForItem(indexPath: indexPath)
-        cell.setItem(
-            text: item.topOption,
-            borderColor: item.borderColor,
-            textColor: item.textColor)
-        return cell
+        switch collectionView.tag {
+        case 0:
+            guard let cell = collectionView
+                .dequeueReusableCell(
+                    withReuseIdentifier: TopOptionCVC.identifier,
+                    for: indexPath) as? TopOptionCVC else {return UICollectionViewCell()}
+            let item = presenter.cellForItem(tag:0,indexPath: indexPath)
+            cell.setItem(
+                text: item.topOption,
+                borderColor: item.borderColor,
+                textColor: item.textColor)
+            return cell
+        case 1:
+            guard let cell = collectionView
+                .dequeueReusableCell(
+                    withReuseIdentifier: CategoryCVC.identifier,
+                    for: indexPath) as? CategoryCVC else {return UICollectionViewCell()}
+            let _ = presenter.cellForItem(tag: 1, indexPath: indexPath)
+            cell.setBannerCongigure()
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
+   
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, 
+                        didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(tag: collectionView.tag, at: indexPath)
+    }
+    
+}
+
+extension HomeViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return presenter.sizeForItem(
+            tag: collectionView.tag,
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height)
+        
+       
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        let item = presenter.insetForSection(tag: collectionView.tag)
+        
+        return UIEdgeInsets(
+            top: item.top,
+            left: item.left,
+            bottom: item.bottom,
+            right: item.right)
     }
 }
+

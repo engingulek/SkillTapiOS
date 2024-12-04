@@ -16,31 +16,39 @@ protocol ViewToPrensenterHomeProtocol{
     
     func onTappedSearchBar()
     
-    func topOptionsNumberOfItemsIn() -> Int
-    func topCellForItem(indexPath:IndexPath) -> (
+    func numberOfItemsIn(tag:Int) -> Int
+    func cellForItem(tag:Int,indexPath:IndexPath) -> (
         topOption:String,
         borderColor:String,
         textColor:String
     )
+    
+    func sizeForItem(tag:Int, width:CGFloat,
+                     height:CGFloat) -> CGSize
+    
+    func insetForSection(tag:Int) -> (top:CGFloat,
+                                      left:CGFloat,
+                                      right:CGFloat,
+                                      bottom:CGFloat)
+    
+    func didSelectItem(tag:Int,at indexPath:IndexPath)
+    
     
 }
 
 //MARK: PresenterToViewHomeProtocol
 protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
     func setSearchConfigureView(searchLigtLabelText:String)
-    func setFindFreelancerBanner(
-        title:String,
-        imageUrl:String,
-        subTitle:String)
-    
-    func setAdvertBanner(
-        title:String,
-        imageUrl:String,
-        subTitle:String)
-    
+    func setCategoryTitleLabel(title:String)
+
     func topOptionsCollectionViewPrepare()
     func topOptionsCollectionViewReloadData()
     func setHeadData(title:String,subtitle:String)
+    
+    func categoriesCollectioViewPreapare()
+    func categoriesCollectionViewRealoadData()
+    
+
     
 }
 
