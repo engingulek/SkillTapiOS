@@ -20,6 +20,7 @@
 		7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */; };
 		7D77AE272CFCA29500A011A3 /* TopOptionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */; };
 		7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */; };
+		7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */; };
 		7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */; };
 		7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */; };
 		7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21E02CFB5C020006DF74 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOptionCVC.swift; sourceTree = "<group>"; };
 		7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTheme.swift; sourceTree = "<group>"; };
+		7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		7DEB21D92CFB5C020006DF74 /* SkillTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,15 @@
 			path = theme;
 			sourceTree = "<group>";
 		};
+		7DE6CF972D00BB2500AC57A2 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */,
+				7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		7DEB21D02CFB5C020006DF74 = {
 			isa = PBXGroup;
 			children = (
@@ -168,13 +179,13 @@
 		7DEB21F12CFB85630006DF74 /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				7DE6CF972D00BB2500AC57A2 /* cell */,
 				7DEB21FC2CFB87000006DF74 /* HomeInteractor.swift */,
 				7DEB21FE2CFB870D0006DF74 /* HomePresenter.swift */,
 				7DEB22002CFB87290006DF74 /* HomeRouter.swift */,
 				7DEB22022CFB873C0006DF74 /* HomeViewController.swift */,
 				7DEB22092CFB88780006DF74 /* HomeProtocols.swift */,
 				7DEB220E2CFB8B580006DF74 /* HomeView.swift */,
-				7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 				7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */,
 				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
 				7D281AFB2CFDE63600C560B4 /* SearchPresenter.swift in Sources */,
+				7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */,
 				7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */,
 				7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */,
 				7D281B062CFE1E8D00C560B4 /* FreelancerCVC.swift in Sources */,

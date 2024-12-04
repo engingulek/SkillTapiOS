@@ -21,7 +21,10 @@ protocol ViewToPrensenterSearchProtocol{
     func cellForItem(selectedType:SearchType,
                      at indexPath:IndexPath)
     
-    func sizeForItemAt(selectedType: SearchType,width:CGFloat,height:CGFloat) -> CGSize
+    func sizeForItemAt(selectedType: SearchType,
+                       width:CGFloat,
+                       height:CGFloat) -> CGSize
+   
         
 }
 

@@ -34,21 +34,28 @@ extension UILabel {
         return label
     }
     
-    static func middleTitleLabel() -> UILabel {
+    static func middleTitleLabel(color:String = ColorTheme.primaryColor.color) -> UILabel {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor(hex: color)
         label.font = .systemFont(ofSize: 20,weight: .semibold)
         return label
     }
     
     
-    static func smallLabelLignt() -> UILabel {
+    static func smallLabelLignt(color:String = ColorTheme.primaryColor.color) -> UILabel {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor(hex: color)
         label.font = .systemFont(ofSize: 18,weight: .light)
         return label
     }
     
+    
+    static func xSmallLabelLignt(color:String = ColorTheme.primaryColor.color) -> UILabel {
+        let label = UILabel()
+        label.textColor = UIColor(hex: color)
+        label.font = .systemFont(ofSize: 15,weight: .light)
+        return label
+    }
     static func cellTitleUILabel() -> UILabel {
         let label = UILabel()
         label.textColor = .black

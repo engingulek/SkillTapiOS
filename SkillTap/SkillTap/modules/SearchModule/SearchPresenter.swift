@@ -64,6 +64,7 @@ final class SearchPresenter {
 
 //MARK: ViewToPrensenterSearchProtocol
 extension SearchPresenter : ViewToPrensenterSearchProtocol {
+  
  
     func viewDidLoad() {
         view?.setBackColorAble(color: ColorTheme.secondaryColor.color)

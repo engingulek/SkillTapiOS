@@ -13,6 +13,7 @@ enum TextTheme:String {
     case searchplaceholder = "What you are looking for is here"
     case adverts = "Adverts"
     case freelancers = "Freelancers"
+    case categories = "Categories"
     
     var text : String {
         return self.rawValue

@@ -12,6 +12,7 @@ class HomeView : BaseView<HomeViewController> {
     var presenter : ViewToPrensenterHomeProtocol?
     private lazy var titleLabel : UILabel = UILabel.xltitleUILabel(bold: true)
     private lazy var subTitleLabel : UILabel = UILabel.largeTitleUILabel(bold: false)
+    private lazy var categoryTitleLabel : UILabel = UILabel.largeTitleUILabel(bold: true)
     private lazy var searchView : UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.black.cgColor
@@ -23,18 +24,20 @@ class HomeView : BaseView<HomeViewController> {
     
     private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
     private lazy var searchLigtLabel : UILabel = UILabel.lightMiddleLabel()
-    private lazy var createWorkBanner : BannerView = BannerView()
-    private lazy var findFreelancerBannerView : BannerView = BannerView()
     
-    private lazy var topOptionsCollectionView = UICollectionView.primaryCollectionView(scroolDirection: .horizontal)
+    private lazy var topOptionsCollectionView = UICollectionView
+        .primaryCollectionView(tag: 0,scroolDirection: .horizontal)
     
-   
+    private lazy var categoriesCollectionView = UICollectionView
+        .primaryCollectionView(tag:1,scroolDirection: .vertical)
     
 
     override func setupView() {
         super.setupView()
         configureView()
         topOptionsCollectionView.register(TopOptionCVC.self, forCellWithReuseIdentifier: TopOptionCVC.identifier)
+        categoriesCollectionView.register(CategoryCVC.self, forCellWithReuseIdentifier: CategoryCVC.identifier)
+        
     }
 
     private func configureView(){
@@ -83,22 +86,20 @@ class HomeView : BaseView<HomeViewController> {
             make.height.equalTo(60)
         }
         
-
-        addSubview(createWorkBanner)
-        createWorkBanner.snp.makeConstraints { make in
-            make.top.equalTo(topOptionsCollectionView.snp.bottom).offset(15)
+        addSubview(categoryTitleLabel)
+        categoryTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(topOptionsCollectionView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(20)
-            make.width.equalToSuperview().multipliedBy(0.4)
-            make.height.equalToSuperview().multipliedBy(0.25)
         }
         
-        addSubview(findFreelancerBannerView)
-        findFreelancerBannerView.snp.makeConstraints { make in
-            make.top.equalTo(topOptionsCollectionView.snp.bottom).offset(10)
-            make.trailing.equalToSuperview().offset(-20)
-            make.width.equalToSuperview().multipliedBy(0.4)
-            make.height.equalToSuperview().multipliedBy(0.25)
+        addSubview(categoriesCollectionView)
+        categoriesCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(categoryTitleLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
+
     }
     
     @objc private func searchViewTapped() {
@@ -109,24 +110,7 @@ class HomeView : BaseView<HomeViewController> {
         searchLigtLabel.text = searchLigtLabelText
     }
     
-    func getFindFreelancerBanner(
-        title:String,
-        imageUrl:String,bannerSubTitleText:String){
-        findFreelancerBannerView.setBannerCongigure(
-            text: title,
-            bannerImageUrl: imageUrl,
-            bannerSubText: bannerSubTitleText
-        )
-    }
-    
-    func getAdvertBanner(title:String,
-                             imageUrl:String,
-                             bannerSubTitleText:String){
-        createWorkBanner.setBannerCongigure(text: title,
-                                            bannerImageUrl: imageUrl,
-                                            bannerSubText: bannerSubTitleText)
-    }
-    
+
     func topOptionsCollectionViewPrepare(){
         topOptionsCollectionView.delegate = controller
         topOptionsCollectionView.dataSource = controller
@@ -136,9 +120,23 @@ class HomeView : BaseView<HomeViewController> {
         topOptionsCollectionView.reloadData()
     }
     
+    
+    func categriesCollectionViewPrepare(){
+        categoriesCollectionView.delegate = controller
+        categoriesCollectionView.dataSource = controller
+    }
+    
+    func categriesCollectionViewReloadData(){
+        categoriesCollectionView.reloadData()
+    }
+    
     func setHeadTitleData(title:String,subTitle:String){
         titleLabel.text = title
         subTitleLabel.text = subTitle
+    }
+    
+    func setCategoryTitleLabel(_ title:String){
+        categoryTitleLabel.text = title
     }
     
 }
