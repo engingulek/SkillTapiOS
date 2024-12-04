@@ -65,4 +65,5 @@ protocol InteractorToPresenterHomeProtocol{
 //MARK: PresenterToRouterHomeProtocol
 protocol PresenterToRouterHomeProtocol {
     func toSearchView(view:PresenterToViewHomeProtocol?)
+    func toSubCategoryView(view:PresenterToViewHomeProtocol?)
 }

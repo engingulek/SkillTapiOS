@@ -19,6 +19,7 @@ extension UIImageView {
     }
     
     
+    
     func setImageWithKigfisher(with urlString: String, placeholder: UIImage? = nil) {
         guard let url = URL(string: urlString) else {
             self.image = placeholder

@@ -94,7 +94,7 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         case 0:
             print("Selected topSection \(indexPath)")
         case 1:
-            print("Selected Category \(indexPath)")
+            router.toSubCategoryView(view: view)
         default:
             return
         }
