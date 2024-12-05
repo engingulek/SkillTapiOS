@@ -18,6 +18,8 @@ enum ColorTheme : String {
     /// is red
     case thirdColor = "#FF0000"
     
+    case ratingColor = "#FCC737"
+    
     var color : String {
         return self.rawValue
     }

@@ -64,11 +64,18 @@ extension UILabel {
         return label
     }
     
-    static func descUILabel() -> UILabel{
+    static func descUILabel(lineLimit:Int = .zero) -> UILabel{
         let label = UILabel()
         label.textColor = .black
         label.font = .systemFont(ofSize: 15,weight: .light)
-        label.numberOfLines = 3
+        label.numberOfLines = lineLimit
+        return label
+    }
+    
+    static func bigPriceInfoLabel() -> UILabel {
+        let label = UILabel()
+        label.textColor = .red
+        label.font = .systemFont(ofSize: 25,weight: .semibold)
         return label
     }
     

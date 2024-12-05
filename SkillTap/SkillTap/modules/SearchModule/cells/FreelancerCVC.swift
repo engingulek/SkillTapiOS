@@ -13,6 +13,8 @@ class FreelancerCVC: UICollectionViewCell {
     private lazy var freelancerTitleLabel : UILabel = UILabel.cellTitleUILabel()
     private lazy var freelancerSubTitleLabel : UILabel = UILabel.lightMiddleLabel()
     private lazy var freelancerDescLabel : UILabel = UILabel.descUILabel()
+    private lazy var ratingImage : UIImageView = UIImageView.ratingImage()
+    private lazy var ratingLabel : UILabel = UILabel.middleTitleLabel(color: ColorTheme.ratingColor.color)
     
     
     override init(frame: CGRect) {
@@ -58,6 +60,19 @@ class FreelancerCVC: UICollectionViewCell {
             make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-5)
         }
+        
+        contentView.addSubview(ratingLabel)
+        ratingLabel.snp.makeConstraints { make in
+            make.top.equalTo(freelancerTitleLabel.snp.top)
+            make.trailing.equalToSuperview().offset(-10)
+        }
+        
+        contentView.addSubview(ratingImage)
+        ratingImage.snp.makeConstraints { make in
+            make.top.equalTo(freelancerTitleLabel.snp.top)
+            make.trailing.equalTo(ratingLabel.snp.leading).offset(-1)
+        }
+        
     }
     
     func configureData(){
@@ -66,5 +81,6 @@ class FreelancerCVC: UICollectionViewCell {
         freelancerTitleLabel.text = "Name Surname"
         freelancerSubTitleLabel.text = "Developer,Translator "
         freelancerDescLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        ratingLabel.text = "4.5"
     }
 }

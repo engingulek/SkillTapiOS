@@ -18,17 +18,26 @@ extension UIImageView {
         return imageView
     }
     
+    static func ratingImage() -> UIImageView{
+        let imageView = UIImageView()
+        let color : UIColor = UIColor(hex: ColorTheme.ratingColor.color) ?? .orange
+        imageView.image = .init(systemName: "star.fill")?
+            .withTintColor(color, renderingMode: .alwaysOriginal)
+        return imageView
+       
+    }
     
     
-    func setImageWithKigfisher(with urlString: String, placeholder: UIImage? = nil) {
+    
+    func setImageWithKigfisher(with urlString: String) {
         guard let url = URL(string: urlString) else {
-            self.image = placeholder
+            self.image = UIImage(resource: .placeholder)
             return
         }
         
         self.kf.setImage(
             with: url,
-            placeholder: placeholder,
+            placeholder: UIImage(resource: .placeholder),
             options: [
                 .transition(.fade(0.3)),
                 .cacheOriginalImage
