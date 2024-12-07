@@ -9,32 +9,41 @@ import Foundation
 
 typealias FreelancerKits = UIViewAble  & NavConUIAble
 
-//MARK: ViewToPrensenterFreelancerProtocol
-protocol ViewToPrensenterFreelancerProtocol{
-    var view : PresenterToViewFreelancerProtocol? {get}
+//MARK: ViewToPrensenterFreelancerDetailProtocol
+protocol ViewToPrensenterFreelancerDetailProtocol{
+    var view : PresenterToViewFreelancerDetailProtocol? {get}
     func viewDidLoad()
+    func sizeForItemAt(
+                       width:CGFloat,
+                       height:CGFloat) -> CGSize
+    func numberOfItemsIn() -> Int
+    func cellForItem(at indexPath:IndexPath)
   
    
         
 }
 
-//MARK: PresenterToViewFreelancerProtocol
-protocol PresenterToViewFreelancerProtocol : AnyObject,SearchKits{
+//MARK: PresenterToViewFreelancerDetailProtocol
+protocol PresenterToViewFreelancerDetailProtocol : AnyObject,SearchKits{
+    func advertsColllectionViewPrepare()
+    func advertsCollectionViewReloadData()
+    func freelancerInfoViewData()
+    func freelancerViewData(title:String)
     
   
 }
 
-//MARK: PresenterToInteractorFreelancerProtocol
-protocol PresenterToInteractorFreelancerProtocol{
+//MARK: PresenterToInteractorFreelancerDetailProtocol
+protocol PresenterToInteractorFreelancerDetailProtocol{
     
 }
 
-//MARK: InteractorToPresenterFreelancerProtocol
-protocol InteractorToPresenterFreelancerProtocol{
+//MARK: InteractorToPresenterFreelancerDetailProtocol
+protocol InteractorToPresenterFreelancerDetailProtocol{
     
 }
 
-//MARK: PresenterToRouterFreelancerProtocol
-protocol PresenterToRouterFreelancerProtocol {
+//MARK: PresenterToRouterFreelancerDetailProtocol
+protocol PresenterToRouterFreelancerDetailProtocol {
   
 }

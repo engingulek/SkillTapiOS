@@ -20,6 +20,7 @@ class AdvertCVC: UICollectionViewCell {
         layer.cornerRadius = 10
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGray.cgColor
+        backgroundColor = .white
     
     }
     

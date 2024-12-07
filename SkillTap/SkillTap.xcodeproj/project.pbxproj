@@ -21,7 +21,7 @@
 		7D5DB6B22D04B41E00CB7F68 /* AdvertDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */; };
 		7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */; };
 		7D5DB6B62D04B5C300CB7F68 /* FreelancerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B52D04B5C300CB7F68 /* FreelancerProtocols.swift */; };
-		7D5DB6B82D04B61A00CB7F68 /* FreelancerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B72D04B61A00CB7F68 /* FreelancerPresenter.swift */; };
+		7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B72D04B61A00CB7F68 /* FreelancerDetailPresenter.swift */; };
 		7D5DB6BA2D04B62C00CB7F68 /* FreelancerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B92D04B62C00CB7F68 /* FreelancerView.swift */; };
 		7D5DB6BD2D04BB7100CB7F68 /* FreelancerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6BC2D04BB7100CB7F68 /* FreelancerInfoView.swift */; };
 		7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77AE222CFC958C00A011A3 /* Kingfisher */; };
@@ -73,7 +73,7 @@
 		7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailRouter.swift; sourceTree = "<group>"; };
 		7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailRouter.swift; sourceTree = "<group>"; };
 		7D5DB6B52D04B5C300CB7F68 /* FreelancerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerProtocols.swift; sourceTree = "<group>"; };
-		7D5DB6B72D04B61A00CB7F68 /* FreelancerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerPresenter.swift; sourceTree = "<group>"; };
+		7D5DB6B72D04B61A00CB7F68 /* FreelancerDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailPresenter.swift; sourceTree = "<group>"; };
 		7D5DB6B92D04B62C00CB7F68 /* FreelancerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerView.swift; sourceTree = "<group>"; };
 		7D5DB6BC2D04BB7100CB7F68 /* FreelancerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerInfoView.swift; sourceTree = "<group>"; };
 		7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */,
 				7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */,
 				7D5DB6B52D04B5C300CB7F68 /* FreelancerProtocols.swift */,
-				7D5DB6B72D04B61A00CB7F68 /* FreelancerPresenter.swift */,
+				7D5DB6B72D04B61A00CB7F68 /* FreelancerDetailPresenter.swift */,
 				7D5DB6B92D04B62C00CB7F68 /* FreelancerView.swift */,
 			);
 			path = FreelancerDetailModule;
@@ -411,7 +411,7 @@
 				7DE6CF9E2D00D56500AC57A2 /* SubCategoryView.swift in Sources */,
 				7DE6CFA22D00D87700AC57A2 /* SubCategoryProtocols.swift in Sources */,
 				7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */,
-				7D5DB6B82D04B61A00CB7F68 /* FreelancerPresenter.swift in Sources */,
+				7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */,
 				7D5DB6B62D04B5C300CB7F68 /* FreelancerProtocols.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
