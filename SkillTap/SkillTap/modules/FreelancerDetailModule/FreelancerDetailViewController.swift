@@ -8,11 +8,23 @@
 import UIKit
 
 class FreelancerDetailViewController: ViewController {
-
+    lazy var presenter : ViewToPrensenterFreelancerProtocol = FreelancerPresenter(view:self)
+    private lazy var freelancerView = FreelancerView(self)
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .blue
+        presenter.viewDidLoad()
+        //TODO: move to presenter
+        freelancerView.configureFreelancerInfoData()
     }
+    
+    override func loadView() {
+        view = freelancerView
+    }
+    
+    
+}
+
+//MARK: PresenterToViewFreelancerProtocol
+extension FreelancerDetailViewController : PresenterToViewFreelancerProtocol {
     
 }
