@@ -20,10 +20,14 @@
 		7D5DB6B02D04B40D00CB7F68 /* FreelancerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */; };
 		7D5DB6B22D04B41E00CB7F68 /* AdvertDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */; };
 		7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */; };
-		7D5DB6B62D04B5C300CB7F68 /* FreelancerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B52D04B5C300CB7F68 /* FreelancerProtocols.swift */; };
+		7D5DB6B62D04B5C300CB7F68 /* FreelancerDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B52D04B5C300CB7F68 /* FreelancerDetailProtocols.swift */; };
 		7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B72D04B61A00CB7F68 /* FreelancerDetailPresenter.swift */; };
 		7D5DB6BA2D04B62C00CB7F68 /* FreelancerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B92D04B62C00CB7F68 /* FreelancerView.swift */; };
 		7D5DB6BD2D04BB7100CB7F68 /* FreelancerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6BC2D04BB7100CB7F68 /* FreelancerInfoView.swift */; };
+		7D5DB6C12D04D7E100CB7F68 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6C02D04D7E100CB7F68 /* AdvertDetailView.swift */; };
+		7D5DB6C32D04D86900CB7F68 /* AdvertDetilProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6C22D04D86900CB7F68 /* AdvertDetilProtocols.swift */; };
+		7D5DB6C52D04D8CF00CB7F68 /* AdvertDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6C42D04D8CF00CB7F68 /* AdvertDetailPresenter.swift */; };
+		7D5DB6C82D04DA7200CB7F68 /* AdvertDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6C72D04DA7200CB7F68 /* AdvertDetailInfoView.swift */; };
 		7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77AE222CFC958C00A011A3 /* Kingfisher */; };
 		7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */; };
 		7D77AE272CFCA29500A011A3 /* TopOptionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */; };
@@ -72,10 +76,14 @@
 		7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailViewController.swift; sourceTree = "<group>"; };
 		7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailRouter.swift; sourceTree = "<group>"; };
 		7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailRouter.swift; sourceTree = "<group>"; };
-		7D5DB6B52D04B5C300CB7F68 /* FreelancerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerProtocols.swift; sourceTree = "<group>"; };
+		7D5DB6B52D04B5C300CB7F68 /* FreelancerDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailProtocols.swift; sourceTree = "<group>"; };
 		7D5DB6B72D04B61A00CB7F68 /* FreelancerDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailPresenter.swift; sourceTree = "<group>"; };
 		7D5DB6B92D04B62C00CB7F68 /* FreelancerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerView.swift; sourceTree = "<group>"; };
 		7D5DB6BC2D04BB7100CB7F68 /* FreelancerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerInfoView.swift; sourceTree = "<group>"; };
+		7D5DB6C02D04D7E100CB7F68 /* AdvertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailView.swift; sourceTree = "<group>"; };
+		7D5DB6C22D04D86900CB7F68 /* AdvertDetilProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetilProtocols.swift; sourceTree = "<group>"; };
+		7D5DB6C42D04D8CF00CB7F68 /* AdvertDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailPresenter.swift; sourceTree = "<group>"; };
+		7D5DB6C72D04DA7200CB7F68 /* AdvertDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailInfoView.swift; sourceTree = "<group>"; };
 		7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOptionCVC.swift; sourceTree = "<group>"; };
 		7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTheme.swift; sourceTree = "<group>"; };
@@ -148,8 +156,11 @@
 		7D5DB6AB2D04B21600CB7F68 /* AdvertDetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				7D5DB6C62D04DA5F00CB7F68 /* views */,
 				7D5DB6AC2D04B23D00CB7F68 /* AdvertDetailViewController.swift */,
 				7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */,
+				7D5DB6C22D04D86900CB7F68 /* AdvertDetilProtocols.swift */,
+				7D5DB6C42D04D8CF00CB7F68 /* AdvertDetailPresenter.swift */,
 			);
 			path = AdvertDetailModule;
 			sourceTree = "<group>";
@@ -160,9 +171,8 @@
 				7D5DB6BB2D04BB6200CB7F68 /* views */,
 				7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */,
 				7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */,
-				7D5DB6B52D04B5C300CB7F68 /* FreelancerProtocols.swift */,
+				7D5DB6B52D04B5C300CB7F68 /* FreelancerDetailProtocols.swift */,
 				7D5DB6B72D04B61A00CB7F68 /* FreelancerDetailPresenter.swift */,
-				7D5DB6B92D04B62C00CB7F68 /* FreelancerView.swift */,
 			);
 			path = FreelancerDetailModule;
 			sourceTree = "<group>";
@@ -170,7 +180,17 @@
 		7D5DB6BB2D04BB6200CB7F68 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				7D5DB6B92D04B62C00CB7F68 /* FreelancerView.swift */,
 				7D5DB6BC2D04BB7100CB7F68 /* FreelancerInfoView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		7D5DB6C62D04DA5F00CB7F68 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7D5DB6C02D04D7E100CB7F68 /* AdvertDetailView.swift */,
+				7D5DB6C72D04DA7200CB7F68 /* AdvertDetailInfoView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -400,6 +420,7 @@
 				7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */,
 				7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */,
 				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
+				7D5DB6C32D04D86900CB7F68 /* AdvertDetilProtocols.swift in Sources */,
 				7D281AFB2CFDE63600C560B4 /* SearchPresenter.swift in Sources */,
 				7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */,
 				7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */,
@@ -412,13 +433,14 @@
 				7DE6CFA22D00D87700AC57A2 /* SubCategoryProtocols.swift in Sources */,
 				7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */,
 				7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */,
-				7D5DB6B62D04B5C300CB7F68 /* FreelancerProtocols.swift in Sources */,
+				7D5DB6B62D04B5C300CB7F68 /* FreelancerDetailProtocols.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
 				7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */,
 				7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */,
 				7DEB220A2CFB88780006DF74 /* HomeProtocols.swift in Sources */,
 				7D5DB6B02D04B40D00CB7F68 /* FreelancerDetailViewController.swift in Sources */,
+				7D5DB6C82D04DA7200CB7F68 /* AdvertDetailInfoView.swift in Sources */,
 				7D281AF52CFDE1FC00C560B4 /* SearchViewController.swift in Sources */,
 				7D281AF72CFDE21400C560B4 /* SearchRouter.swift in Sources */,
 				7DEB21FD2CFB87000006DF74 /* HomeInteractor.swift in Sources */,
@@ -431,10 +453,12 @@
 				7DEB22012CFB87290006DF74 /* HomeRouter.swift in Sources */,
 				7DEB220F2CFB8B580006DF74 /* HomeView.swift in Sources */,
 				7D77AE272CFCA29500A011A3 /* TopOptionCVC.swift in Sources */,
+				7D5DB6C52D04D8CF00CB7F68 /* AdvertDetailPresenter.swift in Sources */,
 				7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */,
 				7DEB220D2CFB8B220006DF74 /* BaseView.swift in Sources */,
 				7DEB22242CFBAB6E0006DF74 /* BannerView.swift in Sources */,
 				7DE6CFA02D00D67F00AC57A2 /* SubCategoryRouter.swift in Sources */,
+				7D5DB6C12D04D7E100CB7F68 /* AdvertDetailView.swift in Sources */,
 				7DEB21FF2CFB870D0006DF74 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

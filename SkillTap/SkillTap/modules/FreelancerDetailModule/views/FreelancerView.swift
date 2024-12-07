@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import SnapKit
 class FreelancerView : BaseView<FreelancerDetailViewController> {
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
+    private lazy var scrollView = UIScrollView()
+    private lazy var contentView = UIView()
     private lazy var freelancerInfoView = FreelancerInfoView()
     private lazy var advertsTitle : UILabel = UILabel.middleTitleLabel()
     private lazy var advertsCollectionView : UICollectionView 

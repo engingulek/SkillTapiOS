@@ -8,12 +8,19 @@
 import UIKit
 
 class AdvertDetailViewController: ViewController {
-
+    lazy var presenter : ViewToPrensenterAdvertDetailProtocol 
+    = AdvertDetailPresenter(view: self)
+    private lazy var advertDetailView = AdvertDetailView(self)
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .red
+        presenter.viewDidLoad()
     }
     
+    override func loadView() {
+        view = advertDetailView
+    }
+}
 
+extension AdvertDetailViewController : PresenterToViewAdvertDetailProtocol {
+    
 }

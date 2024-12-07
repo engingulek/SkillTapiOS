@@ -10,6 +10,8 @@ import UIKit
 class AdvertDetailRouter {
     static func createSearchModule() -> UIViewController {
         let viewController = AdvertDetailViewController()
+        let presenter : ViewToPrensenterAdvertDetailProtocol & InteractorToPresenterAdvertDetailProtocol = AdvertDetailPresenter(view: viewController)
+        viewController.presenter = presenter
         return viewController
      }
 }
