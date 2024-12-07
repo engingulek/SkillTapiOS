@@ -16,6 +16,10 @@
 		7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281B002CFDF37C00C560B4 /* UIButton+Extensions.swift */; };
 		7D281B042CFE1E4700C560B4 /* AdvertCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281B032CFE1E4700C560B4 /* AdvertCVC.swift */; };
 		7D281B062CFE1E8D00C560B4 /* FreelancerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281B052CFE1E8D00C560B4 /* FreelancerCVC.swift */; };
+		7D5DB6AD2D04B23D00CB7F68 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6AC2D04B23D00CB7F68 /* AdvertDetailViewController.swift */; };
+		7D5DB6B02D04B40D00CB7F68 /* FreelancerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */; };
+		7D5DB6B22D04B41E00CB7F68 /* AdvertDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */; };
+		7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */; };
 		7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77AE222CFC958C00A011A3 /* Kingfisher */; };
 		7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */; };
 		7D77AE272CFCA29500A011A3 /* TopOptionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */; };
@@ -60,6 +64,10 @@
 		7D281B002CFDF37C00C560B4 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		7D281B032CFE1E4700C560B4 /* AdvertCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertCVC.swift; sourceTree = "<group>"; };
 		7D281B052CFE1E8D00C560B4 /* FreelancerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerCVC.swift; sourceTree = "<group>"; };
+		7D5DB6AC2D04B23D00CB7F68 /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
+		7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailViewController.swift; sourceTree = "<group>"; };
+		7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailRouter.swift; sourceTree = "<group>"; };
+		7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailRouter.swift; sourceTree = "<group>"; };
 		7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7D77AE262CFCA29500A011A3 /* TopOptionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOptionCVC.swift; sourceTree = "<group>"; };
 		7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTheme.swift; sourceTree = "<group>"; };
@@ -129,6 +137,24 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		7D5DB6AB2D04B21600CB7F68 /* AdvertDetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				7D5DB6AC2D04B23D00CB7F68 /* AdvertDetailViewController.swift */,
+				7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */,
+			);
+			path = AdvertDetailModule;
+			sourceTree = "<group>";
+		};
+		7D5DB6AE2D04B3E500CB7F68 /* FreelancerDetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */,
+				7D5DB6B32D04B45800CB7F68 /* FreelancerDetailRouter.swift */,
+			);
+			path = FreelancerDetailModule;
+			sourceTree = "<group>";
+		};
 		7D77AE282CFCAA9E00A011A3 /* theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +221,8 @@
 		7DEB21F02CFB85400006DF74 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				7D5DB6AE2D04B3E500CB7F68 /* FreelancerDetailModule */,
+				7D5DB6AB2D04B21600CB7F68 /* AdvertDetailModule */,
 				7DE6CF9A2D00D53A00AC57A2 /* SubCategoryModule */,
 				7D281AF12CFDE19800C560B4 /* SearchModule */,
 				7DEB21F12CFB85630006DF74 /* HomeModule */,
@@ -356,15 +384,19 @@
 				7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */,
 				7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */,
 				7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */,
+				7D5DB6B22D04B41E00CB7F68 /* AdvertDetailRouter.swift in Sources */,
 				7D281B062CFE1E8D00C560B4 /* FreelancerCVC.swift in Sources */,
+				7D5DB6AD2D04B23D00CB7F68 /* AdvertDetailViewController.swift in Sources */,
 				7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */,
 				7DE6CF9E2D00D56500AC57A2 /* SubCategoryView.swift in Sources */,
 				7DE6CFA22D00D87700AC57A2 /* SubCategoryProtocols.swift in Sources */,
+				7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
 				7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */,
 				7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */,
 				7DEB220A2CFB88780006DF74 /* HomeProtocols.swift in Sources */,
+				7D5DB6B02D04B40D00CB7F68 /* FreelancerDetailViewController.swift in Sources */,
 				7D281AF52CFDE1FC00C560B4 /* SearchViewController.swift in Sources */,
 				7D281AF72CFDE21400C560B4 /* SearchRouter.swift in Sources */,
 				7DEB21FD2CFB87000006DF74 /* HomeInteractor.swift in Sources */,

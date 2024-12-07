@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias SearchKits = UIViewAble  & NavConUIAble
+typealias SearchKits = UIViewAble  & NavConUIAble & SegueAble
 
 //MARK: ViewToPrensenterSearchProtocol
 protocol ViewToPrensenterSearchProtocol{
@@ -24,6 +24,9 @@ protocol ViewToPrensenterSearchProtocol{
     func sizeForItemAt(selectedType: SearchType,
                        width:CGFloat,
                        height:CGFloat) -> CGSize
+    func didSelectItem(
+        selectedType: SearchType,
+        at indexPath:IndexPath)
    
         
 }
@@ -62,5 +65,6 @@ protocol InteractorToPresenterSearchProtocol{
 
 //MARK: PresenterToRouterSearchProtocol
 protocol PresenterToRouterSearchProtocol {
-    
+    func toAdvertDetail(view:PresenterToViewSearchProtocol?)
+    func toFreelancerDetail(view:PresenterToViewSearchProtocol?)
 }
