@@ -17,7 +17,9 @@ class AdvertDetailViewController: ViewController {
     }
     
     override func loadView() {
+        advertDetailView.presenter = presenter
         view = advertDetailView
+        
     }
 }
 

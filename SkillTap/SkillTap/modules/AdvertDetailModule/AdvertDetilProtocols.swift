@@ -14,6 +14,8 @@ typealias AdvertDetailKits = UIViewAble  & NavConUIAble
 protocol ViewToPrensenterAdvertDetailProtocol{
     var view : PresenterToViewAdvertDetailProtocol? {get}
     func viewDidLoad()
+    func packageSegmentedConrollerChanged(index:Int)
+    func onTappedBuyButtonOnPackage()
   
    
         

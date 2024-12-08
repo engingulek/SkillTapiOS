@@ -16,6 +16,7 @@ enum TextTheme:String {
     case categories = "Categories"
     case subCategoriesNavTitle = "Sub Categories"
     case freelancerDetail = "Freelancer Detail"
+    case advertDetailNav = "Advert Detail"
     
     var text : String {
         return self.rawValue

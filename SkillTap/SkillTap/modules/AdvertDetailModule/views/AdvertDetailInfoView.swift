@@ -14,7 +14,7 @@ class AdvertDetailInfoView : UIView {
     private lazy var advertOwnerSubtitle:  UILabel = UILabel.lightMiddleLabel()
     private lazy var descLabel : UILabel = UILabel.descUILabel(lineLimit: .zero)
     private lazy var descTitleLabel : UILabel = UILabel.middleTitleLabel()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -72,40 +72,7 @@ class AdvertDetailInfoView : UIView {
              make.bottom.equalToSuperview().offset(-25)
             make.trailing.equalToSuperview().offset(-20)
            
-           
          }
-        
-        /*addSubview(descLabel)
-        descLabel.snp.makeConstraints { make in
-            make.top.equalTo(descLabel.snp.bottom).offset(5)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-           
-        }*/
-        
-        
-      /*  addSubview(ratingImage)
-        ratingImage.snp.makeConstraints { make in
-         
-            make.top.equalTo(freelancerTitle.snp.bottom).offset(5)
-            make.centerX.equalToSuperview()
-        
-        }
-        
-        addSubview(ratingLabel)
-        ratingLabel.snp.makeConstraints { make in
-            make.top.equalTo(ratingImage.snp.bottom).offset(5)
-            make.centerX.equalToSuperview()
-          
-        }
-        
-        addSubview(descLabel)
-        descLabel.snp.makeConstraints { make in
-            make.width.equalTo(250)
-            make.top.equalTo(ratingLabel.snp.bottom).offset(5)
-            make.bottom.equalToSuperview().offset(-10)
-            make.centerX.equalToSuperview()
-        }*/
         
     }
     

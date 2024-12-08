@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 import SnapKit
 class FreelancerView : BaseView<FreelancerDetailViewController> {
-    private lazy var scrollView = UIScrollView()
-    private lazy var contentView = UIView()
     private lazy var freelancerInfoView = FreelancerInfoView()
     private lazy var advertsTitle : UILabel = UILabel.middleTitleLabel()
     private lazy var advertsCollectionView : UICollectionView 
@@ -23,33 +21,19 @@ class FreelancerView : BaseView<FreelancerDetailViewController> {
     
     
     private func configureView(){
-        addSubview(scrollView)
-        scrollView.addSubview(contentView)
         
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        
-        contentView.snp.makeConstraints { make in
-            make.width.equalTo(scrollView)
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-        
-        
-        contentView.addSubview(freelancerInfoView)
+        addSubview(freelancerInfoView)
         
         
         freelancerInfoView.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(20)
-            make.centerX.equalTo(contentView)
-            make.width.equalTo(contentView.snp.width).multipliedBy(0.8)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.8)
         }
         
         
         
-        contentView.addSubview(advertsTitle)
+        addSubview(advertsTitle)
         advertsTitle.snp.makeConstraints { make in
             make.top.equalTo(freelancerInfoView.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
@@ -65,11 +49,7 @@ class FreelancerView : BaseView<FreelancerDetailViewController> {
             make.height.equalToSuperview().multipliedBy(0.25)
           
         }
-        
-        
-        contentView.snp.makeConstraints { make in
-            make.bottom.equalTo(advertsCollectionView.snp.bottom).offset(10)
-        }
+    
         
     }
     
