@@ -16,8 +16,10 @@ enum SearchType{
 final class SearchPresenter {
     weak var view : PresenterToViewSearchProtocol?
     private var selectedSearchType : SearchType = .adverts
-    init(view: PresenterToViewSearchProtocol?) {
+    private var router : PresenterToRouterSearchProtocol
+    init(view: PresenterToViewSearchProtocol?,router:PresenterToRouterSearchProtocol) {
         self.view = view
+        self.router = router
     }
     private func changeButtonsDesign(_ selectedSearchType:SearchType){
         switch selectedSearchType {
@@ -124,6 +126,16 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
             return CGSize(width: 0, height: 0)
         }
         
+    }
+    func didSelectItem(selectedType: SearchType, at indexPath: IndexPath) {
+        switch selectedType {
+        case .adverts:
+            router.toAdvertDetail(view: view)
+        case .freelancer:
+            router.toFreelancerDetail(view: view)
+        case .none:
+            return
+        }
     }
 
 }

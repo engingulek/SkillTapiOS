@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    lazy var presenter : ViewToPrensenterSearchProtocol = SearchPresenter(view: self)
+    lazy var presenter : ViewToPrensenterSearchProtocol = SearchPresenter(view: self,router: SearchRouter())
     
     private lazy var searchView = SearchView(self)
     override func viewDidLoad() {
@@ -107,6 +107,17 @@ extension SearchViewController : UICollectionViewDelegate,UICollectionViewDataSo
             return cell
         default:
             return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView.tag {
+        case 0:
+            presenter.didSelectItem(selectedType: .adverts,at: indexPath)
+        case 1:
+            presenter.didSelectItem(selectedType: .freelancer,at: indexPath)
+        default:
+            presenter.didSelectItem(selectedType: .none,at: indexPath)
         }
     }
 }

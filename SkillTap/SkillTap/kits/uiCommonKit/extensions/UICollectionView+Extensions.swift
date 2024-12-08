@@ -15,6 +15,7 @@ extension UICollectionView {
        layout.scrollDirection = scroolDirection
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
          collectionView.tag = tag
+         
         return collectionView
     }
 }
