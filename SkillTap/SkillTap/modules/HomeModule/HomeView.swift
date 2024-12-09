@@ -25,17 +25,16 @@ class HomeView : BaseView<HomeViewController> {
     private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
     private lazy var searchLigtLabel : UILabel = UILabel.lightMiddleLabel()
     
-    private lazy var topOptionsCollectionView = UICollectionView
-        .primaryCollectionView(tag: 0,scroolDirection: .horizontal)
+
     
     private lazy var categoriesCollectionView = UICollectionView
-        .primaryCollectionView(tag:1,scroolDirection: .vertical)
+        .primaryCollectionView(scroolDirection: .vertical)
     
 
     override func setupView() {
         super.setupView()
         configureView()
-        topOptionsCollectionView.register(TopOptionCVC.self, forCellWithReuseIdentifier: TopOptionCVC.identifier)
+        
         categoriesCollectionView.register(CategoryCVC.self, forCellWithReuseIdentifier: CategoryCVC.identifier)
         
     }
@@ -78,17 +77,10 @@ class HomeView : BaseView<HomeViewController> {
         searchLigtLabel.addGestureRecognizer(searchTapGesture)
         
         
-        addSubview(topOptionsCollectionView)
-        topOptionsCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchView.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(60)
-        }
-        
+     
         addSubview(categoryTitleLabel)
         categoryTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(topOptionsCollectionView.snp.bottom).offset(10)
+            make.top.equalTo(searchView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(20)
         }
         
@@ -111,14 +103,6 @@ class HomeView : BaseView<HomeViewController> {
     }
     
 
-    func topOptionsCollectionViewPrepare(){
-        topOptionsCollectionView.delegate = controller
-        topOptionsCollectionView.dataSource = controller
-    }
-    
-    func topOptionsCollectionViewReloadData(){
-        topOptionsCollectionView.reloadData()
-    }
     
     
     func categriesCollectionViewPrepare(){

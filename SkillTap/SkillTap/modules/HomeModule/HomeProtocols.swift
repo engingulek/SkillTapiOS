@@ -17,21 +17,21 @@ protocol ViewToPrensenterHomeProtocol{
     func onTappedSearchBar()
     
     func numberOfItemsIn(tag:Int) -> Int
-    func cellForItem(tag:Int,indexPath:IndexPath) -> (
+    func cellForItem(indexPath:IndexPath) -> (
         topOption:String,
         borderColor:String,
         textColor:String
     )
     
-    func sizeForItem(tag:Int, width:CGFloat,
+    func sizeForItem(width:CGFloat,
                      height:CGFloat) -> CGSize
     
-    func insetForSection(tag:Int) -> (top:CGFloat,
+    func insetForSection() -> (top:CGFloat,
                                       left:CGFloat,
                                       right:CGFloat,
                                       bottom:CGFloat)
     
-    func didSelectItem(tag:Int,at indexPath:IndexPath)
+    func didSelectItem(at indexPath:IndexPath)
     
     
 }
@@ -41,8 +41,6 @@ protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
     func setSearchConfigureView(searchLigtLabelText:String)
     func setCategoryTitleLabel(title:String)
 
-    func topOptionsCollectionViewPrepare()
-    func topOptionsCollectionViewReloadData()
     func setHeadData(title:String,subtitle:String)
     
     func categoriesCollectioViewPreapare()

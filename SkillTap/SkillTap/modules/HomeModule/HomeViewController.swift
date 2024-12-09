@@ -39,19 +39,7 @@ extension HomeViewController : PresenterToViewHomeProtocol {
     }
 
     
-    func topOptionsCollectionViewPrepare() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            homeView.topOptionsCollectionViewPrepare()
-        }
-    }
-    
-    func topOptionsCollectionViewReloadData() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            homeView.topOptionsCollectionViewReloadData()
-        }
-    }
+  
     
     func setHeadData(title: String, subtitle: String) {
         DispatchQueue.main.async { [weak self] in
@@ -92,35 +80,19 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch collectionView.tag {
-        case 0:
-            guard let cell = collectionView
-                .dequeueReusableCell(
-                    withReuseIdentifier: TopOptionCVC.identifier,
-                    for: indexPath) as? TopOptionCVC else {return UICollectionViewCell()}
-            let item = presenter.cellForItem(tag:0,indexPath: indexPath)
-            cell.setItem(
-                text: item.topOption,
-                borderColor: item.borderColor,
-                textColor: item.textColor)
-            return cell
-        case 1:
-            guard let cell = collectionView
-                .dequeueReusableCell(
-                    withReuseIdentifier: CategoryCVC.identifier,
-                    for: indexPath) as? CategoryCVC else {return UICollectionViewCell()}
-            let _ = presenter.cellForItem(tag: 1, indexPath: indexPath)
-            cell.setBannerCongigure()
-            return cell
-        default:
-            return UICollectionViewCell()
-        }
+        guard let cell = collectionView
+            .dequeueReusableCell(
+                withReuseIdentifier: CategoryCVC.identifier,
+                for: indexPath) as? CategoryCVC else {return UICollectionViewCell()}
+        let _ = presenter.cellForItem( indexPath: indexPath)
+        cell.setBannerCongigure()
+        return cell
    
     }
     
     func collectionView(_ collectionView: UICollectionView, 
                         didSelectItemAt indexPath: IndexPath) {
-        presenter.didSelectItem(tag: collectionView.tag, at: indexPath)
+        presenter.didSelectItem( at: indexPath)
     }
     
 }
@@ -130,7 +102,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return presenter.sizeForItem(
-            tag: collectionView.tag,
+          
             width: UIScreen.main.bounds.width,
             height: UIScreen.main.bounds.height)
         
@@ -140,7 +112,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, 
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        let item = presenter.insetForSection(tag: collectionView.tag)
+        let item = presenter.insetForSection()
         
         return UIEdgeInsets(
             top: item.top,

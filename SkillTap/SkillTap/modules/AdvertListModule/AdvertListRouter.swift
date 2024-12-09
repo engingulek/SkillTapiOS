@@ -10,6 +10,9 @@ import UIKit
 class AdvertListRouter {
     static func createModule() -> UIViewController {
         let viewController = AdvertListViewController()
+        let presenter : ViewToPrensenterAdvertListProtocol
+        & InteractorToPresenterAdvertListProtocol = AdvertListPresenter(view: viewController)
+        viewController.presenter = presenter
         return viewController
     }
 }
