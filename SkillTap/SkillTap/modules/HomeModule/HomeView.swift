@@ -24,6 +24,7 @@ class HomeView : BaseView<HomeViewController> {
     
     private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
     private lazy var searchLigtLabel : UILabel = UILabel.lightMiddleLabel()
+    private lazy var messageIcon : UIImageView = UIImageView.middleIcon(systemName: "message.fill")
     
 
     
@@ -36,7 +37,12 @@ class HomeView : BaseView<HomeViewController> {
         configureView()
         
         categoriesCollectionView.register(CategoryCVC.self, forCellWithReuseIdentifier: CategoryCVC.identifier)
+      
         
+    }
+    
+    @objc private func onTappedMessageIcon() {
+        presenter?.onTappedMessageIcon()
     }
 
     private func configureView(){
@@ -45,6 +51,17 @@ class HomeView : BaseView<HomeViewController> {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.equalToSuperview().offset(20)
         }
+        
+        messageIcon.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTappedMessageIcon))
+        messageIcon.addGestureRecognizer(tapGesture)
+        addSubview(messageIcon)
+        messageIcon.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.top)
+            make.trailing.equalToSuperview().offset(-10)
+            make.size.equalTo(30)
+        }
+        
         addSubview(subTitleLabel)
         subTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(10)

@@ -15,7 +15,7 @@ protocol ViewToPrensenterAdvertDetailProtocol{
     var view : PresenterToViewAdvertDetailProtocol? {get}
     func viewDidLoad()
     func packageSegmentedConrollerChanged(index:Int)
-    func onTappedBuyButtonOnPackage()
+    func onTappedSendMessageButton()
   
    
         
@@ -40,5 +40,5 @@ protocol InteractorToPresenterAdvertDetailProtocol{
 
 //MARK: PresenterToRouterAdvertDetailProtocol
 protocol PresenterToRouterAdvertDetailProtocol {
-  
+    func toMessage(view:PresenterToViewAdvertDetailProtocol?)
 }

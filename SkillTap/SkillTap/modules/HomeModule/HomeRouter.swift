@@ -31,4 +31,9 @@ extension HomeRouter : PresenterToRouterHomeProtocol {
         view?.pushViewControllerAble(viewController, animated: true)
     }
     
+    func toLastMessageList(view: PresenterToViewHomeProtocol?) {
+        let viewController = LastMessageListViewController()
+        view?.pushViewControllerAble(viewController, animated: true)
+    }
+    
 }

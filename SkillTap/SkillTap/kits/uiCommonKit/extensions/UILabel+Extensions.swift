@@ -56,9 +56,9 @@ extension UILabel {
         label.font = .systemFont(ofSize: 15,weight: .light)
         return label
     }
-    static func cellTitleUILabel() -> UILabel {
+    static func cellTitleUILabel(color:String = ColorTheme.primaryColor.color) -> UILabel {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor(hex: color)
         label.font = .systemFont(ofSize: 18,weight: .semibold)
         label.textAlignment = .center
         return label

@@ -28,9 +28,9 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
     private lazy var packagedescLabel : UILabel = UILabel.descUILabel()
     
     
-    private lazy var buyButton : UIButton = UIButton.basicButton(action:buyButtonAction )
-    private lazy var buyButtonAction  : UIAction = UIAction { _ in
-        self.presenter?.onTappedBuyButtonOnPackage()
+    private lazy var sendMessageButton : UIButton = UIButton.messageButton(action:sendMessageAction )
+    private lazy var sendMessageAction  : UIAction = UIAction { _ in
+        self.presenter?.onTappedSendMessageButton()
     }
 
     override func setupView() {
@@ -42,8 +42,8 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
         packagedescLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
         
         packageSegmentedControll.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
-        buyButton.setTitle("Buy", for: .normal)
-        buyButton.setTitleColor(UIColor(hex: ColorTheme.thirdColor.color), for: .normal)
+
+      
     }
     
     @objc private func segmentChanged(_ sender: UISegmentedControl) {
@@ -108,12 +108,12 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
             make.trailing.equalToSuperview().offset(-10)
            
         }
-        packageDescView.addSubview(buyButton)
-        buyButton.snp.makeConstraints { make in
-            make.top.equalTo(packagedescLabel.snp.bottom).offset(5)
+        packageDescView.addSubview(sendMessageButton)
+        sendMessageButton.snp.makeConstraints { make in
+            make.top.equalTo(packagedescLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
 }

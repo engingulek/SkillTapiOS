@@ -9,9 +9,10 @@ import Foundation
 
 final class AdvertDetailPresenter {
     weak var view : PresenterToViewAdvertDetailProtocol?
-    private var selectedSegmentedController : Int = 0
-    init(view: PresenterToViewAdvertDetailProtocol?) {
+    private var router : PresenterToRouterAdvertDetailProtocol
+    init(view: PresenterToViewAdvertDetailProtocol?,router:PresenterToRouterAdvertDetailProtocol) {
         self.view = view
+        self.router = router
     }
 }
 
@@ -22,7 +23,7 @@ extension AdvertDetailPresenter : ViewToPrensenterAdvertDetailProtocol {
     
     func packageSegmentedConrollerChanged(index: Int) {
         print(index)
-        selectedSegmentedController = index
+       
     }
     
     func viewDidLoad() {
@@ -30,8 +31,9 @@ extension AdvertDetailPresenter : ViewToPrensenterAdvertDetailProtocol {
         view?.changeTitle(title: TextTheme.advertDetailNav.text)
     }
     
-    func onTappedBuyButtonOnPackage() {
-        print("On Tappped \(selectedSegmentedController)")
+    func onTappedSendMessageButton() {
+        print("On Tapppedm message button")
+        router.toMessage(view: view)
     }
 }
 
