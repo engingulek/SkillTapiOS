@@ -11,15 +11,16 @@ import SnapKit
 class MessageView : BaseView<MesssageViewController> {
     private let textField = UITextField()
     private var textFieldBottomConstraint: Constraint?
-    private lazy var messageCollectionView : UICollectionView = UICollectionView.primaryCollectionView(scroolDirection: .vertical)
+    private lazy var messageCollectionView : UICollectionView = 
+    UICollectionView.primaryCollectionView(scroolDirection: .vertical)
     override func setupView() {
         super.setupView()
         configureView()
         setupKeyboardObservers()
         setupTapGestureToDismissKeyboard()
-        messageCollectionView.register(SentMessageCVC.self, forCellWithReuseIdentifier: SentMessageCVC.identifier)
+        messageCollectionView.register(MessageCVC.self, forCellWithReuseIdentifier: MessageCVC.identifier)
         
-        messageCollectionView.register(ComingMessageCVC.self, forCellWithReuseIdentifier: ComingMessageCVC.identifier)
+      
     }
     
     deinit {
