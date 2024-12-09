@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias SubCategoryKits = UIViewAble & NavConUIAble
+typealias SubCategoryKits = UIViewAble & NavConUIAble & SegueAble
 
 //MARK: ViewToPrensenterSubCategoryProtocol
 protocol ViewToPrensenterSubCategoryProtocol{
@@ -44,5 +44,7 @@ protocol InteractorToPresenterSubCategoryProtocol{
 }
 
 //MARK: PresenterToRouterSubCategoryProtocol
-protocol PresenterToRouterSubCategoryProtocol {}
+protocol PresenterToRouterSubCategoryProtocol {
+    func toAdvertListModule(view:PresenterToViewSubCategoryProtocol?)
+}
     

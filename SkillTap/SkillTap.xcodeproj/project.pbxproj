@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0DC5AA2D06F48E009B0B8A /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5A92D06F48E009B0B8A /* AdvertListViewController.swift */; };
+		7D0DC5AC2D06F49F009B0B8A /* AdvertListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5AB2D06F49F009B0B8A /* AdvertListRouter.swift */; };
+		7D0DC5AE2D06F7CE009B0B8A /* AdvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5AD2D06F7CE009B0B8A /* AdvertListView.swift */; };
 		7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AF22CFDE1EB00C560B4 /* SearchView.swift */; };
 		7D281AF52CFDE1FC00C560B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */; };
 		7D281AF72CFDE21400C560B4 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D281AF62CFDE21400C560B4 /* SearchRouter.swift */; };
@@ -63,6 +66,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D0DC5A92D06F48E009B0B8A /* AdvertListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewController.swift; sourceTree = "<group>"; };
+		7D0DC5AB2D06F49F009B0B8A /* AdvertListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListRouter.swift; sourceTree = "<group>"; };
+		7D0DC5AD2D06F7CE009B0B8A /* AdvertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListView.swift; sourceTree = "<group>"; };
 		7D281AF22CFDE1EB00C560B4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7D281AF62CFDE21400C560B4 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -131,6 +137,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D0DC5A82D06F465009B0B8A /* AdvertListModule */ = {
+			isa = PBXGroup;
+			children = (
+				7D0DC5A92D06F48E009B0B8A /* AdvertListViewController.swift */,
+				7D0DC5AB2D06F49F009B0B8A /* AdvertListRouter.swift */,
+				7D0DC5AD2D06F7CE009B0B8A /* AdvertListView.swift */,
+			);
+			path = AdvertListModule;
+			sourceTree = "<group>";
+		};
 		7D281AF12CFDE19800C560B4 /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +277,7 @@
 		7DEB21F02CFB85400006DF74 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				7D0DC5A82D06F465009B0B8A /* AdvertListModule */,
 				7D5DB6AE2D04B3E500CB7F68 /* FreelancerDetailModule */,
 				7D5DB6AB2D04B21600CB7F68 /* AdvertDetailModule */,
 				7DE6CF9A2D00D53A00AC57A2 /* SubCategoryModule */,
@@ -416,10 +433,12 @@
 				7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */,
 				7DEB21F92CFB864E0006DF74 /* UIColor+Extensions.swift in Sources */,
 				7D281AF92CFDE22900C560B4 /* SearchProtocols.swift in Sources */,
+				7D0DC5AE2D06F7CE009B0B8A /* AdvertListView.swift in Sources */,
 				7DE6CFA42D00D90300AC57A2 /* SubCategoryPresenter.swift in Sources */,
 				7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */,
 				7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */,
 				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
+				7D0DC5AC2D06F49F009B0B8A /* AdvertListRouter.swift in Sources */,
 				7D5DB6C32D04D86900CB7F68 /* AdvertDetilProtocols.swift in Sources */,
 				7D281AFB2CFDE63600C560B4 /* SearchPresenter.swift in Sources */,
 				7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */,
@@ -434,6 +453,7 @@
 				7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */,
 				7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */,
 				7D5DB6B62D04B5C300CB7F68 /* FreelancerDetailProtocols.swift in Sources */,
+				7D0DC5AA2D06F48E009B0B8A /* AdvertListViewController.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
 				7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */,
