@@ -8,8 +8,9 @@
 import UIKit
 
 class AdvertDetailViewController: ViewController {
-    lazy var presenter : ViewToPrensenterAdvertDetailProtocol 
-    = AdvertDetailPresenter(view: self)
+    
+    lazy var presenter : ViewToPrensenterAdvertDetailProtocol
+    = AdvertDetailPresenter(view: self,router: AdvertDetailRouter())
     private lazy var advertDetailView = AdvertDetailView(self)
     override func viewDidLoad() {
         super.viewDidLoad()

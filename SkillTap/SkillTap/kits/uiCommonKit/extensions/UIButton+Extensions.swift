@@ -16,4 +16,15 @@ extension UIButton {
         button.addAction(action, for: .touchUpInside)
         return button
     }
+    
+    static func messageButton(action:UIAction) -> UIButton {
+        let button = UIButton()
+        button.titleLabel?.font = .systemFont(ofSize: 20)
+        button.layer.cornerRadius = 10
+        button.setTitle(TextTheme.sendMessage.text, for: .normal)
+        button.backgroundColor = UIColor(hex: ColorTheme.thirdColor.color)
+        button.setTitleColor(UIColor(hex: ColorTheme.secondaryColor.color), for: .normal)
+        button.addAction(action, for: .touchUpInside)
+        return button
+    }
 }
