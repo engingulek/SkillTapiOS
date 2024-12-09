@@ -21,7 +21,6 @@ final class HomePresenter {
 //MARK: ViewToPrensenterHomeProtocol
 extension HomePresenter : ViewToPrensenterHomeProtocol {
 
-    
     func viewDidLoad() {
         view?.setBackColorAble(color:ColorTheme.secondaryColor.color)
         view?.setSearchConfigureView(searchLigtLabelText: TextTheme.searchplaceholder.text)
@@ -72,7 +71,9 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         router.toSubCategoryView(view: view)
     }
     
-    
+    func onTappedMessageIcon() {
+        router.toLastMessageList(view: view)
+    }
 
 
 }
