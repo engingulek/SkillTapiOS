@@ -10,7 +10,9 @@ import UIKit
 class LastMessageListViewController: ViewController {
 
     private lazy var lastMessageListView = LastMessageListView(self)
-     lazy var presenter : ViewToPrensenterLastMessageListProtocol = LastMessageListPresenter(view: self)
+     lazy var presenter : ViewToPrensenterLastMessageListProtocol = LastMessageListPresenter(
+        view: self,
+        router: LastMessageListRouter())
     override func viewDidLoad() {
         super.viewDidLoad()
         view = lastMessageListView
@@ -46,6 +48,10 @@ extension LastMessageListViewController : UICollectionViewDelegate,UICollectionV
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LastMessageCVC.identifier, for: indexPath) as? LastMessageCVC else {return UICollectionViewCell()}
         presenter.cellForItem(at: indexPath)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
     }
 }
 

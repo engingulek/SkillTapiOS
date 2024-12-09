@@ -9,8 +9,10 @@ import Foundation
 
 final class LastMessageListPresenter {
     weak var view : PresenterToViewLastMessageListProtocol?
-    init(view: PresenterToViewLastMessageListProtocol?) {
+    private var router : PresenterToRouterLastMessageListProtocol
+    init(view: PresenterToViewLastMessageListProtocol?,router : PresenterToRouterLastMessageListProtocol) {
         self.view = view
+        self.router = router
     }
 }
 
@@ -33,7 +35,7 @@ extension LastMessageListPresenter : ViewToPrensenterLastMessageListProtocol {
     }
     
     func didSelectItem(at indexPath: IndexPath) {
-        
+        router.toMessage(view: view)
     }
     
     func sizeForItemAt(width: CGFloat, height: CGFloat) -> CGSize {
