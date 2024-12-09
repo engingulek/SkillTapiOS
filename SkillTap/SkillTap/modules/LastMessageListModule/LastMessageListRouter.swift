@@ -10,6 +10,17 @@ import UIKit
 class LastMessageListRouter {
     static func createModule() -> UIViewController {
         let viewController = LastMessageListViewController()
+        let presenter : ViewToPrensenterLastMessageListProtocol & InteractorToPresenterLastMessageListProtocol =  LastMessageListPresenter(view: viewController)
+        viewController.presenter = presenter
+        
         return viewController
     }
+}
+
+extension LastMessageListRouter : PresenterToRouterLastMessageListProtocol {
+    func toMessage(view: PresenterToViewLastMessageListProtocol?) {
+        
+    }
+
+    
 }
