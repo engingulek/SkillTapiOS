@@ -9,8 +9,11 @@ import Foundation
 
 final class SubCategoryPresenter {
     weak var view : PresenterToViewSubCategoryProtocol?
-    init(view: PresenterToViewSubCategoryProtocol?) {
+    private var router : PresenterToRouterSubCategoryProtocol
+    init(view: PresenterToViewSubCategoryProtocol?,
+         router:PresenterToRouterSubCategoryProtocol) {
         self.view = view
+        self.router = router
     }
 }
 
@@ -35,7 +38,7 @@ extension SubCategoryPresenter : ViewToPrensenterSubCategoryProtocol {
     }
     
     func didSelectItem(at indexPath:IndexPath){
-        
+        router.toAdvertListModule(view: view)
     }
     
     func sizeForItemAt(width: CGFloat,
@@ -43,11 +46,7 @@ extension SubCategoryPresenter : ViewToPrensenterSubCategoryProtocol {
         return CGSize(width: width, height:height / 14)
     }
     
-    
 
-    
-    /*/return CGSize(width: width, height:height / 14)*/
-    
 }
 //MARK: InteractorToPresenterSubCategoryProtocol
 extension SubCategoryPresenter : InteractorToPresenterSubCategoryProtocol {

@@ -9,7 +9,8 @@ import UIKit
 
 class SubCategoryViewController: UIViewController {
     lazy var presenter : ViewToPrensenterSubCategoryProtocol =
-    SubCategoryPresenter(view: self)
+    //TODO: Switinject will be added here
+    SubCategoryPresenter(view: self,router: SubCategoryRouter())
     private lazy var subCategoryView = SubCategoryView(self)
    
     override func viewDidLoad() {
