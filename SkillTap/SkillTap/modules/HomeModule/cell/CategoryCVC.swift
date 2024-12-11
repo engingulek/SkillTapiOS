@@ -11,12 +11,12 @@ class CategoryCVC: UICollectionViewCell {
     static  let identifier : String  = "categoryCellIdentifier"
     
     
-    private lazy var bannerLabel : UILabel = UILabel.middleTitleLabel(
+    private lazy var categoryLabel : UILabel = UILabel.middleTitleLabel(
         color: ColorTheme.secondaryColor.color)
-    private lazy var bannerImage : UIImageView = UIImageView()
-    private lazy var bannerSubTitleDeveloper : UILabel = UILabel.xSmallLabelLignt(
+    private lazy var categoryImage : UIImageView = UIImageView()
+    private lazy var categoryAdvertCount : UILabel = UILabel.xSmallLabelLignt(
         color: ColorTheme.secondaryColor.color)
-    private lazy var bannerSubTitleFreelancer : UILabel = UILabel.xSmallLabelLignt(
+    private lazy var categoryFreelancerCount : UILabel = UILabel.xSmallLabelLignt(
         color: ColorTheme.secondaryColor.color)
     
     override init(frame: CGRect) {
@@ -32,45 +32,42 @@ class CategoryCVC: UICollectionViewCell {
         self.layer.cornerRadius = 20
       
         self.layer.borderWidth = 1
+
         
-        
-        
-        self.addSubview(bannerImage)
-        bannerImage.snp.makeConstraints { make in
+        self.addSubview(categoryImage)
+        categoryImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(20)
             make.size.equalTo(100)
         }
         
-        self.addSubview(bannerLabel)
-        bannerLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(bannerImage.snp.bottom).offset(10)
+        self.addSubview(categoryLabel)
+        categoryLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.top.equalTo(categoryImage.snp.bottom).offset(10)
         }
         
-        self.addSubview(bannerSubTitleDeveloper)
-        bannerSubTitleDeveloper.snp.makeConstraints { make in
+        self.addSubview(categoryAdvertCount)
+        categoryAdvertCount.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(bannerLabel.snp.bottom).offset(10)
+            make.top.equalTo(categoryLabel.snp.bottom).offset(10)
         }
         
-        addSubview(bannerSubTitleFreelancer)
-        bannerSubTitleFreelancer.snp.makeConstraints { make in
-            make.top.equalTo(bannerSubTitleDeveloper.snp.bottom).offset(10)
+        addSubview(categoryFreelancerCount)
+        categoryFreelancerCount.snp.makeConstraints { make in
+            make.top.equalTo(categoryAdvertCount.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
     }
     
     
-    func setBannerCongigure(){
-        bannerLabel.text = "Title"
-        bannerImage.setImageWithKigfisher(with: "https://firebasestorage.googleapis.com/v0/b/feastly-f1988.appspot.com/o/skillTap%2Fcoding.png?alt=media&token=6741ab68-bcb2-4c17-afd8-d8c18c74359d")
-        bannerSubTitleFreelancer.text = "23.000 Freelancer"
-        bannerSubTitleDeveloper.text = "10.000 Developer"
-        layer.backgroundColor = UIColor.red.cgColor
-        layer.borderColor =  UIColor.red.cgColor
+    func configureData(category:Category){
+        categoryLabel.text = category.title
+        categoryImage.setImageWithKigfisher(with: category.imageURL)
+        categoryFreelancerCount.text = "\(category.freelancerCount) Freelancer"
+        categoryAdvertCount.text = "\(category.advertCount) Adverts"
+        layer.backgroundColor = UIColor(hex: category.colorCode)?.cgColor
+        layer.borderColor =  UIColor(hex: category.colorCode)?.cgColor
     }
-    
-    
-
 }

@@ -11,7 +11,8 @@ class HomeViewController: UIViewController {
     //TODO: Swiftinject will be added to here
     lazy var presenter : ViewToPrensenterHomeProtocol = HomePresenter(
         view: self,
-        router: HomeRouter()
+        router: HomeRouter(),
+        interactor: HomeInteractor()
     )
      private lazy var homeView = HomeView(self)
 
@@ -76,7 +77,7 @@ extension HomeViewController : PresenterToViewHomeProtocol {
 extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return presenter.numberOfItemsIn(tag: collectionView.tag)
+        return presenter.numberOfItemsIn()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,8 +85,8 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             .dequeueReusableCell(
                 withReuseIdentifier: CategoryCVC.identifier,
                 for: indexPath) as? CategoryCVC else {return UICollectionViewCell()}
-        let _ = presenter.cellForItem( indexPath: indexPath)
-        cell.setBannerCongigure()
+        let category = presenter.cellForItem( indexPath: indexPath)
+        cell.configureData(category: category)
         return cell
    
     }

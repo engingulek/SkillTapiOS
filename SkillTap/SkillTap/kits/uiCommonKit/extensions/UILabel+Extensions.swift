@@ -34,10 +34,13 @@ extension UILabel {
         return label
     }
     
-    static func middleTitleLabel(color:String = ColorTheme.primaryColor.color) -> UILabel {
+    static func middleTitleLabel(color:String = ColorTheme.primaryColor.color,
+                                 lineLimit:Int = .zero) -> UILabel {
         let label = UILabel()
         label.textColor = UIColor(hex: color)
         label.font = .systemFont(ofSize: 20,weight: .semibold)
+        label.numberOfLines = lineLimit
+        label.textAlignment = .center
         return label
     }
     
@@ -78,7 +81,4 @@ extension UILabel {
         label.font = .systemFont(ofSize: 25,weight: .semibold)
         return label
     }
-    
-    
-    
 }

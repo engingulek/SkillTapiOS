@@ -10,11 +10,26 @@ import Foundation
 final class HomePresenter {
     weak var view: PresenterToViewHomeProtocol?
     private var router : PresenterToRouterHomeProtocol
-    init(view: PresenterToViewHomeProtocol?,router:PresenterToRouterHomeProtocol) {
+    private let interactor : PresenterToInteractorHomeProtocol
+    private var categoryList : [Category] = []
+    
+    init(view: PresenterToViewHomeProtocol?,
+         router:PresenterToRouterHomeProtocol,
+         interactor : PresenterToInteractorHomeProtocol) {
         self.view = view
         self.router = router
+        self.interactor = interactor
     }
     
+    
+    private func fetchCategories() async {
+        do{
+            try await interactor.fetchCategories()
+        }catch{
+            categoryList = []
+        }
+        view?.categoriesCollectionViewRealoadData()
+    }
 }
 
 
@@ -30,7 +45,12 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
     
         view?.changeTitle(title: TextTheme.homeNavTitle.text)
         view?.categoriesCollectioViewPreapare()
-        view?.categoriesCollectionViewRealoadData()
+        
+        
+        
+        Task {
+            await fetchCategories()
+        }
         
     }
     
@@ -38,18 +58,15 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         router.toSearchView(view: view)
     }
     
-    func numberOfItemsIn(tag:Int) -> Int {
-        return 3
+    func numberOfItemsIn() -> Int {
+        return categoryList.count
       
     }
     
-    func cellForItem(indexPath: IndexPath) -> (topOption: String,
-                                                  borderColor:String,
-                                                  textColor:String) {
-        return (topOption:"test",
-                borderColor:ColorTheme.primaryColor.color,
-                textColor:ColorTheme.primaryColor.color
-        )
+    func cellForItem(indexPath: IndexPath) ->Category {
+        let category = categoryList[indexPath.item]
+        return category
+        
     }
     
     func sizeForItem(
@@ -75,10 +92,11 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         router.toLastMessageList(view: view)
     }
 
-
 }
 
 //MARK: InteractorToPresenterHomeProtocol
 extension HomePresenter : InteractorToPresenterHomeProtocol {
-    
+    func sendCategories(categories: [Category]) {
+        categoryList = categories
+    }
 }
