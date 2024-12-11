@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class HomeInteractor :  PresenterToInteractorHomeProtocol {
+    var presenter : InteractorToPresenterHomeProtocol?
+    private let networkManager : NetworkManagerProtocol = NetworkManager()
+    func fetchCategories() async throws {
+        do{
+            let response = try await networkManager.fetch(target: .categories, responseClass: [Category].self)
+            presenter?.sendCategories(categories:response)
+        }catch{
+            throw error
+        }
+    }
+}

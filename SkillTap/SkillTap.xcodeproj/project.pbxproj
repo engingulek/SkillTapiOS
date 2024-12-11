@@ -40,6 +40,7 @@
 		7D3CF7542D0A156A00728804 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3CF7532D0A156A00728804 /* TargetType.swift */; };
 		7D3CF7562D0A159E00728804 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3CF7552D0A159E00728804 /* NetworkPath.swift */; };
 		7D3CF7582D0A161100728804 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3CF7572D0A161100728804 /* NetworkManager.swift */; };
+		7D3CF75A2D0A180400728804 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3CF7592D0A180400728804 /* Category.swift */; };
 		7D5DB6AD2D04B23D00CB7F68 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6AC2D04B23D00CB7F68 /* AdvertDetailViewController.swift */; };
 		7D5DB6B02D04B40D00CB7F68 /* FreelancerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */; };
 		7D5DB6B22D04B41E00CB7F68 /* AdvertDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */; };
@@ -117,6 +118,7 @@
 		7D3CF7532D0A156A00728804 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		7D3CF7552D0A159E00728804 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
 		7D3CF7572D0A161100728804 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7D3CF7592D0A180400728804 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7D5DB6AC2D04B23D00CB7F68 /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
 		7D5DB6AF2D04B40D00CB7F68 /* FreelancerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailViewController.swift; sourceTree = "<group>"; };
 		7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailRouter.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				7DEB22022CFB873C0006DF74 /* HomeViewController.swift */,
 				7DEB22092CFB88780006DF74 /* HomeProtocols.swift */,
 				7DEB220E2CFB8B580006DF74 /* HomeView.swift */,
+				7D3CF7592D0A180400728804 /* Category.swift */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
 				7D0DC5B02D06FACD009B0B8A /* AdvertListProtocols.swift in Sources */,
 				7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */,
+				7D3CF75A2D0A180400728804 /* Category.swift in Sources */,
 				7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */,
 				7DEB220A2CFB88780006DF74 /* HomeProtocols.swift in Sources */,
 				7D0DC5D12D07298E009B0B8A /* MessageCVC.swift in Sources */,

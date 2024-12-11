@@ -12,8 +12,13 @@ class HomeRouter {
    static func createHomeModule() -> UIViewController {
         let viewController = HomeViewController()
        let router = HomeRouter()
-       let presenter : ViewToPrensenterHomeProtocol & InteractorToPresenterHomeProtocol = HomePresenter(view: viewController, router: router)
+       let interactor = HomeInteractor()
+       let presenter : ViewToPrensenterHomeProtocol & InteractorToPresenterHomeProtocol
+       = HomePresenter(view: viewController,
+                       router: router,
+       interactor: interactor)
        viewController.presenter = presenter
+       interactor.presenter = presenter
         return viewController
     }
 }
