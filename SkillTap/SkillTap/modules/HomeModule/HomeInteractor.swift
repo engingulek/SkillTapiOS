@@ -12,7 +12,7 @@ class HomeInteractor :  PresenterToInteractorHomeProtocol {
     private let networkManager : NetworkManagerProtocol = NetworkManager()
     func fetchCategories() async throws {
         do{
-            let response = try await networkManager.fetch(target: .categories, responseClass: [Category].self)
+            let response = try await networkManager.fetch(target: .categories, responseClass: [CategoryData].self)
             presenter?.sendCategories(categories:response)
         }catch{
             throw error
