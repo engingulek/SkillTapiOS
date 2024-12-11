@@ -62,7 +62,7 @@ class CategoryCVC: UICollectionViewCell {
     }
     
     
-    func configureData(category:Category){
+    func configureData(category:CategoryData){
         categoryLabel.text = category.title
         categoryImage.setImageWithKigfisher(with: category.imageURL)
         categoryFreelancerCount.text = "\(category.freelancerCount) Freelancer"

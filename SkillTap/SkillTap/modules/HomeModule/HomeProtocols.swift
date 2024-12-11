@@ -17,7 +17,7 @@ protocol ViewToPrensenterHomeProtocol{
     func onTappedSearchBar()
     
     func numberOfItemsIn() -> Int
-    func cellForItem(indexPath:IndexPath) -> Category
+    func cellForItem(indexPath:IndexPath) -> CategoryData
     
     func sizeForItem(width:CGFloat,
                      height:CGFloat) -> CGSize
@@ -55,7 +55,7 @@ protocol PresenterToInteractorHomeProtocol {
 
 //MARK: InteractorToPresenterHomeProtocol
 protocol InteractorToPresenterHomeProtocol{
-    func sendCategories(categories:[Category])
+    func sendCategories(categories:[CategoryData])
 }
 
 //MARK: PresenterToRouterHomeProtocol

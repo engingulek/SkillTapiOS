@@ -11,7 +11,7 @@ final class HomePresenter {
     weak var view: PresenterToViewHomeProtocol?
     private var router : PresenterToRouterHomeProtocol
     private let interactor : PresenterToInteractorHomeProtocol
-    private var categoryList : [Category] = []
+    private var categoryList : [CategoryData] = []
     
     init(view: PresenterToViewHomeProtocol?,
          router:PresenterToRouterHomeProtocol,
@@ -41,7 +41,7 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         view?.setSearchConfigureView(searchLigtLabelText: TextTheme.searchplaceholder.text)
         view?.setCategoryTitleLabel(title: TextTheme.categories.text)
         
-        view?.setHeadData(title: "Hi,Engin", subtitle:TextTheme.searchplaceholder.text)
+        view?.setHeadData(title: TextTheme.hi.text, subtitle:TextTheme.searchplaceholder.text)
     
         view?.changeTitle(title: TextTheme.homeNavTitle.text)
         view?.categoriesCollectioViewPreapare()
@@ -63,7 +63,7 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
       
     }
     
-    func cellForItem(indexPath: IndexPath) ->Category {
+    func cellForItem(indexPath: IndexPath) -> CategoryData {
         let category = categoryList[indexPath.item]
         return category
         
@@ -96,7 +96,7 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
 
 //MARK: InteractorToPresenterHomeProtocol
 extension HomePresenter : InteractorToPresenterHomeProtocol {
-    func sendCategories(categories: [Category]) {
+    func sendCategories(categories: [CategoryData]) {
         categoryList = categories
     }
 }
