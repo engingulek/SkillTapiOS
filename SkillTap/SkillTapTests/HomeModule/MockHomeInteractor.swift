@@ -14,7 +14,7 @@ enum MockError: Error {
 }
 class MockHomeInteractor : PresenterToInteractorHomeProtocol {
     var categories : [CategoryData] = []
-    let mockfetchCategoriesError:Bool = false
+    var mockfetchCategoriesError:Bool = false
     func fetchCategories() async throws {
         if mockfetchCategoriesError{
             throw MockError.mockError
