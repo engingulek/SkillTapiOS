@@ -27,6 +27,7 @@ final class HomePresenter {
             try await interactor.fetchCategories()
         }catch{
             categoryList = []
+            view?.createErrorMessageForCategories(message: TextTheme.errorMessage.text)
         }
         view?.categoriesCollectionViewRealoadData()
     }
@@ -91,6 +92,8 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
     func onTappedMessageIcon() {
         router.toLastMessageList(view: view)
     }
+    
+   
 
 }
 
