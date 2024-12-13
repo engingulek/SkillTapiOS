@@ -71,6 +71,13 @@ extension HomeViewController : PresenterToViewHomeProtocol {
             homeView.categriesCollectionViewReloadData()
         }
     }
+    
+    func createErrorMessageForCategories( message: String) {
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else {return}
+            homeView.createErrorMessage(message: message)
+        }
+    }
 }
 
 //MARK: UICollectionViewDelegate,UICollectionViewDataSource

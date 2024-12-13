@@ -32,6 +32,8 @@ protocol ViewToPrensenterHomeProtocol{
     func onTappedMessageIcon()
     
     
+    
+    
 }
 
 //MARK: PresenterToViewHomeProtocol
@@ -43,6 +45,7 @@ protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
     
     func categoriesCollectioViewPreapare()
     func categoriesCollectionViewRealoadData()
+    func createErrorMessageForCategories(message:String)
     
 
     

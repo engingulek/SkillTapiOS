@@ -45,6 +45,18 @@ extension UILabel {
     }
     
     
+    static func erroeLabel(
+        color:String = ColorTheme.thirdColor.color
+    ) -> UILabel {
+        let label = UILabel()
+        label.textColor = UIColor(hex: color)
+        label.font = .systemFont(ofSize: 20,weight: .semibold)
+        label.textAlignment = .center
+        return label
+    }
+    
+    
+    
     static func smallLabelLignt(color:String = ColorTheme.primaryColor.color) -> UILabel {
         let label = UILabel()
         label.textColor = UIColor(hex: color)

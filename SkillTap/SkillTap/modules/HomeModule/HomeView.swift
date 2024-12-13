@@ -25,6 +25,9 @@ class HomeView : BaseView<HomeViewController> {
     private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
     private lazy var searchLigtLabel : UILabel = UILabel.lightMiddleLabel()
     private lazy var messageIcon : UIImageView = UIImageView.middleIcon(systemName: "message.fill")
+    private lazy var errorIcon : UIImageView = UIImageView.errorIcon()
+    private lazy var errorLabel : UILabel = UILabel.erroeLabel()
+    
     
 
     
@@ -108,6 +111,18 @@ class HomeView : BaseView<HomeViewController> {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+        
+        addSubview(errorIcon)
+        errorIcon.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.size.equalTo(60)
+        }
+        addSubview(errorLabel)
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(errorIcon.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
 
     }
     
@@ -138,6 +153,11 @@ class HomeView : BaseView<HomeViewController> {
     
     func setCategoryTitleLabel(_ title:String){
         categoryTitleLabel.text = title
+    }
+    
+    func createErrorMessage(message:String){
+        errorLabel.text = message
+        errorIcon.isHidden = false
     }
     
 }

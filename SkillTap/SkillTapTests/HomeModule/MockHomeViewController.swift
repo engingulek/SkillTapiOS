@@ -10,7 +10,7 @@ import UIKit
 @testable import SkillTap
 
 class MockHomeViewController : PresenterToViewHomeProtocol{
-    
+
     var invokedsetBackColorAble:Bool = false
     var invokedsetBackColorAbleCount:Int = 0
     var invokedsetBackColorAbleData = [(color:String,Void)]()
@@ -79,13 +79,28 @@ class MockHomeViewController : PresenterToViewHomeProtocol{
     var invokedpushViewControllerAble:Bool = false
     var invokedpushViewControllerAbleCount:Int = 0
     func pushViewControllerAble(_ vc: UIViewController, animated: Bool) {
-         invokedpushViewControllerAble = false
+         invokedpushViewControllerAble = true
          invokedpushViewControllerAbleCount += 1
     }
+    
+    
+    var invokedcreateErrorMessageForCategories:Bool = false
+    var invokedcreateErrorMessageForCategoriesCount:Int = 0
+    var invokedcreateErrorMessageForCategoriesData = [(message:String,Void)]()
+    func createErrorMessageForCategories(message: String) {
+        
+         invokedcreateErrorMessageForCategories = true
+         invokedcreateErrorMessageForCategoriesCount += 1
+         invokedcreateErrorMessageForCategoriesData.append((message:message,()))
+    }
+    
+    
     
     func popViewControllerAble() {
         
     }
+    
+    
     
     
     

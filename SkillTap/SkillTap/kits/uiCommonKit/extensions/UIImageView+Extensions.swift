@@ -27,6 +27,15 @@ extension UIImageView {
        
     }
     
+    static func errorIcon() -> UIImageView{
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.image = .init(resource: .errorIcon)
+        imageView.isHidden = true
+        return imageView
+    
+    }
+    
     
     
     func setImageWithKigfisher(with urlString: String) {

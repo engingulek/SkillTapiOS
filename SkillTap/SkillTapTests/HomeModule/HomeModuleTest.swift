@@ -156,5 +156,30 @@ final class HomeModuleTest :  XCTestCase {
         
         wait(for: [expectation], timeout: 5)
     }
+    
+    func test_fetchCategoryOnViewDidload_retrunErrorMessage(){
+        let expectation = XCTestExpectation(description: "Async task completed")
+        
+        XCTAssertFalse(view.invokedcreateErrorMessageForCategories)
+        XCTAssertEqual(view.invokedcreateErrorMessageForCategoriesCount, 0)
+        interactor.categories = [
+            .init(id: 1,
+                  title: "test ttile",
+                  imageURL:"test url",
+                  advertCount: 10,
+                  freelancerCount: 10,
+                  colorCode: "#FFFFF")
+        ]
+        interactor.mockfetchCategoriesError = true
+        presenter.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in 
+            XCTAssertTrue(view.invokedcreateErrorMessageForCategories)
+            XCTAssertEqual(view.invokedcreateErrorMessageForCategoriesCount, 1)
+            XCTAssertEqual(view.invokedcreateErrorMessageForCategoriesData.map(\.message),[TextTheme.errorMessage.text])
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
 
 }

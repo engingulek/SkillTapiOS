@@ -20,6 +20,7 @@ enum TextTheme:String {
     case lastMessageList = "Last Message List"
     case sendMessage = "Send Message"
     case hi = "Hi"
+    case errorMessage = "Something Went Wrong"
     
     var text : String {
         return self.rawValue
