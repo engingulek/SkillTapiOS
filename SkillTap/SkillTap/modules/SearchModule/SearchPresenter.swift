@@ -73,6 +73,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
         view?.setBackColorAble(color: ColorTheme.secondaryColor.color)
         view?.changeTitle(title: TextTheme.searchNavTitle.text)
         view?.setSearchTextFieldPlaceholder(TextTheme.searchplaceholder.text)
+        
         view?.setAdvertsButtonDesign(text: TextTheme.adverts.text,
                                      textColor: ColorTheme.secondaryColor.color,
                                      backColor: ColorTheme.thirdColor.color,
@@ -84,6 +85,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
                                      textColor: ColorTheme.thirdColor.color,
                                      backColor: ColorTheme.secondaryColor.color,
                                         borderColor: ColorTheme.thirdColor.color)
+        
         view?.advertsCollectionViewPrepare()
         view?.advertsCollectionViewReload()
         view?.freelancerCollectionViewPrepare()

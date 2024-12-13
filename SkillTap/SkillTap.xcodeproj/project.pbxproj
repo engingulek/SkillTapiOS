@@ -59,6 +59,8 @@
 		7D77AE232CFC958C00A011A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77AE222CFC958C00A011A3 /* Kingfisher */; };
 		7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */; };
 		7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */; };
+		7D9FC8532D0C5B1900AF66B5 /* MockSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9FC8522D0C5B1900AF66B5 /* MockSearchViewController.swift */; };
+		7D9FC8562D0C642500AF66B5 /* SearchModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9FC8552D0C642500AF66B5 /* SearchModuleTest.swift */; };
 		7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */; };
 		7DE6CF9C2D00D55700AC57A2 /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF9B2D00D55700AC57A2 /* SubCategoryViewController.swift */; };
 		7DE6CF9E2D00D56500AC57A2 /* SubCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF9D2D00D56500AC57A2 /* SubCategoryView.swift */; };
@@ -150,6 +152,8 @@
 		7D5DB6C72D04DA7200CB7F68 /* AdvertDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailInfoView.swift; sourceTree = "<group>"; };
 		7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTheme.swift; sourceTree = "<group>"; };
+		7D9FC8522D0C5B1900AF66B5 /* MockSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewController.swift; sourceTree = "<group>"; };
+		7D9FC8552D0C642500AF66B5 /* SearchModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleTest.swift; sourceTree = "<group>"; };
 		7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		7DE6CF9B2D00D55700AC57A2 /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
 		7DE6CF9D2D00D56500AC57A2 /* SubCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryView.swift; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 		7D3CF7602D0A228500728804 /* SkillTapTests */ = {
 			isa = PBXGroup;
 			children = (
+				7D9FC8542D0C5BA200AF66B5 /* SearchModule */,
 				7D3CF7682D0A228F00728804 /* HomeModule */,
 			);
 			path = SkillTapTests;
@@ -351,6 +356,15 @@
 				7D281AFC2CFDED6E00C560B4 /* TextTheme.swift */,
 			);
 			path = theme;
+			sourceTree = "<group>";
+		};
+		7D9FC8542D0C5BA200AF66B5 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				7D9FC8522D0C5B1900AF66B5 /* MockSearchViewController.swift */,
+				7D9FC8552D0C642500AF66B5 /* SearchModuleTest.swift */,
+			);
+			path = SearchModule;
 			sourceTree = "<group>";
 		};
 		7DE6CF972D00BB2500AC57A2 /* cell */ = {
@@ -600,8 +614,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9FC8532D0C5B1900AF66B5 /* MockSearchViewController.swift in Sources */,
 				7D3CF76A2D0A234D00728804 /* MockHomeViewController.swift in Sources */,
 				7D3CF76E2D0A277E00728804 /* HomeModuleTest.swift in Sources */,
+				7D9FC8562D0C642500AF66B5 /* SearchModuleTest.swift in Sources */,
 				7D3CF76C2D0A267000728804 /* MockHomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

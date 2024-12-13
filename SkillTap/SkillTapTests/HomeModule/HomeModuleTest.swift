@@ -44,7 +44,7 @@ final class HomeModuleTest :  XCTestCase {
                        [ColorTheme.secondaryColor.color])
     }
     
-    func test_viewModel_setBackColorAble_returnCategoryTitle(){
+    func test_viewModel_setCategoryTitleLabel_returnCategoryTitle(){
         XCTAssertFalse(view.invokedsetCategoryTitleLabel)
         XCTAssertEqual(view.invokedsetCategoryTitleLabelCount, 0)
      presenter.viewDidLoad()
