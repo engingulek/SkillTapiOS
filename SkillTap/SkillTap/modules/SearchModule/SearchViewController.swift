@@ -26,8 +26,7 @@ class SearchViewController: UIViewController {
 
 
 extension SearchViewController : PresenterToViewSearchProtocol {
-   
-    
+  
     func setSearchTextFieldPlaceholder(_ placeholder: String) {
         searchView.setSearchPlaceholder(searchPlaceholder: placeholder)
     }
@@ -79,7 +78,13 @@ extension SearchViewController : PresenterToViewSearchProtocol {
         }
     }
     
-
+    
+    func createSearchIconWhenOpenPage(isHidden:Bool) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return }
+            searchView.pageSearchIconHiddenState(isHidden)
+        }
+    }
 }
 
 

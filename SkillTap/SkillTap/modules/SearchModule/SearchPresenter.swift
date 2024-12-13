@@ -66,6 +66,7 @@ final class SearchPresenter {
 
 //MARK: ViewToPrensenterSearchProtocol
 extension SearchPresenter : ViewToPrensenterSearchProtocol {
+
   
  
     func viewDidLoad() {
@@ -87,6 +88,8 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
         view?.advertsCollectionViewReload()
         view?.freelancerCollectionViewPrepare()
         view?.freelancerCollectionViewReload()
+        view?.createSearchIconWhenOpenPage(isHidden: false)
+        
     }
     
     func onChangedSearctTextField(text: String?) {
@@ -106,7 +109,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
 
     
     func numberOfItems() -> Int {
-        return selectedSearchType == .adverts ? 10 : 5
+        return selectedSearchType == .adverts ? 0 : 0
     }
     
     func cellForItem(selectedType:SearchType,at indexPath: IndexPath) {

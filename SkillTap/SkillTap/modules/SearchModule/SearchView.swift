@@ -58,6 +58,7 @@ class SearchView : BaseView<SearchViewController> {
     
     private lazy var advertsCollectionView = UICollectionView.primaryCollectionView(tag:0,scroolDirection: .vertical)
     private lazy var freelancerCollectionView = UICollectionView.primaryCollectionView(tag:1,scroolDirection: .vertical)
+    private lazy var pageSearcIcon : UIImageView = UIImageView.pageSearchIcon()
     
     private func configureView(){
         addSubview(searchView)
@@ -115,6 +116,13 @@ class SearchView : BaseView<SearchViewController> {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+        
+        addSubview(pageSearcIcon)
+        pageSearcIcon.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.size.equalTo(100)
+        }
     }
     
     
@@ -154,5 +162,9 @@ class SearchView : BaseView<SearchViewController> {
     
     func freelancerCollectionViewReloadData(){
         freelancerCollectionView.reloadData()
+    }
+    
+    func pageSearchIconHiddenState(_ isHidden:Bool){
+        pageSearcIcon.isHidden = isHidden
     }
 }

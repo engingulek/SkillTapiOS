@@ -27,6 +27,8 @@ protocol ViewToPrensenterSearchProtocol{
     func didSelectItem(
         selectedType: SearchType,
         at indexPath:IndexPath)
+    
+   
    
         
 }
@@ -50,6 +52,8 @@ protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
     
     func advertsCollectionViewReload()
     func freelancerCollectionViewReload()
+    
+    func createSearchIconWhenOpenPage(isHidden:Bool)
     
 }
 
