@@ -68,6 +68,7 @@
 		7DE6CFA22D00D87700AC57A2 /* SubCategoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA12D00D87700AC57A2 /* SubCategoryProtocols.swift */; };
 		7DE6CFA42D00D90300AC57A2 /* SubCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA32D00D90300AC57A2 /* SubCategoryPresenter.swift */; };
 		7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */; };
+		7DEAEE7C2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */; };
 		7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */; };
 		7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */; };
 		7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21E02CFB5C020006DF74 /* ViewController.swift */; };
@@ -161,6 +162,7 @@
 		7DE6CFA12D00D87700AC57A2 /* SubCategoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryProtocols.swift; sourceTree = "<group>"; };
 		7DE6CFA32D00D90300AC57A2 /* SubCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryPresenter.swift; sourceTree = "<group>"; };
 		7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryCVC.swift; sourceTree = "<group>"; };
+		7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extension.swift"; sourceTree = "<group>"; };
 		7DEB21D92CFB5C020006DF74 /* SkillTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 				7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */,
 				7D77AE242CFCA08400A011A3 /* UICollectionView+Extensions.swift */,
 				7D281B002CFDF37C00C560B4 /* UIButton+Extensions.swift */,
+				7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				7D0DC5B92D070BC4009B0B8A /* LastMessageListView.swift in Sources */,
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
 				7D0DC5B02D06FACD009B0B8A /* AdvertListProtocols.swift in Sources */,
+				7DEAEE7C2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift in Sources */,
 				7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */,
 				7D3CF75A2D0A180400728804 /* Category.swift in Sources */,
 				7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */,

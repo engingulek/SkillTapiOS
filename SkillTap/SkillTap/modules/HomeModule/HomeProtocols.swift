@@ -47,6 +47,9 @@ protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
     func categoriesCollectionViewRealoadData()
     func createErrorMessageForCategories(message:String)
     
+    func startLoadignAnimation()
+    func stopLoadingAnimation()
+    
 
     
 }

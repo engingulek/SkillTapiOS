@@ -28,6 +28,8 @@ class HomeView : BaseView<HomeViewController> {
     private lazy var errorIcon : UIImageView = UIImageView.errorIcon()
     private lazy var errorLabel : UILabel = UILabel.erroeLabel()
     
+    private lazy var loadingAnimation : UIActivityIndicatorView = UIActivityIndicatorView.baseActivityIndicator()
+    
     
 
     
@@ -123,6 +125,12 @@ class HomeView : BaseView<HomeViewController> {
             make.top.equalTo(errorIcon.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
+        
+        addSubview(loadingAnimation)
+        loadingAnimation.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
 
     }
     
@@ -158,6 +166,14 @@ class HomeView : BaseView<HomeViewController> {
     func createErrorMessage(message:String){
         errorLabel.text = message
         errorIcon.isHidden = false
+    }
+    
+    func startLoadingAnimation(){
+        loadingAnimation.startAnimating()
+    }
+    
+    func stopLoadingAnimation(){
+        loadingAnimation.stopAnimating()
     }
     
 }
