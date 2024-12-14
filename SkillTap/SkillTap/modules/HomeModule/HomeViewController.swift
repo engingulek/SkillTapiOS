@@ -78,6 +78,21 @@ extension HomeViewController : PresenterToViewHomeProtocol {
             homeView.createErrorMessage(message: message)
         }
     }
+    
+    func startLoadignAnimation() {
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else {return}
+            homeView.startLoadingAnimation()
+        }
+    }
+    
+    
+    func stopLoadingAnimation() {
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else {return}
+            homeView.stopLoadingAnimation()
+        }
+    }
 }
 
 //MARK: UICollectionViewDelegate,UICollectionViewDataSource

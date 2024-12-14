@@ -36,6 +36,15 @@ extension UIImageView {
     
     }
     
+    static func pageSearchIcon() -> UIImageView{
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.image = .init(resource: .search)
+        imageView.isHidden = false
+        return imageView
+    
+    }
+    
     
     
     func setImageWithKigfisher(with urlString: String) {

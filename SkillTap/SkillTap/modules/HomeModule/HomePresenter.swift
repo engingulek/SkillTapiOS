@@ -23,13 +23,18 @@ final class HomePresenter {
     
     
     private func fetchCategories() async {
+        view?.startLoadignAnimation()
         do{
             try await interactor.fetchCategories()
+            view?.stopLoadingAnimation()
+            view?.categoriesCollectionViewRealoadData()
         }catch{
             categoryList = []
             view?.createErrorMessageForCategories(message: TextTheme.errorMessage.text)
+            view?.stopLoadingAnimation()
+            view?.categoriesCollectionViewRealoadData()
         }
-        view?.categoriesCollectionViewRealoadData()
+        
     }
 }
 

@@ -71,7 +71,7 @@ extension FreelancerDetailViewController : UICollectionViewDelegate,UICollection
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdvertCVC.identifier, for: indexPath) as? AdvertCVC
         else {return UICollectionViewCell()}
         presenter.cellForItem(at: indexPath)
-        cell.configureData()
+       // cell.configureData()
         return cell
     }
 }

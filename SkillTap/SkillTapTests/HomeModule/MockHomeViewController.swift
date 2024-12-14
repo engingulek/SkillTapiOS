@@ -10,6 +10,8 @@ import UIKit
 @testable import SkillTap
 
 class MockHomeViewController : PresenterToViewHomeProtocol{
+ 
+    
 
     var invokedsetBackColorAble:Bool = false
     var invokedsetBackColorAbleCount:Int = 0
@@ -92,6 +94,22 @@ class MockHomeViewController : PresenterToViewHomeProtocol{
          invokedcreateErrorMessageForCategories = true
          invokedcreateErrorMessageForCategoriesCount += 1
          invokedcreateErrorMessageForCategoriesData.append((message:message,()))
+    }
+    
+    
+    
+    var invokedstartLoadignAnimation:Bool = false
+    var invokedstartLoadignAnimationCount:Int = 0
+    func startLoadignAnimation() {
+         invokedstartLoadignAnimation = true
+         invokedstartLoadignAnimationCount += 1
+    }
+    
+    var invokedstopLoadingAnimation:Bool = false
+    var invokedstopLoadingAnimationCount:Int = 0
+    func stopLoadingAnimation() {
+         invokedstopLoadingAnimation = true
+         invokedstopLoadingAnimationCount += 1
     }
     
     

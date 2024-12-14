@@ -12,8 +12,13 @@ class SearchRouter {
     static func createSearchModule() -> UIViewController {
         let viewController = SearchViewController()
         let router = SearchRouter()
-        let presenter : ViewToPrensenterSearchProtocol & InteractorToPresenterSearchProtocol = SearchPresenter(view: viewController,router:router)
+        let interactor = SearchInteractor()
+        let presenter : ViewToPrensenterSearchProtocol & InteractorToPresenterSearchProtocol
+        = SearchPresenter(view: viewController,
+                          router:router,
+        interactor: interactor)
         viewController.presenter = presenter
+        interactor.presenter = presenter
         return viewController
     }
 }

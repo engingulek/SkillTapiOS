@@ -10,5 +10,7 @@ import Foundation
 enum Constants : String {
     case baseUrl = "http://localhost:8080/api"
     case categories = "/categories"
+    case adverts = "/adverts"
+    case freelancer = "/freelancer"
     case getAll = "/getAll"
 }

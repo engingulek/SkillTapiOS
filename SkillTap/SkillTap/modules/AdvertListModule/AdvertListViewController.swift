@@ -29,7 +29,7 @@ extension AdvertListViewController : UICollectionViewDelegate,UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: AdvertCVC.identifier,
             for: indexPath) as? AdvertCVC else {return UICollectionViewCell()}
-        cell.configureData()
+        //cell.configureData()
         presenter.cellForItem(at: indexPath)
         return cell
     }

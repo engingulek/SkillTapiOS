@@ -44,7 +44,7 @@ final class HomeModuleTest :  XCTestCase {
                        [ColorTheme.secondaryColor.color])
     }
     
-    func test_viewModel_setBackColorAble_returnCategoryTitle(){
+    func test_viewModel_setCategoryTitleLabel_returnCategoryTitle(){
         XCTAssertFalse(view.invokedsetCategoryTitleLabel)
         XCTAssertEqual(view.invokedsetCategoryTitleLabelCount, 0)
      presenter.viewDidLoad()
@@ -180,6 +180,81 @@ final class HomeModuleTest :  XCTestCase {
         }
         
         wait(for: [expectation], timeout: 5)
+    }
+    
+    
+    func test_fetchCategoryOnViewDidload_ReturnLoadinAnimation(){
+        let expectation = XCTestExpectation(description: "Async task completed")
+        // start animation
+        XCTAssertFalse(view.invokedstartLoadignAnimation)
+        XCTAssertEqual(view.invokedstartLoadignAnimationCount, 0)
+        
+        
+        // stop animation
+        XCTAssertFalse(view.invokedstopLoadingAnimation)
+        XCTAssertEqual(view.invokedstopLoadingAnimationCount, 0)
+        
+        interactor.categories = [
+            .init(id: 1,
+                  title: "test ttile",
+                  imageURL:"test url",
+                  advertCount: 10,
+                  freelancerCount: 10,
+                  colorCode: "#FFFFF")
+        ]
+        
+        presenter.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
+            // start animation
+            XCTAssertTrue(view.invokedstartLoadignAnimation)
+            XCTAssertEqual(view.invokedstartLoadignAnimationCount, 1)
+            
+            
+            // stop animation
+            XCTAssertTrue(view.invokedstopLoadingAnimation)
+            XCTAssertEqual(view.invokedstopLoadingAnimationCount, 1)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+        
+    }
+    
+    func test_fetchCategoryOnViewDidload_IfError_ReturnLoadinAnimation(){
+        let expectation = XCTestExpectation(description: "Async task completed")
+        // start animation
+        XCTAssertFalse(view.invokedstartLoadignAnimation)
+        XCTAssertEqual(view.invokedstartLoadignAnimationCount, 0)
+        
+        
+        // stop animation
+        XCTAssertFalse(view.invokedstopLoadingAnimation)
+        XCTAssertEqual(view.invokedstopLoadingAnimationCount, 0)
+        
+        interactor.categories = [
+            .init(id: 1,
+                  title: "test ttile",
+                  imageURL:"test url",
+                  advertCount: 10,
+                  freelancerCount: 10,
+                  colorCode: "#FFFFF")
+        ]
+        interactor.mockfetchCategoriesError = true
+        presenter.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
+            // start animation
+            XCTAssertTrue(view.invokedstartLoadignAnimation)
+            XCTAssertEqual(view.invokedstartLoadignAnimationCount, 1)
+            
+            
+            // stop animation
+            XCTAssertTrue(view.invokedstopLoadingAnimation)
+            XCTAssertEqual(view.invokedstopLoadingAnimationCount, 1)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+        
     }
 
 }

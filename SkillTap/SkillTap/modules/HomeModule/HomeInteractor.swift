@@ -15,6 +15,7 @@ class HomeInteractor :  PresenterToInteractorHomeProtocol {
             let response = try await networkManager.fetch(target: .categories, responseClass: [CategoryData].self)
             presenter?.sendCategories(categories:response)
         }catch{
+            //TODO: presenter?.returnError will be adeed
             throw error
         }
     }

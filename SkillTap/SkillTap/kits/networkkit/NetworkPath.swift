@@ -10,7 +10,8 @@ import Foundation
 import Alamofire
 public enum NetworkPath{
     case categories
-    
+    case adverts
+    case feelancer
 }
 
 
@@ -24,7 +25,10 @@ extension NetworkPath : TargetType {
         switch self {
         case .categories:
             return Constants.categories.rawValue + Constants.getAll.rawValue
-       
+        case .adverts:
+            return Constants.adverts.rawValue + Constants.getAll.rawValue
+        case .feelancer:
+            return Constants.freelancer.rawValue + Constants.getAll.rawValue
         }
     }
     
