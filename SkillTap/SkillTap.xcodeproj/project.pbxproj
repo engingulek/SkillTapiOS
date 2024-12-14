@@ -69,6 +69,8 @@
 		7DE6CFA42D00D90300AC57A2 /* SubCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA32D00D90300AC57A2 /* SubCategoryPresenter.swift */; };
 		7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */; };
 		7DEAEE7C2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */; };
+		7DEAEE7F2D0D9DF300C318E7 /* Advert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */; };
+		7DEAEE812D0D9EA600C318E7 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE802D0D9EA600C318E7 /* SearchInteractor.swift */; };
 		7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */; };
 		7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */; };
 		7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21E02CFB5C020006DF74 /* ViewController.swift */; };
@@ -163,6 +165,8 @@
 		7DE6CFA32D00D90300AC57A2 /* SubCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryPresenter.swift; sourceTree = "<group>"; };
 		7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryCVC.swift; sourceTree = "<group>"; };
 		7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extension.swift"; sourceTree = "<group>"; };
+		7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advert.swift; sourceTree = "<group>"; };
+		7DEAEE802D0D9EA600C318E7 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		7DEB21D92CFB5C020006DF74 /* SkillTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,12 +263,14 @@
 		7D281AF12CFDE19800C560B4 /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
+				7DEAEE7D2D0D9DE700C318E7 /* models */,
 				7D281B022CFE1E3000C560B4 /* cells */,
 				7D281AF22CFDE1EB00C560B4 /* SearchView.swift */,
 				7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */,
 				7D281AF62CFDE21400C560B4 /* SearchRouter.swift */,
 				7D281AF82CFDE22900C560B4 /* SearchProtocols.swift */,
 				7D281AFA2CFDE63600C560B4 /* SearchPresenter.swift */,
+				7DEAEE802D0D9EA600C318E7 /* SearchInteractor.swift */,
 			);
 			path = SearchModule;
 			sourceTree = "<group>";
@@ -388,6 +394,14 @@
 				7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */,
 			);
 			path = SubCategoryModule;
+			sourceTree = "<group>";
+		};
+		7DEAEE7D2D0D9DE700C318E7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		7DEB21D02CFB5C020006DF74 = {
@@ -658,12 +672,14 @@
 				7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */,
 				7DE6CF9E2D00D56500AC57A2 /* SubCategoryView.swift in Sources */,
 				7DE6CFA22D00D87700AC57A2 /* SubCategoryProtocols.swift in Sources */,
+				7DEAEE7F2D0D9DF300C318E7 /* Advert.swift in Sources */,
 				7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */,
 				7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */,
 				7D0DC5B72D07082E009B0B8A /* LastMessageListRouter.swift in Sources */,
 				7D5DB6B62D04B5C300CB7F68 /* FreelancerDetailProtocols.swift in Sources */,
 				7D0DC5AA2D06F48E009B0B8A /* AdvertListViewController.swift in Sources */,
 				7D3CF74D2D0A13D400728804 /* Constants.swift in Sources */,
+				7DEAEE812D0D9EA600C318E7 /* SearchInteractor.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
 				7D0DC5D72D07499E009B0B8A /* MessageProtocols.swift in Sources */,
 				7D0DC5B92D070BC4009B0B8A /* LastMessageListView.swift in Sources */,

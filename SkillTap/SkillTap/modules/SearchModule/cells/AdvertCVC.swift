@@ -44,6 +44,7 @@ class AdvertCVC: UICollectionViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(advertImage.snp.top).offset(10)
             make.leading.equalTo(advertImage.snp.trailing).offset(10)
+            make.trailing.equalToSuperview()
         }
         
         contentView.addSubview(priceInfoLabel)
@@ -64,10 +65,10 @@ class AdvertCVC: UICollectionViewCell {
        
     }
     
-    func configureData(){
-        titleLabel.text = "Test Title"
-        advertImage.setImageWithKigfisher(with: "https://images.unsplash.com/photo-1620969427101-7a2bb6d83273?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-        priceInfoLabel.text = "250 TL"
-        detailLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    func configureData(advert:Advert){
+        titleLabel.text = advert.title
+        advertImage.setImageWithKigfisher(with: advert.imageURL)
+        priceInfoLabel.text = "\(advert.price) TL"
+        detailLabel.text = advert.detail
     }
 }

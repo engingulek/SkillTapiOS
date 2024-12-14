@@ -17,10 +17,18 @@ final class SearchPresenter {
     weak var view : PresenterToViewSearchProtocol?
     private var selectedSearchType : SearchType = .adverts
     private var router : PresenterToRouterSearchProtocol
-    init(view: PresenterToViewSearchProtocol?,router:PresenterToRouterSearchProtocol) {
+    private let interactor : PresenterToInteractorSearchProtocol
+    private var tempAdvertList : [Advert] = []
+    private var searchAdvertList : [Advert] = []
+    private var searchText : String = ""
+    init(view: PresenterToViewSearchProtocol?,
+         router:PresenterToRouterSearchProtocol,
+         interactor:PresenterToInteractorSearchProtocol) {
         self.view = view
         self.router = router
+        self.interactor = interactor
     }
+    
     private func changeButtonsDesign(_ selectedSearchType:SearchType){
         switch selectedSearchType {
         case .adverts:
@@ -62,6 +70,13 @@ final class SearchPresenter {
         
         }
     }
+    
+    private func fetchSearchAdvert() async {
+        await interactor.fetchAllAdverts()
+        view?.advertsCollectionViewReload()
+        
+    }
+    
 }
 
 //MARK: ViewToPrensenterSearchProtocol
@@ -87,20 +102,51 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
                                         borderColor: ColorTheme.thirdColor.color)
         
         view?.advertsCollectionViewPrepare()
-        view?.advertsCollectionViewReload()
+        
         view?.freelancerCollectionViewPrepare()
         view?.freelancerCollectionViewReload()
         view?.createSearchIconWhenOpenPage(isHidden: false)
         
+        Task{
+           await fetchSearchAdvert()
+        }
+        
+     
+        
+    }
+    
+    
+    private func searchAdverts(){
+        
+        searchAdvertList = tempAdvertList.filter({ $0.detail.lowercased().contains(searchText.lowercased()) })
+        if searchAdvertList.isEmpty {
+            view?.createSearchIconWhenOpenPage(isHidden: false)
+        }else{
+            view?.createSearchIconWhenOpenPage(isHidden: true)
+        }
+        view?.advertsCollectionViewReload()
+        
     }
     
     func onChangedSearctTextField(text: String?) {
-       
+        guard let text = text else {return}
+        searchText = text
+        switch selectedSearchType {
+        case .adverts:
+            searchAdverts()
+        case .freelancer:
+            return
+        case .none:
+            searchAdvertList = []
+        }
+        
+        
     }
     
     func onTappedAdvertsButton() {
         selectedSearchType = .adverts
         changeButtonsDesign(selectedSearchType)
+        searchAdverts()
     }
     
     func onTappedFreelancerButton() {
@@ -111,10 +157,12 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
 
     
     func numberOfItems() -> Int {
-        return selectedSearchType == .adverts ? 0 : 0
+        return selectedSearchType == .adverts ? searchAdvertList.count : 0
     }
     
-    func cellForItem(selectedType:SearchType,at indexPath: IndexPath) {
+    func cellForItem(at indexPath: IndexPath) -> (advert:Advert,()) {
+        let advert = searchAdvertList[indexPath.item]
+        return (advert,())
        
     }
     
@@ -147,5 +195,18 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
 
 //MARK: InteractorToPresenterSearchProtocol
 extension SearchPresenter : InteractorToPresenterSearchProtocol {
+  
+    
+    func sendAdverts(adverts: [Advert]) {
+        tempAdvertList = adverts
+    }
+    
+    func sendError(error: Error) {
+        
+    }
+    
+  
+    
+    
     
 }

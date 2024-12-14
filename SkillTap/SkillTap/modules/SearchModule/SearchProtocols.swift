@@ -18,8 +18,7 @@ protocol ViewToPrensenterSearchProtocol{
     func onTappedFreelancerButton()
     
     func numberOfItems() -> Int
-    func cellForItem(selectedType:SearchType,
-                     at indexPath:IndexPath)
+    func cellForItem(at indexPath:IndexPath) ->  (advert:Advert,())
     
     func sizeForItemAt(selectedType: SearchType,
                        width:CGFloat,
@@ -59,11 +58,13 @@ protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
 
 //MARK: PresenterToInteractorSearchProtocol
 protocol PresenterToInteractorSearchProtocol {
-    
+    func fetchAllAdverts() async 
 }
 
 //MARK: InteractorToPresenterSearchProtocol
 protocol InteractorToPresenterSearchProtocol{
+    func sendAdverts(adverts:[Advert])
+    func sendError(error:Error)
     
 }
 

@@ -8,7 +8,10 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    lazy var presenter : ViewToPrensenterSearchProtocol = SearchPresenter(view: self,router: SearchRouter())
+    lazy var presenter : ViewToPrensenterSearchProtocol = 
+    SearchPresenter(view: self,
+                    router: SearchRouter(),
+    interactor: SearchInteractor())
     
     private lazy var searchView = SearchView(self)
     override func viewDidLoad() {
@@ -95,16 +98,16 @@ extension SearchViewController : UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = presenter.cellForItem(at: indexPath)
         switch collectionView.tag {
         case 0:
-            presenter.cellForItem(selectedType: .adverts, at: indexPath)
+            
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: AdvertCVC.identifier,
                 for: indexPath) as? AdvertCVC else {return UICollectionViewCell()}
-            cell.configureData()
+            cell.configureData(advert: item.advert)
             return cell
         case 1:
-            presenter.cellForItem(selectedType: .freelancer, at: indexPath)
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: FreelancerCVC.identifier,
                 for: indexPath) as? FreelancerCVC else {return UICollectionViewCell()}
