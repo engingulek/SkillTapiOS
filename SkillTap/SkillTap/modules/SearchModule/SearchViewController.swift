@@ -34,7 +34,10 @@ extension SearchViewController : PresenterToViewSearchProtocol {
         searchView.setSearchPlaceholder(searchPlaceholder: placeholder)
     }
     
-    func setAdvertsButtonDesign(text: String, textColor: String, backColor: String,borderColor:String) {
+    func setAdvertsButtonDesign(text: String, 
+                                textColor: String,
+                                backColor: String,
+                                borderColor:String) {
         searchView.setAdvertsButton(
             text: text,
             textColor: textColor,
@@ -43,7 +46,10 @@ extension SearchViewController : PresenterToViewSearchProtocol {
         )
     }
     
-    func setFreelancerButtonDesign(text: String, textColor: String, backColor: String,borderColor:String) {
+    func setFreelancerButtonDesign(text: String, 
+                                   textColor: String,
+                                   backColor: String,
+                                   borderColor:String) {
         searchView.setFreelancersButton(
             text: text,
             textColor: textColor,
@@ -80,38 +86,43 @@ extension SearchViewController : PresenterToViewSearchProtocol {
             searchView.freelancerCollectionViewReloadData()
         }
     }
-    
-    
-    func createSearchIconWhenOpenPage(isHidden:Bool) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return }
-            searchView.pageSearchIconHiddenState(isHidden)
-        }
-    }
 }
 
 
 //MARK: UICollectionViewDelegate,UICollectionViewDataSource 
 extension SearchViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.numberOfItems()
+       
+        switch collectionView.tag {
+        case 0:
+            return presenter.numberOfItems(searchType: .adverts)
+        case 1:
+          
+            return presenter.numberOfItems(searchType: .freelancer)
+            
+        default:
+            return presenter.numberOfItems(searchType: .none)
+        }
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = presenter.cellForItem(at: indexPath)
+        
         switch collectionView.tag {
         case 0:
             
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: AdvertCVC.identifier,
                 for: indexPath) as? AdvertCVC else {return UICollectionViewCell()}
-            cell.configureData(advert: item.advert)
+            let advert = presenter.cellForItemAdvert(at: indexPath)
+            cell.configureData(advert: advert)
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: FreelancerCVC.identifier,
                 for: indexPath) as? FreelancerCVC else {return UICollectionViewCell()}
-            cell.configureData()
+            let freelancer = presenter.cellForItemFreelancer(at: indexPath)
+           cell.configureData(freelancer: freelancer)
             return cell
         default:
             return UICollectionViewCell()

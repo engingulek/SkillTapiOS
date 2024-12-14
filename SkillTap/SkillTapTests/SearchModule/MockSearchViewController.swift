@@ -118,15 +118,7 @@ class MockSearchViewController : PresenterToViewSearchProtocol {
          invokedfreelancerCollectionViewReloadCount += 1
     }
     
-    
-    var invokedcreateSearchIconWhenOpenPage:Bool = false
-    var invokedcreateSearchIconWhenOpenPageCount:Int = 0
-    var invokedcreateSearchIconWhenOpenPageData = [(isHidden:Bool,Void)]()
-    func createSearchIconWhenOpenPage(isHidden: Bool) {
-         invokedcreateSearchIconWhenOpenPage = true
-         invokedcreateSearchIconWhenOpenPageCount += 1
-        invokedcreateSearchIconWhenOpenPageData.append((isHidden:isHidden,()))
-    }
+  
     
     var invokedpushViewControllerAble:Bool = false
     var invokedpushViewControllerAbleCount:Int = 0

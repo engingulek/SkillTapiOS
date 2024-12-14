@@ -13,6 +13,8 @@ final class SearchModuleTest : XCTestCase {
     private var presenter : SearchPresenter!
     private var view : MockSearchViewController!
     private var router:SearchRouter!
+    //TODO: This will be mock
+    private var interactor : SearchInteractor!
     
     
     override  func setUp() {
@@ -20,7 +22,7 @@ final class SearchModuleTest : XCTestCase {
         view = .init()
         router = .init()
         presenter = .init(view: view,
-                          router: router)
+                          router: router,interactor: interactor)
     }
     
     override func tearDown() {
@@ -215,16 +217,7 @@ final class SearchModuleTest : XCTestCase {
     }
     
     
-    func test_viewDidLoad_createSearchIconWhenOpenPage_ReturnIsHidden(){
-        
-        XCTAssertFalse(view.invokedcreateSearchIconWhenOpenPage)
-        XCTAssertEqual(view.invokedcreateSearchIconWhenOpenPageCount,0)
-     
-        presenter.viewDidLoad()
-        XCTAssertTrue(view.invokedcreateSearchIconWhenOpenPage)
-        XCTAssertEqual(view.invokedcreateSearchIconWhenOpenPageCount,1)
-        XCTAssertEqual(view.invokedcreateSearchIconWhenOpenPageData.map(\.isHidden),[false])
-    }
+
     
     
 }

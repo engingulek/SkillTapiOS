@@ -17,8 +17,9 @@ protocol ViewToPrensenterSearchProtocol{
     func onTappedAdvertsButton()
     func onTappedFreelancerButton()
     
-    func numberOfItems() -> Int
-    func cellForItem(at indexPath:IndexPath) ->  (advert:Advert,())
+    func  numberOfItems(searchType:SearchType) -> Int
+    func cellForItemAdvert(at indexPath:IndexPath) -> Advert
+    func  cellForItemFreelancer(at indexPath:IndexPath) -> Freelancer
     
     func sizeForItemAt(selectedType: SearchType,
                        width:CGFloat,
@@ -52,18 +53,20 @@ protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
     func advertsCollectionViewReload()
     func freelancerCollectionViewReload()
     
-    func createSearchIconWhenOpenPage(isHidden:Bool)
+    
     
 }
 
 //MARK: PresenterToInteractorSearchProtocol
 protocol PresenterToInteractorSearchProtocol {
     func fetchAllAdverts() async 
+    func fetchAllFreelancers() async
 }
 
 //MARK: InteractorToPresenterSearchProtocol
 protocol InteractorToPresenterSearchProtocol{
     func sendAdverts(adverts:[Advert])
+    func sendFreelancr(freelancers:[Freelancer])
     func sendError(error:Error)
     
 }

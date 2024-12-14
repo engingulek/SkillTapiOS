@@ -71,6 +71,7 @@
 		7DEAEE7C2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */; };
 		7DEAEE7F2D0D9DF300C318E7 /* Advert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */; };
 		7DEAEE812D0D9EA600C318E7 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE802D0D9EA600C318E7 /* SearchInteractor.swift */; };
+		7DEAEE832D0DB62B00C318E7 /* Freelancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE822D0DB62B00C318E7 /* Freelancer.swift */; };
 		7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */; };
 		7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */; };
 		7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21E02CFB5C020006DF74 /* ViewController.swift */; };
@@ -167,6 +168,7 @@
 		7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extension.swift"; sourceTree = "<group>"; };
 		7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advert.swift; sourceTree = "<group>"; };
 		7DEAEE802D0D9EA600C318E7 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		7DEAEE822D0DB62B00C318E7 /* Freelancer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Freelancer.swift; sourceTree = "<group>"; };
 		7DEB21D92CFB5C020006DF74 /* SkillTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */,
+				7DEAEE822D0DB62B00C318E7 /* Freelancer.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				7D5DB6BD2D04BB7100CB7F68 /* FreelancerInfoView.swift in Sources */,
 				7D0DC5BF2D071135009B0B8A /* LastMessageListPresenter.swift in Sources */,
 				7D5DB6BA2D04B62C00CB7F68 /* FreelancerView.swift in Sources */,
+				7DEAEE832D0DB62B00C318E7 /* Freelancer.swift in Sources */,
 				7D281B042CFE1E4700C560B4 /* AdvertCVC.swift in Sources */,
 				7DEB22012CFB87290006DF74 /* HomeRouter.swift in Sources */,
 				7DEB220F2CFB8B580006DF74 /* HomeView.swift in Sources */,

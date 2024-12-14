@@ -75,12 +75,12 @@ class FreelancerCVC: UICollectionViewCell {
         
     }
     
-    func configureData(){
-        freelancerImage.setImageWithKigfisher(with: "https://images.unsplash.com/photo-1665686304312-16e3a16be0ed?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    func configureData(freelancer:Freelancer){
+        freelancerImage.setImageWithKigfisher(with: freelancer.imageURL)
         
-        freelancerTitleLabel.text = "Name Surname"
-        freelancerSubTitleLabel.text = "Developer,Translator "
-        freelancerDescLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        ratingLabel.text = "4.5"
+        freelancerTitleLabel.text = freelancer.title
+        freelancerSubTitleLabel.text = freelancer.subTitle
+        freelancerDescLabel.text = freelancer.detail
+        ratingLabel.text = "\(freelancer.rating)"
     }
 }

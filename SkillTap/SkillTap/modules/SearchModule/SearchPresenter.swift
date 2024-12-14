@@ -20,7 +20,9 @@ final class SearchPresenter {
     private let interactor : PresenterToInteractorSearchProtocol
     private var tempAdvertList : [Advert] = []
     private var searchAdvertList : [Advert] = []
-    private var searchText : String = ""
+    private var tempFreelancerList : [Freelancer] = []
+    private var searchFreelancerList : [Freelancer] = []
+    
     init(view: PresenterToViewSearchProtocol?,
          router:PresenterToRouterSearchProtocol,
          interactor:PresenterToInteractorSearchProtocol) {
@@ -71,16 +73,21 @@ final class SearchPresenter {
         }
     }
     
-    private func fetchSearchAdvert() async {
+    private func fetchAllAdvert() async {
         await interactor.fetchAllAdverts()
-        view?.advertsCollectionViewReload()
-        
+    }
+    
+    private func fetchAllFreelancer() async {
+        await interactor.fetchAllFreelancers()
     }
     
 }
 
 //MARK: ViewToPrensenterSearchProtocol
 extension SearchPresenter : ViewToPrensenterSearchProtocol {
+
+  
+    
 
   
  
@@ -104,66 +111,75 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
         view?.advertsCollectionViewPrepare()
         
         view?.freelancerCollectionViewPrepare()
-        view?.freelancerCollectionViewReload()
-        view?.createSearchIconWhenOpenPage(isHidden: false)
+        
         
         Task{
-           await fetchSearchAdvert()
+           await fetchAllAdvert()
+            await fetchAllFreelancer()
+            
         }
-        
-     
         
     }
     
     
-    private func searchAdverts(){
+    private func searchAdverts(searchText:String){
         
         searchAdvertList = tempAdvertList.filter({ $0.detail.lowercased().contains(searchText.lowercased()) })
-        if searchAdvertList.isEmpty {
-            view?.createSearchIconWhenOpenPage(isHidden: false)
-        }else{
-            view?.createSearchIconWhenOpenPage(isHidden: true)
-        }
+       
         view?.advertsCollectionViewReload()
-        
+    }
+    
+    private func searchFreelancer(searchText:String){
+        searchFreelancerList = tempFreelancerList.filter({ $0.title.lowercased().contains(searchText.lowercased()) })
+       
+        view?.freelancerCollectionViewReload()
     }
     
     func onChangedSearctTextField(text: String?) {
         guard let text = text else {return}
-        searchText = text
-        switch selectedSearchType {
-        case .adverts:
-            searchAdverts()
-        case .freelancer:
-            return
-        case .none:
-            searchAdvertList = []
-        }
-        
-        
+       
+        searchAdverts(searchText: text)
+        searchFreelancer(searchText: text)
+    
     }
     
     func onTappedAdvertsButton() {
         selectedSearchType = .adverts
         changeButtonsDesign(selectedSearchType)
-        searchAdverts()
+      
     }
     
     func onTappedFreelancerButton() {
         selectedSearchType = .freelancer
         changeButtonsDesign(selectedSearchType)
+        
     }
+   
+    
     
 
     
-    func numberOfItems() -> Int {
-        return selectedSearchType == .adverts ? searchAdvertList.count : 0
+    func numberOfItems(searchType:SearchType) -> Int {
+        switch searchType {
+        case .adverts:
+            return searchAdvertList.count
+        case .freelancer:
+            return searchFreelancerList.count
+        case .none:
+            return 0
+        }
+        
+     
     }
     
-    func cellForItem(at indexPath: IndexPath) -> (advert:Advert,()) {
+    func cellForItemAdvert(at indexPath: IndexPath) -> Advert {
         let advert = searchAdvertList[indexPath.item]
-        return (advert,())
-       
+        return advert
+    }
+    
+    func cellForItemFreelancer(at indexPath: IndexPath) -> Freelancer {
+        let freelancer = searchFreelancerList[indexPath.item]
+        return freelancer
     }
     
     func sizeForItemAt(selectedType: SearchType,
@@ -195,18 +211,23 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
 
 //MARK: InteractorToPresenterSearchProtocol
 extension SearchPresenter : InteractorToPresenterSearchProtocol {
-  
-    
+ 
     func sendAdverts(adverts: [Advert]) {
         tempAdvertList = adverts
-    }
-    
-    func sendError(error: Error) {
+        searchAdvertList = tempAdvertList
+        view?.advertsCollectionViewReload()
+        view?.freelancerCollectionViewReload()
         
     }
     
-  
+    func sendError(error: Error) {
+        tempAdvertList = []
+        tempFreelancerList = []
+    }
     
-    
-    
+    func sendFreelancr(freelancers: [Freelancer]) {
+        tempFreelancerList = freelancers
+        searchFreelancerList = tempFreelancerList
+        view?.freelancerCollectionViewReload()
+    }
 }
