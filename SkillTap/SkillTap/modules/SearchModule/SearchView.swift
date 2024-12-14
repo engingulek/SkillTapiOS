@@ -60,6 +60,9 @@ class SearchView : BaseView<SearchViewController> {
     private lazy var freelancerCollectionView = UICollectionView.primaryCollectionView(tag:1,scroolDirection: .vertical)
     
     
+
+    
+    
     private func configureView(){
         addSubview(searchView)
         searchView.snp.makeConstraints { make in
@@ -116,7 +119,9 @@ class SearchView : BaseView<SearchViewController> {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+    
         
+       
     
     }
     
@@ -159,5 +164,6 @@ class SearchView : BaseView<SearchViewController> {
         freelancerCollectionView.reloadData()
     }
     
+ 
  
 }

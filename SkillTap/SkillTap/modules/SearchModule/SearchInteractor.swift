@@ -18,7 +18,7 @@ class SearchInteractor : PresenterToInteractorSearchProtocol {
             presenter?.sendAdverts(adverts: response)
             
         }catch{
-            presenter?.sendError(error: error)
+           
         }
     }
     
@@ -29,7 +29,7 @@ class SearchInteractor : PresenterToInteractorSearchProtocol {
             presenter?.sendFreelancr(freelancers: response)
             
         }catch{
-            presenter?.sendError(error: error)
+            
         }
 
     }

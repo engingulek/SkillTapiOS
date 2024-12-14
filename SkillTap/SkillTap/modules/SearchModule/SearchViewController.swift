@@ -86,6 +86,7 @@ extension SearchViewController : PresenterToViewSearchProtocol {
             searchView.freelancerCollectionViewReloadData()
         }
     }
+    
 }
 
 

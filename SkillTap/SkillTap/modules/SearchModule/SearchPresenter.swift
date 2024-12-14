@@ -32,44 +32,48 @@ final class SearchPresenter {
     }
     
     private func changeButtonsDesign(_ selectedSearchType:SearchType){
+        
         switch selectedSearchType {
         case .adverts:
             view?.setAdvertsButtonDesign(text: TextTheme.adverts.text,
                                          textColor: ColorTheme.secondaryColor.color,
                                          backColor: ColorTheme.thirdColor.color,
                                          borderColor: ColorTheme.thirdColor.color
-                            
+                                         
             )
             
             view?.setFreelancerButtonDesign(text: TextTheme.freelancers.text,
-                                         textColor: ColorTheme.thirdColor.color,
-                                         backColor: ColorTheme.secondaryColor.color,
+                                            textColor: ColorTheme.thirdColor.color,
+                                            backColor: ColorTheme.secondaryColor.color,
                                             borderColor: ColorTheme.thirdColor.color)
+           
+            
         case .freelancer:
             view?.setFreelancerButtonDesign(text: TextTheme.freelancers.text,
-                                         textColor: ColorTheme.secondaryColor.color,
-                                         backColor: ColorTheme.thirdColor.color,
-                                         borderColor: ColorTheme.thirdColor.color
-                            
+                                            textColor: ColorTheme.secondaryColor.color,
+                                            backColor: ColorTheme.thirdColor.color,
+                                            borderColor: ColorTheme.thirdColor.color
+                                            
             )
             
             view?.setAdvertsButtonDesign(text: TextTheme.adverts.text,
                                          textColor: ColorTheme.thirdColor.color,
                                          backColor: ColorTheme.secondaryColor.color,
-                                            borderColor: ColorTheme.thirdColor.color)
+                                         borderColor: ColorTheme.thirdColor.color)
+           
         case .none:
             view?.setAdvertsButtonDesign(text: TextTheme.adverts.text,
                                          textColor: ColorTheme.secondaryColor.color,
                                          backColor: ColorTheme.thirdColor.color,
                                          borderColor: ColorTheme.thirdColor.color
-                            
+                                         
             )
             
             view?.setFreelancerButtonDesign(text: TextTheme.freelancers.text,
-                                         textColor: ColorTheme.thirdColor.color,
-                                         backColor: ColorTheme.secondaryColor.color,
+                                            textColor: ColorTheme.thirdColor.color,
+                                            backColor: ColorTheme.secondaryColor.color,
                                             borderColor: ColorTheme.thirdColor.color)
-        
+            
         }
     }
     
@@ -85,28 +89,14 @@ final class SearchPresenter {
 
 //MARK: ViewToPrensenterSearchProtocol
 extension SearchPresenter : ViewToPrensenterSearchProtocol {
-
-  
     
-
-  
- 
+    
     func viewDidLoad() {
         view?.setBackColorAble(color: ColorTheme.secondaryColor.color)
         view?.changeTitle(title: TextTheme.searchNavTitle.text)
         view?.setSearchTextFieldPlaceholder(TextTheme.searchplaceholder.text)
         
-        view?.setAdvertsButtonDesign(text: TextTheme.adverts.text,
-                                     textColor: ColorTheme.secondaryColor.color,
-                                     backColor: ColorTheme.thirdColor.color,
-                                     borderColor: ColorTheme.thirdColor.color
-                        
-        )
-        
-        view?.setFreelancerButtonDesign(text: TextTheme.freelancers.text,
-                                     textColor: ColorTheme.thirdColor.color,
-                                     backColor: ColorTheme.secondaryColor.color,
-                                        borderColor: ColorTheme.thirdColor.color)
+        changeButtonsDesign(.adverts)
         
         view?.advertsCollectionViewPrepare()
         
@@ -114,7 +104,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
         
         
         Task{
-           await fetchAllAdvert()
+            await fetchAllAdvert()
             await fetchAllFreelancer()
             
         }
@@ -124,29 +114,33 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
     
     private func searchAdverts(searchText:String){
         
-        searchAdvertList = tempAdvertList.filter({ $0.detail.lowercased().contains(searchText.lowercased()) })
-       
+        searchAdvertList = tempAdvertList.filter({ 
+            $0.detail.lowercased()
+            .contains(searchText.lowercased()) })
+        
         view?.advertsCollectionViewReload()
     }
     
     private func searchFreelancer(searchText:String){
-        searchFreelancerList = tempFreelancerList.filter({ $0.title.lowercased().contains(searchText.lowercased()) })
-       
+        searchFreelancerList = tempFreelancerList.filter({ 
+            $0.title.lowercased()
+            .contains(searchText.lowercased()) })
+        
         view?.freelancerCollectionViewReload()
     }
     
     func onChangedSearctTextField(text: String?) {
         guard let text = text else {return}
-       
+        
         searchAdverts(searchText: text)
         searchFreelancer(searchText: text)
-    
+        
     }
     
     func onTappedAdvertsButton() {
         selectedSearchType = .adverts
         changeButtonsDesign(selectedSearchType)
-      
+        
     }
     
     func onTappedFreelancerButton() {
@@ -154,10 +148,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
         changeButtonsDesign(selectedSearchType)
         
     }
-   
     
-    
-
     
     func numberOfItems(searchType:SearchType) -> Int {
         switch searchType {
@@ -169,7 +160,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
             return 0
         }
         
-     
+        
     }
     
     func cellForItemAdvert(at indexPath: IndexPath) -> Advert {
@@ -185,7 +176,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
     func sizeForItemAt(selectedType: SearchType,
                        width: CGFloat,
                        height: CGFloat) -> CGSize {
-    
+        
         switch selectedType {
         case .adverts:
             return CGSize(width: width - 10, height: height / 4)
@@ -206,12 +197,12 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
             return
         }
     }
-
+    
 }
 
 //MARK: InteractorToPresenterSearchProtocol
 extension SearchPresenter : InteractorToPresenterSearchProtocol {
- 
+    
     func sendAdverts(adverts: [Advert]) {
         tempAdvertList = adverts
         searchAdvertList = tempAdvertList
@@ -220,10 +211,7 @@ extension SearchPresenter : InteractorToPresenterSearchProtocol {
         
     }
     
-    func sendError(error: Error) {
-        tempAdvertList = []
-        tempFreelancerList = []
-    }
+   
     
     func sendFreelancr(freelancers: [Freelancer]) {
         tempFreelancerList = freelancers

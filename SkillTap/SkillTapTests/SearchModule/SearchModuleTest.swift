@@ -13,8 +13,8 @@ final class SearchModuleTest : XCTestCase {
     private var presenter : SearchPresenter!
     private var view : MockSearchViewController!
     private var router:SearchRouter!
-    //TODO: This will be mock
-    private var interactor : SearchInteractor!
+    
+    private var interactor : MockSearchInteractor!
     
     
     override  func setUp() {

@@ -55,6 +55,8 @@ protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
     
     
     
+    
+    
 }
 
 //MARK: PresenterToInteractorSearchProtocol
@@ -67,8 +69,8 @@ protocol PresenterToInteractorSearchProtocol {
 protocol InteractorToPresenterSearchProtocol{
     func sendAdverts(adverts:[Advert])
     func sendFreelancr(freelancers:[Freelancer])
-    func sendError(error:Error)
     
+   
 }
 
 //MARK: PresenterToRouterSearchProtocol
