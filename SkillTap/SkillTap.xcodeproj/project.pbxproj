@@ -61,6 +61,8 @@
 		7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */; };
 		7D9FC8532D0C5B1900AF66B5 /* MockSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9FC8522D0C5B1900AF66B5 /* MockSearchViewController.swift */; };
 		7D9FC8562D0C642500AF66B5 /* SearchModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9FC8552D0C642500AF66B5 /* SearchModuleTest.swift */; };
+		7DB11EE52D12FFAC00EFAA9B /* AdvertDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB11EE42D12FFAC00EFAA9B /* AdvertDetail.swift */; };
+		7DB11EE72D13009A00EFAA9B /* AdvertDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB11EE62D13009A00EFAA9B /* AdvertDetailInteractor.swift */; };
 		7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */; };
 		7DE6CF9C2D00D55700AC57A2 /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF9B2D00D55700AC57A2 /* SubCategoryViewController.swift */; };
 		7DE6CF9E2D00D56500AC57A2 /* SubCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF9D2D00D56500AC57A2 /* SubCategoryView.swift */; };
@@ -159,6 +161,8 @@
 		7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusTheme.swift; sourceTree = "<group>"; };
 		7D9FC8522D0C5B1900AF66B5 /* MockSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewController.swift; sourceTree = "<group>"; };
 		7D9FC8552D0C642500AF66B5 /* SearchModuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleTest.swift; sourceTree = "<group>"; };
+		7DB11EE42D12FFAC00EFAA9B /* AdvertDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetail.swift; sourceTree = "<group>"; };
+		7DB11EE62D13009A00EFAA9B /* AdvertDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailInteractor.swift; sourceTree = "<group>"; };
 		7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		7DE6CF9B2D00D55700AC57A2 /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
 		7DE6CF9D2D00D56500AC57A2 /* SubCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryView.swift; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 			isa = PBXGroup;
 			children = (
 				7D5DB6C62D04DA5F00CB7F68 /* views */,
+				7DB11EE42D12FFAC00EFAA9B /* AdvertDetail.swift */,
+				7DB11EE62D13009A00EFAA9B /* AdvertDetailInteractor.swift */,
 				7D5DB6AC2D04B23D00CB7F68 /* AdvertDetailViewController.swift */,
 				7D5DB6B12D04B41E00CB7F68 /* AdvertDetailRouter.swift */,
 				7D5DB6C22D04D86900CB7F68 /* AdvertDetilProtocols.swift */,
@@ -667,6 +673,7 @@
 				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
 				7D0DC5AC2D06F49F009B0B8A /* AdvertListRouter.swift in Sources */,
 				7D5DB6C32D04D86900CB7F68 /* AdvertDetilProtocols.swift in Sources */,
+				7DB11EE52D12FFAC00EFAA9B /* AdvertDetail.swift in Sources */,
 				7D281AFB2CFDE63600C560B4 /* SearchPresenter.swift in Sources */,
 				7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */,
 				7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */,
@@ -684,6 +691,7 @@
 				7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */,
 				7D0DC5B72D07082E009B0B8A /* LastMessageListRouter.swift in Sources */,
 				7D5DB6B62D04B5C300CB7F68 /* FreelancerDetailProtocols.swift in Sources */,
+				7DB11EE72D13009A00EFAA9B /* AdvertDetailInteractor.swift in Sources */,
 				7D0DC5AA2D06F48E009B0B8A /* AdvertListViewController.swift in Sources */,
 				7D3CF74D2D0A13D400728804 /* Constants.swift in Sources */,
 				7DEAEE812D0D9EA600C318E7 /* SearchInteractor.swift in Sources */,

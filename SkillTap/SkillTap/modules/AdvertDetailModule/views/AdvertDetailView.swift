@@ -25,7 +25,11 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
     
     private lazy var packageDescView : UIView = UIView()
     private lazy var packageTitle:UILabel = UILabel.middleTitleLabel()
+  
     private lazy var packagedescLabel : UILabel = UILabel.descUILabel()
+    private lazy var packagePriceLabel : UILabel = UILabel.middleTitleLabel(
+        color: ColorTheme.thirdColor.color)
+    private lazy var errorMessageLabel : UILabel = UILabel.erroeLabel()
     
     
     private lazy var sendMessageButton : UIButton = UIButton.messageButton(action:sendMessageAction )
@@ -36,14 +40,11 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
     override func setupView() {
         super.setupView()
         configureView()
-        advertBaseImage.setImageWithKigfisher(with: "https://images.unsplash.com/photo-1620969427101-7a2bb6d83273?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-        packageIncludeTitleLabel.text = "Package Included"
-        packageTitle.text = "Package Title"
-        packagedescLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+       
         
         packageSegmentedControll.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
 
-      
+        packageIncludeTitleLabel.text = TextTheme.packageIncluded.text
     }
     
     @objc private func segmentChanged(_ sender: UISegmentedControl) {
@@ -98,6 +99,7 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
         packageDescView.addSubview(packageTitle)
         packageTitle.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(10)
         }
         
@@ -108,12 +110,62 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
             make.trailing.equalToSuperview().offset(-10)
            
         }
+       
+        packageDescView.addSubview(packagePriceLabel)
+        packagePriceLabel.snp.makeConstraints { make in
+            make.top.equalTo(packagedescLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+           
+        }
+        
         packageDescView.addSubview(sendMessageButton)
         sendMessageButton.snp.makeConstraints { make in
-            make.top.equalTo(packagedescLabel.snp.bottom).offset(10)
+            make.top.equalTo(packagePriceLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-10)
         }
+        
+        
+        addSubview(errorMessageLabel)
+        errorMessageLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+    }
+    
+    
+    func getAdvertDetail(
+        detail: (baseImageUrl: String,
+                 freelancer: FreelancerOnAdvertDetail)?,
+        errorState: Bool){
+            if errorState {
+                advertBaseImage.isHidden = true
+                 advertDetailInfoView.isHidden = true
+                 packageIncludeTitleLabel.isHidden = true
+                 packageSegmentedControll.isHidden = true
+                 packageDescView.isHidden = true
+                errorMessageLabel.isHidden = false
+                errorMessageLabel.text = TextTheme.errorMessage.text
+           
+            }else{
+                advertBaseImage.isHidden = false
+                 advertDetailInfoView.isHidden = false
+                 packageIncludeTitleLabel.isHidden = false
+                 packageSegmentedControll.isHidden = false
+                 packageDescView.isHidden = false
+                errorMessageLabel.isHidden = true
+                errorMessageLabel.text = TextTheme.errorMessage.text
+                
+                advertBaseImage.setImageWithKigfisher(with: detail?.baseImageUrl ?? "")
+                advertDetailInfoView.configureData(freelancer: detail!.freelancer)
+            }
+        }
+    
+    func getAdvertPackage(_ package:Package){
+        packageTitle.text = package.title
+        packagedescLabel.text = package.detail
+        packagePriceLabel.text = "\(package.price) ₺"
     }
 }

@@ -190,7 +190,8 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
     func didSelectItem(selectedType: SearchType, at indexPath: IndexPath) {
         switch selectedType {
         case .adverts:
-            router.toAdvertDetail(view: view)
+            let advertId = searchAdvertList[indexPath.item].id
+            router.toAdvertDetail(view: view,id: advertId)
         case .freelancer:
             router.toFreelancerDetail(view: view)
         case .none:

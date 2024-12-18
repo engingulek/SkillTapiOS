@@ -12,7 +12,7 @@ class SearchInteractor : PresenterToInteractorSearchProtocol {
     var presenter : InteractorToPresenterSearchProtocol?
     private let newtorkManager :  NetworkManagerProtocol = NetworkManager()
     
-    func fetchAllAdverts() async  {
+    func fetchAllAdverts() async   {
         do{
             let response = try await newtorkManager.fetch(target: .adverts, responseClass: [Advert].self)
             presenter?.sendAdverts(adverts: response)
@@ -23,7 +23,7 @@ class SearchInteractor : PresenterToInteractorSearchProtocol {
     }
     
     
-    func fetchAllFreelancers() async {
+    func fetchAllFreelancers() async  {
         do{
             let response = try await newtorkManager.fetch(target: .feelancer, responseClass: [Freelancer].self)
             presenter?.sendFreelancr(freelancers: response)

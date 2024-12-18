@@ -16,6 +16,8 @@ protocol ViewToPrensenterAdvertDetailProtocol{
     func viewDidLoad()
     func packageSegmentedConrollerChanged(index:Int)
     func onTappedSendMessageButton()
+    func fetchAdvertDetail(id:Int)
+
   
    
         
@@ -24,18 +26,19 @@ protocol ViewToPrensenterAdvertDetailProtocol{
 //MARK: PresenterToViewAdvertDetailProtocol
 protocol PresenterToViewAdvertDetailProtocol: AnyObject,SearchKits{
    
-    
+    func getAdvertDetail(detail:(baseImageUrl:String,freelancer:FreelancerOnAdvertDetail)?, errorState: Bool)
+    func getAdvertPackage(package:Package)
   
 }
 
 //MARK: PresenterToInteractorAdvertDetailProtocol
 protocol PresenterToInteractorAdvertDetailProtocol{
-    
+    func fetchAdvertDetail(id:Int) async
 }
 
 //MARK: InteractorToPresenterAdvertDetailProtocol
 protocol InteractorToPresenterAdvertDetailProtocol{
-    
+    func sendAdvertDetail(_ advertDetail:AdvertDetail?)
 }
 
 //MARK: PresenterToRouterAdvertDetailProtocol
