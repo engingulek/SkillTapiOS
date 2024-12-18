@@ -10,13 +10,13 @@ import Foundation
 class HomeInteractor :  PresenterToInteractorHomeProtocol {
     var presenter : InteractorToPresenterHomeProtocol?
     private let networkManager : NetworkManagerProtocol = NetworkManager()
-    func fetchCategories() async throws {
+    func fetchCategories() async  {
         do{
             let response = try await networkManager.fetch(target: .categories, responseClass: [CategoryData].self)
             presenter?.sendCategories(categories:response)
         }catch{
-            //TODO: presenter?.returnError will be adeed
-            throw error
+            presenter?.sendError()
+        
         }
     }
 }

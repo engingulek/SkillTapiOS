@@ -70,7 +70,6 @@
 		7DEAEE852D0DD21600C318E7 /* MockSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE842D0DD21600C318E7 /* MockSearchInteractor.swift */; };
 		7DEB21DD2CFB5C020006DF74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */; };
 		7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */; };
-		7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21E02CFB5C020006DF74 /* ViewController.swift */; };
 		7DEB21E62CFB5C040006DF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB21E52CFB5C040006DF74 /* Assets.xcassets */; };
 		7DEB21E92CFB5C040006DF74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB21E72CFB5C040006DF74 /* LaunchScreen.storyboard */; };
 		7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB21F42CFB85C20006DF74 /* Ables.swift */; };
@@ -89,6 +88,7 @@
 		7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */; };
 		7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */; };
 		7DEB22242CFBAB6E0006DF74 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22232CFBAB6E0006DF74 /* BannerView.swift */; };
+		7DFF7E382D13641000B12FF3 /* CornerRadiusTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFF7E372D13641000B12FF3 /* CornerRadiusTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,7 +164,6 @@
 		7DEB21D92CFB5C020006DF74 /* SkillTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7DEB21E02CFB5C020006DF74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7DEB21E52CFB5C040006DF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DEB21E82CFB5C040006DF74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DEB21EA2CFB5C040006DF74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 		7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		7DEB22232CFBAB6E0006DF74 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		7DFF7E372D13641000B12FF3 /* CornerRadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +346,7 @@
 				7DEB22172CFB95860006DF74 /* ColorTheme.swift */,
 				7D77AE292CFCAAB100A011A3 /* RadiusTheme.swift */,
 				7D281AFC2CFDED6E00C560B4 /* TextTheme.swift */,
+				7DFF7E372D13641000B12FF3 /* CornerRadiusTheme.swift */,
 			);
 			path = theme;
 			sourceTree = "<group>";
@@ -363,6 +364,7 @@
 		7DB11EF02D13376C00EFAA9B /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				7DEB220E2CFB8B580006DF74 /* HomeView.swift */,
 				7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */,
 				7DEB22022CFB873C0006DF74 /* HomeViewController.swift */,
 				7DB11EEC2D13370600EFAA9B /* HomeViewController+CollectionvView.swift */,
@@ -415,7 +417,6 @@
 				7DEB21F02CFB85400006DF74 /* modules */,
 				7DEB21DC2CFB5C020006DF74 /* AppDelegate.swift */,
 				7DEB21DE2CFB5C020006DF74 /* SceneDelegate.swift */,
-				7DEB21E02CFB5C020006DF74 /* ViewController.swift */,
 				7DEB21E52CFB5C040006DF74 /* Assets.xcassets */,
 				7DEB21E72CFB5C040006DF74 /* LaunchScreen.storyboard */,
 				7DEB21EA2CFB5C040006DF74 /* Info.plist */,
@@ -444,7 +445,6 @@
 				7DEB21FE2CFB870D0006DF74 /* HomePresenter.swift */,
 				7DEB22002CFB87290006DF74 /* HomeRouter.swift */,
 				7DEB22092CFB88780006DF74 /* HomeProtocols.swift */,
-				7DEB220E2CFB8B580006DF74 /* HomeView.swift */,
 				7D3CF7592D0A180400728804 /* Category.swift */,
 			);
 			path = HomeModule;
@@ -630,7 +630,6 @@
 				7D3CF7582D0A161100728804 /* NetworkManager.swift in Sources */,
 				7D0DC5C82D071D5C009B0B8A /* MessageRouter.swift in Sources */,
 				7DEB22162CFB92520006DF74 /* UIImageView+Extensions.swift in Sources */,
-				7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */,
 				7DEB21F92CFB864E0006DF74 /* UIColor+Extensions.swift in Sources */,
 				7D0DC5BB2D070CCF009B0B8A /* LastMessageCVC.swift in Sources */,
 				7D0DC5CF2D0721CC009B0B8A /* MessageView.swift in Sources */,
@@ -648,6 +647,7 @@
 				7D3CF7562D0A159E00728804 /* NetworkPath.swift in Sources */,
 				7D77AE2A2CFCAAB100A011A3 /* RadiusTheme.swift in Sources */,
 				7D3CF7542D0A156A00728804 /* TargetType.swift in Sources */,
+				7DFF7E382D13641000B12FF3 /* CornerRadiusTheme.swift in Sources */,
 				7D5DB6B22D04B41E00CB7F68 /* AdvertDetailRouter.swift in Sources */,
 				7D281B062CFE1E8D00C560B4 /* FreelancerCVC.swift in Sources */,
 				7D5DB6AD2D04B23D00CB7F68 /* AdvertDetailViewController.swift in Sources */,

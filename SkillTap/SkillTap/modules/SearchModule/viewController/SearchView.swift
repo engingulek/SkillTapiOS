@@ -11,7 +11,7 @@ import UIKit
 
 
 class SearchView : BaseView<SearchViewController> {
-    var presenter : ViewToPrensenterSearchProtocol?
+   var presenter : ViewToPrensenterSearchProtocol?
    
     private lazy var searchView : UIView = {
         let view = UIView()
@@ -26,16 +26,18 @@ class SearchView : BaseView<SearchViewController> {
     private lazy var freelancersButton : UIButton = UIButton.basicButton(action: onTappedFreelancerButton)
     
     
-    private lazy var onTappedAdverstButton : UIAction = UIAction { _  in
-        self.advertsCollectionView.isHidden = false
-        self.freelancerCollectionView.isHidden = true
-        self.presenter?.onTappedAdvertsButton()
+    private lazy var onTappedAdverstButton : UIAction = UIAction { [weak self] _  in
+        guard let self = self else { return }
+        advertsCollectionView.isHidden = false
+        freelancerCollectionView.isHidden = true
+        presenter?.onTappedAdvertsButton()
        }
     
-    private lazy var onTappedFreelancerButton : UIAction = UIAction { _ in
-        self.advertsCollectionView.isHidden = true
-        self.freelancerCollectionView.isHidden = false
-        self.presenter?.onTappedFreelancerButton()
+    private lazy var onTappedFreelancerButton : UIAction = UIAction {[weak self] _ in
+        guard let self = self else { return }
+        advertsCollectionView.isHidden = true
+        freelancerCollectionView.isHidden = false
+        presenter?.onTappedFreelancerButton()
        }
     
     

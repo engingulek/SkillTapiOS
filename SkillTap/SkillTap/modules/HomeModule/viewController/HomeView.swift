@@ -10,6 +10,7 @@ import SnapKit
 import UIKit
 class HomeView : BaseView<HomeViewController> {
     var presenter : ViewToPrensenterHomeProtocol?
+  
     private lazy var titleLabel : UILabel = UILabel.xltitleUILabel(bold: true)
     private lazy var subTitleLabel : UILabel = UILabel.largeTitleUILabel(bold: false)
     private lazy var categoryTitleLabel : UILabel = UILabel.largeTitleUILabel(bold: true)
@@ -18,13 +19,13 @@ class HomeView : BaseView<HomeViewController> {
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 2
         view.backgroundColor = .white
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = CornerRadiusTheme.small.rawValue
         return view
     }()
     
-    private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
+    private lazy var searchIcon : UIImageView = UIImageView.magnifyingglassIcon()
     private lazy var searchLigtLabel : UILabel = UILabel.lightMiddleLabel()
-    private lazy var messageIcon : UIImageView = UIImageView.middleIcon(systemName: "message.fill")
+    private lazy var messageIcon : UIImageView = UIImageView.messageBubbleIcon()
     private lazy var errorIcon : UIImageView = UIImageView.errorIcon()
     private lazy var errorLabel : UILabel = UILabel.erroeLabel()
     
@@ -41,7 +42,8 @@ class HomeView : BaseView<HomeViewController> {
         super.setupView()
         configureView()
         
-        categoriesCollectionView.register(CategoryCVC.self, forCellWithReuseIdentifier: CategoryCVC.identifier)
+        categoriesCollectionView.register(CategoryCVC.self, 
+                                          forCellWithReuseIdentifier: CategoryCVC.identifier)
       
         
     }

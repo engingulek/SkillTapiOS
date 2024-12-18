@@ -8,7 +8,7 @@
 import UIKit
 
 class BaseView<T: UIViewController>: UIView {
-    var controller: T
+   weak var controller: T?
 
     init(_ controller: T) {
         self.controller = controller

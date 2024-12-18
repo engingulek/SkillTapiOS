@@ -24,6 +24,10 @@ class SearchViewController: UIViewController {
         searchView.presenter = presenter
         view = searchView
     }
+    
+    
+ 
+
 }
 
 
@@ -88,5 +92,6 @@ extension SearchViewController : PresenterToViewSearchProtocol {
     }
     
 }
+
 
 
