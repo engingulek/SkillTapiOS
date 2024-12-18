@@ -76,5 +76,5 @@ protocol InteractorToPresenterSearchProtocol{
 //MARK: PresenterToRouterSearchProtocol
 protocol PresenterToRouterSearchProtocol {
     func toAdvertDetail(view:PresenterToViewSearchProtocol?,id:Int)
-    func toFreelancerDetail(view:PresenterToViewSearchProtocol?)
+    func toFreelancerDetail(view:PresenterToViewSearchProtocol?,id:Int)
 }

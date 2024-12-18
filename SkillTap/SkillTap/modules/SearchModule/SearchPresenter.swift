@@ -193,7 +193,8 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
             let advertId = searchAdvertList[indexPath.item].id
             router.toAdvertDetail(view: view,id: advertId)
         case .freelancer:
-            router.toFreelancerDetail(view: view)
+            let freelancerId = searchFreelancerList[indexPath.item].id
+            router.toFreelancerDetail(view: view,id: freelancerId)
         case .none:
             return
         }

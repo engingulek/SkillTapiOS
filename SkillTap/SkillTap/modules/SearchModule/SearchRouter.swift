@@ -25,8 +25,8 @@ class SearchRouter {
 
 
 extension SearchRouter : PresenterToRouterSearchProtocol {
-    func toFreelancerDetail(view: PresenterToViewSearchProtocol?) {
-        let viewController = FreelancerDetailViewController()
+    func toFreelancerDetail(view: PresenterToViewSearchProtocol?,id:Int) {
+        let viewController = FreelancerDetailRouter.createFreelancerDetailModule(id: id)
         view?.pushViewControllerAble(viewController, animated: true)
     }
     

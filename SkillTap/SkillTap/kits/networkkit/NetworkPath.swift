@@ -13,6 +13,7 @@ public enum NetworkPath{
     case adverts
     case feelancer
     case advertDetail(Int)
+    case freelancerDetail(Int)
 }
 
 
@@ -33,6 +34,9 @@ extension NetworkPath : TargetType {
         case .advertDetail(let id):
             return Constants.adverts.rawValue +
             Constants.advertDetail.rawValue + "?id=\(id)"
+        case .freelancerDetail(let id):
+            return Constants.freelancer.rawValue +
+            Constants.getFreelancerDetail.rawValue + "?id=\(id)"
         }
     }
     

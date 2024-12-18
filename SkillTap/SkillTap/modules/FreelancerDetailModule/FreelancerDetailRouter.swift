@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 class FreelancerDetailRouter {
-    static func createSearchModule() -> UIViewController {
+    static func createFreelancerDetailModule(id:Int) -> UIViewController {
         let viewController = FreelancerDetailViewController()
-        let presenter : ViewToPrensenterFreelancerDetailProtocol & InteractorToPresenterFreelancerDetailProtocol = FreelancerDetailPresenter(view: viewController)
+        let interactor = FreelancerDetailInteractor()
+        let presenter : ViewToPrensenterFreelancerDetailProtocol & InteractorToPresenterFreelancerDetailProtocol = FreelancerDetailPresenter(
+            view: viewController,
+            interactor: interactor
+        )
+        presenter.fetchFreelancerDetail(id: id)
         viewController.presenter = presenter
+        interactor.presenter = presenter
         return viewController
      }
 }

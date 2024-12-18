@@ -14,5 +14,7 @@ enum Constants : String {
     case freelancer = "/freelancer"
     case getAll = "/getAll"
     case advertDetail = "/advertDetai"
+    case getFreelancerDetail = "/getFreelancerDetail"
+    
   
 }

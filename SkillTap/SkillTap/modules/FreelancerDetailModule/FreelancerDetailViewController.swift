@@ -8,7 +8,7 @@
 import UIKit
 
 class FreelancerDetailViewController: ViewController {
-    lazy var presenter : ViewToPrensenterFreelancerDetailProtocol = FreelancerDetailPresenter(view:self)
+    lazy var presenter : ViewToPrensenterFreelancerDetailProtocol = FreelancerDetailPresenter(view:self,interactor: FreelancerDetailInteractor())
     private lazy var freelancerView = FreelancerView(self)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class FreelancerDetailViewController: ViewController {
 
 //MARK: PresenterToViewFreelancerProtocol
 extension FreelancerDetailViewController : PresenterToViewFreelancerDetailProtocol {
+    
    
     func advertsColllectionViewPrepare() {
         DispatchQueue.main.async {[weak self] in
@@ -42,19 +43,14 @@ extension FreelancerDetailViewController : PresenterToViewFreelancerDetailProtoc
         }
     }
     
-    func freelancerInfoViewData() {
+    func freelancerConfigureData(freelancer: FreelancerDetail?, errorState: Bool) {
         DispatchQueue.main.async {[weak self] in
             guard let self = self else {return}
-            freelancerView.configureDataForFreelancerInfoView()
+            freelancerView.configureData(freelancer,errorState)
         }
     }
     
-    func freelancerViewData(title:String) {
-        DispatchQueue.main.async {[weak self] in
-            guard let self = self else {return}
-            freelancerView.configureDateFreelancerView(title: title)
-        }
-    }
+  
     
 }
 
@@ -70,8 +66,8 @@ extension FreelancerDetailViewController : UICollectionViewDelegate,UICollection
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdvertCVC.identifier, for: indexPath) as? AdvertCVC
         else {return UICollectionViewCell()}
-        presenter.cellForItem(at: indexPath)
-       // cell.configureData()
+        let advert = presenter.cellForItem(at: indexPath)
+        cell.configureData(advert: advert)
         return cell
     }
 }
