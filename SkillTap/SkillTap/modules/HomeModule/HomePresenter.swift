@@ -90,9 +90,6 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         
     }
     
-    func didSelectItem( at indexPath: IndexPath) {
-        router.toSubCategoryView(view: view)
-    }
     
     func onTappedMessageIcon() {
         router.toLastMessageList(view: view)
