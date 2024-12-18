@@ -31,10 +31,7 @@ extension HomeRouter : PresenterToRouterHomeProtocol {
         view?.pushViewControllerAble(viewController, animated: true)
     }
     
-    func toSubCategoryView(view: PresenterToViewHomeProtocol?) {
-        let viewController = SubCategoryRouter.createSubCategoryModule()
-        view?.pushViewControllerAble(viewController, animated: true)
-    }
+
     
     func toLastMessageList(view: PresenterToViewHomeProtocol?) {
         let viewController = LastMessageListViewController()

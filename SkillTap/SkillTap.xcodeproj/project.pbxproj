@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D0DC5AA2D06F48E009B0B8A /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5A92D06F48E009B0B8A /* AdvertListViewController.swift */; };
-		7D0DC5AC2D06F49F009B0B8A /* AdvertListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5AB2D06F49F009B0B8A /* AdvertListRouter.swift */; };
-		7D0DC5AE2D06F7CE009B0B8A /* AdvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5AD2D06F7CE009B0B8A /* AdvertListView.swift */; };
-		7D0DC5B02D06FACD009B0B8A /* AdvertListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5AF2D06FACD009B0B8A /* AdvertListProtocols.swift */; };
-		7D0DC5B22D06FB94009B0B8A /* AdvertListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5B12D06FB94009B0B8A /* AdvertListPresenter.swift */; };
 		7D0DC5B52D070804009B0B8A /* LastMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5B42D070804009B0B8A /* LastMessageListViewController.swift */; };
 		7D0DC5B72D07082E009B0B8A /* LastMessageListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5B62D07082E009B0B8A /* LastMessageListRouter.swift */; };
 		7D0DC5B92D070BC4009B0B8A /* LastMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0DC5B82D070BC4009B0B8A /* LastMessageListView.swift */; };
@@ -65,13 +60,9 @@
 		7DB11EE72D13009A00EFAA9B /* AdvertDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB11EE62D13009A00EFAA9B /* AdvertDetailInteractor.swift */; };
 		7DB11EE92D13240000EFAA9B /* FreelancerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB11EE82D13240000EFAA9B /* FreelancerDetail.swift */; };
 		7DB11EEB2D13254A00EFAA9B /* FreelancerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB11EEA2D13254A00EFAA9B /* FreelancerDetailInteractor.swift */; };
+		7DB11EED2D13370600EFAA9B /* HomeViewController+CollectionvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB11EEC2D13370600EFAA9B /* HomeViewController+CollectionvView.swift */; };
+		7DB11EF22D13385400EFAA9B /* SearchViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB11EF12D13385400EFAA9B /* SearchViewController+UICollectionView.swift */; };
 		7DE6CF992D00BC6F00AC57A2 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */; };
-		7DE6CF9C2D00D55700AC57A2 /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF9B2D00D55700AC57A2 /* SubCategoryViewController.swift */; };
-		7DE6CF9E2D00D56500AC57A2 /* SubCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF9D2D00D56500AC57A2 /* SubCategoryView.swift */; };
-		7DE6CFA02D00D67F00AC57A2 /* SubCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CF9F2D00D67F00AC57A2 /* SubCategoryRouter.swift */; };
-		7DE6CFA22D00D87700AC57A2 /* SubCategoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA12D00D87700AC57A2 /* SubCategoryProtocols.swift */; };
-		7DE6CFA42D00D90300AC57A2 /* SubCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA32D00D90300AC57A2 /* SubCategoryPresenter.swift */; };
-		7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */; };
 		7DEAEE7C2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */; };
 		7DEAEE7F2D0D9DF300C318E7 /* Advert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */; };
 		7DEAEE812D0D9EA600C318E7 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAEE802D0D9EA600C318E7 /* SearchInteractor.swift */; };
@@ -111,11 +102,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7D0DC5A92D06F48E009B0B8A /* AdvertListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewController.swift; sourceTree = "<group>"; };
-		7D0DC5AB2D06F49F009B0B8A /* AdvertListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListRouter.swift; sourceTree = "<group>"; };
-		7D0DC5AD2D06F7CE009B0B8A /* AdvertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListView.swift; sourceTree = "<group>"; };
-		7D0DC5AF2D06FACD009B0B8A /* AdvertListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListProtocols.swift; sourceTree = "<group>"; };
-		7D0DC5B12D06FB94009B0B8A /* AdvertListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListPresenter.swift; sourceTree = "<group>"; };
 		7D0DC5B42D070804009B0B8A /* LastMessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMessageListViewController.swift; sourceTree = "<group>"; };
 		7D0DC5B62D07082E009B0B8A /* LastMessageListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMessageListRouter.swift; sourceTree = "<group>"; };
 		7D0DC5B82D070BC4009B0B8A /* LastMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMessageListView.swift; sourceTree = "<group>"; };
@@ -167,13 +153,9 @@
 		7DB11EE62D13009A00EFAA9B /* AdvertDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailInteractor.swift; sourceTree = "<group>"; };
 		7DB11EE82D13240000EFAA9B /* FreelancerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetail.swift; sourceTree = "<group>"; };
 		7DB11EEA2D13254A00EFAA9B /* FreelancerDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerDetailInteractor.swift; sourceTree = "<group>"; };
+		7DB11EEC2D13370600EFAA9B /* HomeViewController+CollectionvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionvView.swift"; sourceTree = "<group>"; };
+		7DB11EF12D13385400EFAA9B /* SearchViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
-		7DE6CF9B2D00D55700AC57A2 /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
-		7DE6CF9D2D00D56500AC57A2 /* SubCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryView.swift; sourceTree = "<group>"; };
-		7DE6CF9F2D00D67F00AC57A2 /* SubCategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryRouter.swift; sourceTree = "<group>"; };
-		7DE6CFA12D00D87700AC57A2 /* SubCategoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryProtocols.swift; sourceTree = "<group>"; };
-		7DE6CFA32D00D90300AC57A2 /* SubCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryPresenter.swift; sourceTree = "<group>"; };
-		7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryCVC.swift; sourceTree = "<group>"; };
 		7DEAEE7B2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extension.swift"; sourceTree = "<group>"; };
 		7DEAEE7E2D0D9DF300C318E7 /* Advert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advert.swift; sourceTree = "<group>"; };
 		7DEAEE802D0D9EA600C318E7 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
@@ -225,18 +207,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7D0DC5A82D06F465009B0B8A /* AdvertListModule */ = {
-			isa = PBXGroup;
-			children = (
-				7D0DC5A92D06F48E009B0B8A /* AdvertListViewController.swift */,
-				7D0DC5AB2D06F49F009B0B8A /* AdvertListRouter.swift */,
-				7D0DC5AF2D06FACD009B0B8A /* AdvertListProtocols.swift */,
-				7D0DC5AD2D06F7CE009B0B8A /* AdvertListView.swift */,
-				7D0DC5B12D06FB94009B0B8A /* AdvertListPresenter.swift */,
-			);
-			path = AdvertListModule;
-			sourceTree = "<group>";
-		};
 		7D0DC5B32D07079E009B0B8A /* LastMessageListModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,10 +245,8 @@
 		7D281AF12CFDE19800C560B4 /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
+				7DB11EF32D13386800EFAA9B /* viewController */,
 				7DEAEE7D2D0D9DE700C318E7 /* models */,
-				7D281B022CFE1E3000C560B4 /* cells */,
-				7D281AF22CFDE1EB00C560B4 /* SearchView.swift */,
-				7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */,
 				7D281AF62CFDE21400C560B4 /* SearchRouter.swift */,
 				7D281AF82CFDE22900C560B4 /* SearchProtocols.swift */,
 				7D281AFA2CFDE63600C560B4 /* SearchPresenter.swift */,
@@ -392,25 +360,25 @@
 			path = SearchModule;
 			sourceTree = "<group>";
 		};
-		7DE6CF972D00BB2500AC57A2 /* cell */ = {
+		7DB11EF02D13376C00EFAA9B /* viewController */ = {
 			isa = PBXGroup;
 			children = (
 				7DE6CF982D00BC6F00AC57A2 /* CategoryCVC.swift */,
+				7DEB22022CFB873C0006DF74 /* HomeViewController.swift */,
+				7DB11EEC2D13370600EFAA9B /* HomeViewController+CollectionvView.swift */,
 			);
-			path = cell;
+			path = viewController;
 			sourceTree = "<group>";
 		};
-		7DE6CF9A2D00D53A00AC57A2 /* SubCategoryModule */ = {
+		7DB11EF32D13386800EFAA9B /* viewController */ = {
 			isa = PBXGroup;
 			children = (
-				7DE6CF9B2D00D55700AC57A2 /* SubCategoryViewController.swift */,
-				7DE6CF9D2D00D56500AC57A2 /* SubCategoryView.swift */,
-				7DE6CF9F2D00D67F00AC57A2 /* SubCategoryRouter.swift */,
-				7DE6CFA12D00D87700AC57A2 /* SubCategoryProtocols.swift */,
-				7DE6CFA32D00D90300AC57A2 /* SubCategoryPresenter.swift */,
-				7DE6CFA52D00E1E100AC57A2 /* SubCategoryCVC.swift */,
+				7D281B022CFE1E3000C560B4 /* cells */,
+				7D281AF22CFDE1EB00C560B4 /* SearchView.swift */,
+				7D281AF42CFDE1FC00C560B4 /* SearchViewController.swift */,
+				7DB11EF12D13385400EFAA9B /* SearchViewController+UICollectionView.swift */,
 			);
-			path = SubCategoryModule;
+			path = viewController;
 			sourceTree = "<group>";
 		};
 		7DEAEE7D2D0D9DE700C318E7 /* models */ = {
@@ -460,10 +428,8 @@
 			children = (
 				7D0DC5C22D071D29009B0B8A /* MessageModule */,
 				7D0DC5B32D07079E009B0B8A /* LastMessageListModule */,
-				7D0DC5A82D06F465009B0B8A /* AdvertListModule */,
 				7D5DB6AE2D04B3E500CB7F68 /* FreelancerDetailModule */,
 				7D5DB6AB2D04B21600CB7F68 /* AdvertDetailModule */,
-				7DE6CF9A2D00D53A00AC57A2 /* SubCategoryModule */,
 				7D281AF12CFDE19800C560B4 /* SearchModule */,
 				7DEB21F12CFB85630006DF74 /* HomeModule */,
 			);
@@ -473,11 +439,10 @@
 		7DEB21F12CFB85630006DF74 /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
-				7DE6CF972D00BB2500AC57A2 /* cell */,
+				7DB11EF02D13376C00EFAA9B /* viewController */,
 				7DEB21FC2CFB87000006DF74 /* HomeInteractor.swift */,
 				7DEB21FE2CFB870D0006DF74 /* HomePresenter.swift */,
 				7DEB22002CFB87290006DF74 /* HomeRouter.swift */,
-				7DEB22022CFB873C0006DF74 /* HomeViewController.swift */,
 				7DEB22092CFB88780006DF74 /* HomeProtocols.swift */,
 				7DEB220E2CFB8B580006DF74 /* HomeView.swift */,
 				7D3CF7592D0A180400728804 /* Category.swift */,
@@ -665,19 +630,16 @@
 				7D3CF7582D0A161100728804 /* NetworkManager.swift in Sources */,
 				7D0DC5C82D071D5C009B0B8A /* MessageRouter.swift in Sources */,
 				7DEB22162CFB92520006DF74 /* UIImageView+Extensions.swift in Sources */,
-				7D0DC5B22D06FB94009B0B8A /* AdvertListPresenter.swift in Sources */,
 				7DEB21E12CFB5C020006DF74 /* ViewController.swift in Sources */,
 				7DEB21F92CFB864E0006DF74 /* UIColor+Extensions.swift in Sources */,
 				7D0DC5BB2D070CCF009B0B8A /* LastMessageCVC.swift in Sources */,
 				7D0DC5CF2D0721CC009B0B8A /* MessageView.swift in Sources */,
+				7DB11EED2D13370600EFAA9B /* HomeViewController+CollectionvView.swift in Sources */,
 				7D281AF92CFDE22900C560B4 /* SearchProtocols.swift in Sources */,
 				7D0DC5C62D071D52009B0B8A /* MesssageViewController.swift in Sources */,
-				7D0DC5AE2D06F7CE009B0B8A /* AdvertListView.swift in Sources */,
-				7DE6CFA42D00D90300AC57A2 /* SubCategoryPresenter.swift in Sources */,
 				7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */,
 				7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */,
 				7DEB21F52CFB85C20006DF74 /* Ables.swift in Sources */,
-				7D0DC5AC2D06F49F009B0B8A /* AdvertListRouter.swift in Sources */,
 				7D5DB6C32D04D86900CB7F68 /* AdvertDetilProtocols.swift in Sources */,
 				7DB11EE52D12FFAC00EFAA9B /* AdvertDetail.swift in Sources */,
 				7D281AFB2CFDE63600C560B4 /* SearchPresenter.swift in Sources */,
@@ -690,26 +652,22 @@
 				7D281B062CFE1E8D00C560B4 /* FreelancerCVC.swift in Sources */,
 				7D5DB6AD2D04B23D00CB7F68 /* AdvertDetailViewController.swift in Sources */,
 				7DEB21DF2CFB5C020006DF74 /* SceneDelegate.swift in Sources */,
-				7DE6CF9E2D00D56500AC57A2 /* SubCategoryView.swift in Sources */,
-				7DE6CFA22D00D87700AC57A2 /* SubCategoryProtocols.swift in Sources */,
 				7DEAEE7F2D0D9DF300C318E7 /* Advert.swift in Sources */,
 				7D5DB6B42D04B45800CB7F68 /* FreelancerDetailRouter.swift in Sources */,
 				7D5DB6B82D04B61A00CB7F68 /* FreelancerDetailPresenter.swift in Sources */,
 				7D0DC5B72D07082E009B0B8A /* LastMessageListRouter.swift in Sources */,
 				7D5DB6B62D04B5C300CB7F68 /* FreelancerDetailProtocols.swift in Sources */,
 				7DB11EE72D13009A00EFAA9B /* AdvertDetailInteractor.swift in Sources */,
-				7D0DC5AA2D06F48E009B0B8A /* AdvertListViewController.swift in Sources */,
 				7D3CF74D2D0A13D400728804 /* Constants.swift in Sources */,
 				7DEAEE812D0D9EA600C318E7 /* SearchInteractor.swift in Sources */,
 				7DEB22032CFB873C0006DF74 /* HomeViewController.swift in Sources */,
 				7D0DC5D72D07499E009B0B8A /* MessageProtocols.swift in Sources */,
 				7D0DC5B92D070BC4009B0B8A /* LastMessageListView.swift in Sources */,
 				7D281AF32CFDE1EB00C560B4 /* SearchView.swift in Sources */,
-				7D0DC5B02D06FACD009B0B8A /* AdvertListProtocols.swift in Sources */,
 				7DEAEE7C2D0D8DAA00C318E7 /* UIActivityIndicatorView+Extension.swift in Sources */,
 				7D281B012CFDF37C00C560B4 /* UIButton+Extensions.swift in Sources */,
 				7D3CF75A2D0A180400728804 /* Category.swift in Sources */,
-				7DE6CFA62D00E1E100AC57A2 /* SubCategoryCVC.swift in Sources */,
+				7DB11EF22D13385400EFAA9B /* SearchViewController+UICollectionView.swift in Sources */,
 				7DEB220A2CFB88780006DF74 /* HomeProtocols.swift in Sources */,
 				7D0DC5D12D07298E009B0B8A /* MessageCVC.swift in Sources */,
 				7D5DB6B02D04B40D00CB7F68 /* FreelancerDetailViewController.swift in Sources */,
@@ -719,7 +677,6 @@
 				7DEB21FD2CFB87000006DF74 /* HomeInteractor.swift in Sources */,
 				7D0DC5D52D073D5F009B0B8A /* Message.swift in Sources */,
 				7DEB22182CFB95860006DF74 /* ColorTheme.swift in Sources */,
-				7DE6CF9C2D00D55700AC57A2 /* SubCategoryViewController.swift in Sources */,
 				7D281AFD2CFDED6E00C560B4 /* TextTheme.swift in Sources */,
 				7D5DB6BD2D04BB7100CB7F68 /* FreelancerInfoView.swift in Sources */,
 				7D0DC5BF2D071135009B0B8A /* LastMessageListPresenter.swift in Sources */,
@@ -734,7 +691,6 @@
 				7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */,
 				7DEB220D2CFB8B220006DF74 /* BaseView.swift in Sources */,
 				7DEB22242CFBAB6E0006DF74 /* BannerView.swift in Sources */,
-				7DE6CFA02D00D67F00AC57A2 /* SubCategoryRouter.swift in Sources */,
 				7D5DB6C12D04D7E100CB7F68 /* AdvertDetailView.swift in Sources */,
 				7D0DC5BD2D07109D009B0B8A /* LastMessageListProtocols.swift in Sources */,
 				7DB11EE92D13240000EFAA9B /* FreelancerDetail.swift in Sources */,

@@ -27,8 +27,6 @@ protocol ViewToPrensenterHomeProtocol{
                                       right:CGFloat,
                                       bottom:CGFloat)
     
-    func didSelectItem(at indexPath:IndexPath)
-    
     func onTappedMessageIcon()
     
     
@@ -67,6 +65,5 @@ protocol InteractorToPresenterHomeProtocol{
 //MARK: PresenterToRouterHomeProtocol
 protocol PresenterToRouterHomeProtocol {
     func toSearchView(view:PresenterToViewHomeProtocol?)
-    func toSubCategoryView(view:PresenterToViewHomeProtocol?)
     func toLastMessageList(view:PresenterToViewHomeProtocol?)
 }
