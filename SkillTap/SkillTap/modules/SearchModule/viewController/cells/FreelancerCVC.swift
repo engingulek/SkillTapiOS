@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+
 class FreelancerCVC: UICollectionViewCell {
     static let identifier : String  = "freelancerCellIdenfier"
     private lazy var freelancerImage : UIImageView = UIImageView()
@@ -76,8 +77,8 @@ class FreelancerCVC: UICollectionViewCell {
     }
     
     func configureData(freelancer:Freelancer){
-        freelancerImage.setImageWithKigfisher(with: freelancer.imageURL)
-        
+       freelancerImage.setImageWithKigfisher(with: freelancer.imageURL)
+      
         freelancerTitleLabel.text = freelancer.title
         freelancerSubTitleLabel.text = freelancer.subTitle
         freelancerDescLabel.text = freelancer.detail

@@ -35,7 +35,7 @@ class AdvertCVC: UICollectionViewCell {
         advertImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(5)
             make.leading.equalToSuperview().offset(5)
-            make.size.equalToSuperview().multipliedBy(0.5)
+            
          
         }
         
@@ -67,7 +67,8 @@ class AdvertCVC: UICollectionViewCell {
     
     func configureData(advert:Advert){
         titleLabel.text = advert.title
-        advertImage.setImageWithKigfisher(with: advert.imageURL)
+        
+       advertImage.setImageWithKigfisher(with: advert.imageURL)
         priceInfoLabel.text = "\(advert.price) TL"
         detailLabel.text = advert.detail
     }

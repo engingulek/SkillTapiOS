@@ -38,7 +38,6 @@ class CategoryCVC: UICollectionViewCell {
         categoryImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(20)
-            make.size.equalTo(100)
         }
         
         self.addSubview(categoryLabel)
