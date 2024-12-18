@@ -52,6 +52,7 @@ extension UILabel {
         label.textColor = UIColor(hex: color)
         label.font = .systemFont(ofSize: 20,weight: .semibold)
         label.textAlignment = .center
+        //TODO: Label will be default isHidden
         return label
     }
     

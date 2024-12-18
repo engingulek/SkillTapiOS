@@ -8,12 +8,15 @@
 import Foundation
 import UIKit
 class AdvertDetailRouter {
-    static func createSearchModule() -> UIViewController {
+    static func createAdvertDetailModule(id:Int) -> UIViewController {
         let viewController = AdvertDetailViewController()
         let router = AdvertDetailRouter()
+        let interactor = AdvertDetailInteractor()
         let presenter : ViewToPrensenterAdvertDetailProtocol & InteractorToPresenterAdvertDetailProtocol = AdvertDetailPresenter(
-            view: viewController,router: router)
+            view: viewController,router: router,interactor: interactor)
+        presenter.fetchAdvertDetail(id: id)
         viewController.presenter = presenter
+        interactor.presenter = presenter
         return viewController
      }
 }

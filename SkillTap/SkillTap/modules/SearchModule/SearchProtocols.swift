@@ -61,8 +61,8 @@ protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
 
 //MARK: PresenterToInteractorSearchProtocol
 protocol PresenterToInteractorSearchProtocol {
-    func fetchAllAdverts() async 
-    func fetchAllFreelancers() async
+    func fetchAllAdverts() async
+    func fetchAllFreelancers() async 
 }
 
 //MARK: InteractorToPresenterSearchProtocol
@@ -75,6 +75,6 @@ protocol InteractorToPresenterSearchProtocol{
 
 //MARK: PresenterToRouterSearchProtocol
 protocol PresenterToRouterSearchProtocol {
-    func toAdvertDetail(view:PresenterToViewSearchProtocol?)
-    func toFreelancerDetail(view:PresenterToViewSearchProtocol?)
+    func toAdvertDetail(view:PresenterToViewSearchProtocol?,id:Int)
+    func toFreelancerDetail(view:PresenterToViewSearchProtocol?,id:Int)
 }

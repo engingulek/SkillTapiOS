@@ -11,12 +11,14 @@ import SnapKit
 class FreelancerView : BaseView<FreelancerDetailViewController> {
     private lazy var freelancerInfoView = FreelancerInfoView()
     private lazy var advertsTitle : UILabel = UILabel.middleTitleLabel()
-    private lazy var advertsCollectionView : UICollectionView 
+    private lazy var advertsCollectionView : UICollectionView
     = UICollectionView.primaryCollectionView(scroolDirection: .horizontal)
+    private lazy var errorMessageLabel : UILabel = UILabel.erroeLabel()
     override func setupView() {
         super.setupView()
         configureView()
         advertsCollectionView.register(AdvertCVC.self, forCellWithReuseIdentifier: AdvertCVC.identifier)
+        advertsTitle.text = TextTheme.adverts.text
     }
     
     
@@ -49,21 +51,37 @@ class FreelancerView : BaseView<FreelancerDetailViewController> {
             make.height.equalToSuperview().multipliedBy(0.25)
           
         }
+        
+        addSubview(errorMessageLabel)
+        errorMessageLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     
         
     }
     
     
-    func configureDataForFreelancerInfoView(){
-        freelancerInfoView.configureData()
+    func configureData(_ freelancer:FreelancerDetail? ,_ errorState:Bool){
+        if(errorState){
+            freelancerInfoView.isHidden = true
+            advertsTitle.isHidden = true
+            advertsCollectionView.isHidden = true
+            errorMessageLabel.isHidden = false
+            errorMessageLabel.text = TextTheme.errorMessage.text
+            
+        }else{
+            guard let freelancer = freelancer else {return}
+            freelancerInfoView.configureData(freelancer: freelancer)
+            freelancerInfoView.isHidden = false
+            advertsTitle.isHidden = false
+            advertsCollectionView.isHidden = false
+            errorMessageLabel.isHidden = true
+        }
+       
+      
     }
     
-    func configureDateFreelancerView(title:String){
-        advertsTitle.text = title
-    }
-    
-   
-    
+
     func advertsCollectionViewPrepare() {
         advertsCollectionView.dataSource = controller
         advertsCollectionView.delegate = controller

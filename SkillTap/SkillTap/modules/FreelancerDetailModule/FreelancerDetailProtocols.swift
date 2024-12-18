@@ -17,7 +17,8 @@ protocol ViewToPrensenterFreelancerDetailProtocol{
                        width:CGFloat,
                        height:CGFloat) -> CGSize
     func numberOfItemsIn() -> Int
-    func cellForItem(at indexPath:IndexPath)
+    func cellForItem(at indexPath:IndexPath) -> Advert
+    func fetchFreelancerDetail(id:Int)
   
    
         
@@ -27,20 +28,21 @@ protocol ViewToPrensenterFreelancerDetailProtocol{
 protocol PresenterToViewFreelancerDetailProtocol : AnyObject,SearchKits{
     func advertsColllectionViewPrepare()
     func advertsCollectionViewReloadData()
-    func freelancerInfoViewData()
-    func freelancerViewData(title:String)
+    func freelancerConfigureData(freelancer:FreelancerDetail?,errorState:Bool)
+  
+    
     
   
 }
 
 //MARK: PresenterToInteractorFreelancerDetailProtocol
 protocol PresenterToInteractorFreelancerDetailProtocol{
-    
+    func fetchFreelancerDetail(id:Int) async
 }
 
 //MARK: InteractorToPresenterFreelancerDetailProtocol
 protocol InteractorToPresenterFreelancerDetailProtocol{
-    
+    func sendFreelancerDetail(_ freelancerDetail:FreelancerDetail?)
 }
 
 //MARK: PresenterToRouterFreelancerDetailProtocol

@@ -21,6 +21,7 @@ enum TextTheme:String {
     case sendMessage = "Send Message"
     case hi = "Hi"
     case errorMessage = "Something Went Wrong"
+    case packageIncluded = "Package Included"
     
     var text : String {
         return self.rawValue

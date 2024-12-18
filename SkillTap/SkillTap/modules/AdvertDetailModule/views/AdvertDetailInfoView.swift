@@ -19,7 +19,7 @@ class AdvertDetailInfoView : UIView {
         super.init(frame: frame)
         configureView()
      
-        configureData()
+       
         backgroundColor = .white
         layer.cornerRadius = 10
         descTitleLabel.text = "Advert Description"
@@ -76,11 +76,12 @@ class AdvertDetailInfoView : UIView {
         
     }
     
-    func configureData(){
-        advertOwnerProfilImage.setImageWithKigfisher(with: "https://images.unsplash.com/photo-1665686310934-8fab52b3821b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-        advertOwnerSubtitle.text = "gg"
-        advertOwnerUsername.text = "usernamae"
-        descLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    func configureData(freelancer:FreelancerOnAdvertDetail){
+        advertOwnerProfilImage.setImageWithKigfisher(with: freelancer.imageURL)
+        advertOwnerUsername.text = freelancer.title
+        advertOwnerSubtitle.text = freelancer.subTitle
+        
+        descLabel.text = freelancer.detail
        
     }
 }

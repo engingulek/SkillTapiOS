@@ -9,8 +9,13 @@ import Foundation
 
 final class FreelancerDetailPresenter {
     weak var view : PresenterToViewFreelancerDetailProtocol?
-    init(view: PresenterToViewFreelancerDetailProtocol?) {
+    private let interactor : PresenterToInteractorFreelancerDetailProtocol
+    private var adverts : [Advert] = []
+    init(view: PresenterToViewFreelancerDetailProtocol?,
+         interactor : PresenterToInteractorFreelancerDetailProtocol
+    ) {
         self.view = view
+        self.interactor = interactor
     }
 }
 
@@ -18,14 +23,12 @@ final class FreelancerDetailPresenter {
 //MARK: ViewToPrensenterFreelancerProtocol
 extension FreelancerDetailPresenter : ViewToPrensenterFreelancerDetailProtocol {
 
-  
     func viewDidLoad() {
         view?.setBackColorAble(color: ColorTheme.lightBackColor.color)
         view?.changeTitle(title: TextTheme.freelancerDetail.text)
         view?.advertsColllectionViewPrepare()
         view?.advertsCollectionViewReloadData()
-        view?.freelancerViewData(title: TextTheme.adverts.text)
-        view?.freelancerInfoViewData()
+       
     }
     
     func sizeForItemAt(width: CGFloat, height: CGFloat) -> CGSize {
@@ -33,19 +36,37 @@ extension FreelancerDetailPresenter : ViewToPrensenterFreelancerDetailProtocol {
     }
     
     func numberOfItemsIn() -> Int {
-        return 5
+        return adverts.count
     }
     
-    func cellForItem(at indexPath: IndexPath) {
-        
+    func cellForItem(at indexPath: IndexPath) -> Advert {
+        let advert  = adverts[indexPath.item]
+        return advert
     }
     
     
+    func fetchFreelancerDetail(id: Int) {
+        Task{
+            await interactor.fetchFreelancerDetail(id:id)
+        }
+    }
 
 }
 
 
 //MARK: InteractorToPresenterFreelancerProtocol
 extension FreelancerDetailPresenter : InteractorToPresenterFreelancerDetailProtocol {
-    
+    func sendFreelancerDetail(_ freelancerDetail: FreelancerDetail?) {
+        guard let detail = freelancerDetail else {
+            view?.freelancerConfigureData(freelancer: nil,errorState:true)
+            adverts = []
+            view?.advertsCollectionViewReloadData()
+            return
+        }
+        view?.freelancerConfigureData(freelancer: detail, errorState: false)
+        adverts = detail.adverts
+        view?.advertsCollectionViewReloadData()
+        
+        
+    }
 }
