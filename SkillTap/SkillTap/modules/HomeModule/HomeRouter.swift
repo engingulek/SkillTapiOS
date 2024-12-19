@@ -23,15 +23,12 @@ class HomeRouter {
     }
 }
 
-
 extension HomeRouter : PresenterToRouterHomeProtocol {
 
     func toSearchView(view: PresenterToViewHomeProtocol?) {
         let viewController = SearchRouter.createSearchModule()
         view?.pushViewControllerAble(viewController, animated: true)
     }
-    
-
     
     func toLastMessageList(view: PresenterToViewHomeProtocol?) {
         let viewController = LastMessageListViewController()

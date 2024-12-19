@@ -46,7 +46,7 @@ final class SearchPresenter {
                                             textColor: ColorTheme.thirdColor.color,
                                             backColor: ColorTheme.secondaryColor.color,
                                             borderColor: ColorTheme.thirdColor.color)
-           
+            
             
         case .freelancer:
             view?.setFreelancerButtonDesign(text: TextTheme.freelancers.text,
@@ -60,7 +60,7 @@ final class SearchPresenter {
                                          textColor: ColorTheme.thirdColor.color,
                                          backColor: ColorTheme.secondaryColor.color,
                                          borderColor: ColorTheme.thirdColor.color)
-           
+            
         case .none:
             view?.setAdvertsButtonDesign(text: TextTheme.adverts.text,
                                          textColor: ColorTheme.secondaryColor.color,
@@ -108,13 +108,12 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
             await fetchAllFreelancer()
             
         }
-        
     }
     
     
     private func searchAdverts(searchText:String){
         
-        searchAdvertList = tempAdvertList.filter({ 
+        searchAdvertList = tempAdvertList.filter({
             $0.detail.lowercased()
             .contains(searchText.lowercased()) })
         
@@ -122,7 +121,7 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
     }
     
     private func searchFreelancer(searchText:String){
-        searchFreelancerList = tempFreelancerList.filter({ 
+        searchFreelancerList = tempFreelancerList.filter({
             $0.title.lowercased()
             .contains(searchText.lowercased()) })
         
@@ -159,8 +158,6 @@ extension SearchPresenter : ViewToPrensenterSearchProtocol {
         case .none:
             return 0
         }
-        
-        
     }
     
     func cellForItemAdvert(at indexPath: IndexPath) -> Advert {
@@ -213,7 +210,7 @@ extension SearchPresenter : InteractorToPresenterSearchProtocol {
         
     }
     
-   
+    
     
     func sendFreelancr(freelancers: [Freelancer]) {
         tempFreelancerList = freelancers

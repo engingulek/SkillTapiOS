@@ -29,7 +29,7 @@ class CategoryCVC: UICollectionViewCell {
     }
     
     private func configureView(){
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = CornerRadiusTheme.medium.rawValue
       
         self.layer.borderWidth = 1
 
@@ -38,7 +38,6 @@ class CategoryCVC: UICollectionViewCell {
         categoryImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(20)
-            make.size.equalTo(100)
         }
         
         self.addSubview(categoryLabel)
@@ -65,8 +64,8 @@ class CategoryCVC: UICollectionViewCell {
     func configureData(category:CategoryData){
         categoryLabel.text = category.title
         categoryImage.setImageWithKigfisher(with: category.imageURL)
-        categoryFreelancerCount.text = "\(category.freelancerCount) Freelancer"
-        categoryAdvertCount.text = "\(category.advertCount) Adverts"
+        categoryFreelancerCount.text = "\(category.freelancerCount) \(TextTheme.freelancers.text)"
+        categoryAdvertCount.text = "\(category.advertCount) \(TextTheme.adverts.text)"
         layer.backgroundColor = UIColor(hex: category.colorCode)?.cgColor
         layer.borderColor =  UIColor(hex: category.colorCode)?.cgColor
     }

@@ -88,7 +88,7 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
         }
         
         packageDescView.backgroundColor = .white
-        packageDescView.layer.cornerRadius = 10
+        packageDescView.layer.cornerRadius = CornerRadiusTheme.small.rawValue
         addSubview(packageDescView)
         packageDescView.snp.makeConstraints { make in
             make.top.equalTo(packageSegmentedControll.snp.bottom).offset(10)

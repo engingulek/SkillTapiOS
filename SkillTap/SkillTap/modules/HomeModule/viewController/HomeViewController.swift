@@ -39,9 +39,6 @@ extension HomeViewController : PresenterToViewHomeProtocol {
         }
     }
 
-    
-  
-    
     func setHeadData(title: String, subtitle: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}

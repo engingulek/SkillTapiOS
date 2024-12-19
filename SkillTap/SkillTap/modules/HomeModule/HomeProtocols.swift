@@ -54,12 +54,13 @@ protocol PresenterToViewHomeProtocol : AnyObject,HomeKits{
 
 //MARK: PresenterToInteractorHomeProtocol
 protocol PresenterToInteractorHomeProtocol {
-    func fetchCategories() async throws
+    func fetchCategories() async
 }
 
 //MARK: InteractorToPresenterHomeProtocol
 protocol InteractorToPresenterHomeProtocol{
     func sendCategories(categories:[CategoryData])
+    func sendError()
 }
 
 //MARK: PresenterToRouterHomeProtocol

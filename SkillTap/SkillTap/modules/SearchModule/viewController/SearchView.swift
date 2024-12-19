@@ -11,14 +11,14 @@ import UIKit
 
 
 class SearchView : BaseView<SearchViewController> {
-    var presenter : ViewToPrensenterSearchProtocol?
+   var presenter : ViewToPrensenterSearchProtocol?
    
     private lazy var searchView : UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 2
         view.backgroundColor = .white
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = CornerRadiusTheme.small.rawValue
         return view
     }()
     
@@ -26,38 +26,51 @@ class SearchView : BaseView<SearchViewController> {
     private lazy var freelancersButton : UIButton = UIButton.basicButton(action: onTappedFreelancerButton)
     
     
-    private lazy var onTappedAdverstButton : UIAction = UIAction { _  in
-        self.advertsCollectionView.isHidden = false
-        self.freelancerCollectionView.isHidden = true
-        self.presenter?.onTappedAdvertsButton()
+    private lazy var onTappedAdverstButton : UIAction = UIAction { [weak self] _  in
+        guard let self = self else { return }
+        advertsCollectionView.isHidden = false
+        freelancerCollectionView.isHidden = true
+        presenter?.onTappedAdvertsButton()
        }
     
-    private lazy var onTappedFreelancerButton : UIAction = UIAction { _ in
-        self.advertsCollectionView.isHidden = true
-        self.freelancerCollectionView.isHidden = false
-        self.presenter?.onTappedFreelancerButton()
+    private lazy var onTappedFreelancerButton : UIAction = UIAction {[weak self] _ in
+        guard let self = self else { return }
+        advertsCollectionView.isHidden = true
+        freelancerCollectionView.isHidden = false
+        presenter?.onTappedFreelancerButton()
        }
     
     
-    private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
+    private lazy var searchIcon : UIImageView = UIImageView.magnifyingglassIcon()
     
     private lazy var searchTextField : UITextField = UITextField.searchTextField()
     override func setupView() {
         super.setupView()
         configureView()
+        
         advertsCollectionView.isHidden = false
         freelancerCollectionView.isHidden = true
-        searchTextField.addTarget(self, action: #selector(searchTextFieldEditChanged(_:)), for: .editingChanged)
-        advertsCollectionView.register(AdvertCVC.self, forCellWithReuseIdentifier: AdvertCVC.identifier)
-        freelancerCollectionView.register(FreelancerCVC.self, forCellWithReuseIdentifier: FreelancerCVC.identifier)
+        
+        searchTextField.addTarget(self, 
+                                  action: #selector(searchTextFieldEditChanged(_:)),
+                                  for: .editingChanged)
+        
+        advertsCollectionView.register(AdvertCVC.self, 
+                                       forCellWithReuseIdentifier: AdvertCVC.identifier)
+        freelancerCollectionView.register(FreelancerCVC.self, 
+                                          forCellWithReuseIdentifier: FreelancerCVC.identifier)
     }
     
     @objc private func searchTextFieldEditChanged(_ textField: UITextField) {
         presenter?.onChangedSearctTextField(text: textField.text)
     }
     
-    private lazy var advertsCollectionView = UICollectionView.primaryCollectionView(tag:0,scroolDirection: .vertical)
-    private lazy var freelancerCollectionView = UICollectionView.primaryCollectionView(tag:1,scroolDirection: .vertical)
+    private lazy var advertsCollectionView = UICollectionView
+        .primaryCollectionView(tag:0,
+                               scroolDirection: .vertical)
+    private lazy var freelancerCollectionView = UICollectionView
+        .primaryCollectionView(tag:1,
+                               scroolDirection: .vertical)
     
     
 
@@ -119,10 +132,6 @@ class SearchView : BaseView<SearchViewController> {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-    
-        
-       
-    
     }
     
     
@@ -163,7 +172,4 @@ class SearchView : BaseView<SearchViewController> {
     func freelancerCollectionViewReloadData(){
         freelancerCollectionView.reloadData()
     }
-    
- 
- 
 }

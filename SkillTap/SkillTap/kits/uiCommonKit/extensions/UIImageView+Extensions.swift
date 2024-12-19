@@ -11,10 +11,25 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    static func middleIcon(systemName:String,tintColor:UIColor = .black) -> UIImageView {
+    
+    static func magnifyingglassIcon() -> UIImageView {
         let imageView = UIImageView()
-        imageView.image = .init(systemName: systemName)?
-            .withTintColor(tintColor, renderingMode: .alwaysOriginal)
+        imageView.image = .init(systemName: "magnifyingglass")?
+            .withTintColor(.black, renderingMode: .alwaysOriginal)
+        return imageView
+    }
+    
+    static func docDowloadAbleIcon() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.image = .init(systemName: "arrow.down.doc.fill")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        return imageView
+    }
+    
+    static func messageBubbleIcon() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.image = .init(systemName: "message.fill")?
+            .withTintColor(.black, renderingMode: .alwaysOriginal)
         return imageView
     }
     
@@ -36,29 +51,23 @@ extension UIImageView {
     
     }
     
-    static func pageSearchIcon() -> UIImageView{
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.image = .init(resource: .search)
-        imageView.isHidden = false
-        return imageView
-    
-    }
-    
-    
-    
-    func setImageWithKigfisher(with urlString: String) {
+    func setImageWithKigfisher(with urlString: String,size:Int = 100) {
         guard let url = URL(string: urlString) else {
             self.image = UIImage(resource: .placeholder)
             return
         }
-        
+       let resizingProcessor = ResizingImageProcessor(referenceSize: CGSize(width: size, height: size), mode: .aspectFill)
         self.kf.setImage(
             with: url,
             placeholder: UIImage(resource: .placeholder),
             options: [
+                .processor(resizingProcessor),
+                .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(0.3)),
-                .cacheOriginalImage
+                .cacheOriginalImage,
+                .memoryCacheExpiration(.seconds(1)),
+                .diskCacheExpiration(.days(7))
+                
             ],
             progressBlock: nil,
             completionHandler: {  _ in

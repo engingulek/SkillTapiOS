@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FreelancerDetailViewController: ViewController {
+class FreelancerDetailViewController: UIViewController {
     lazy var presenter : ViewToPrensenterFreelancerDetailProtocol = FreelancerDetailPresenter(view:self,interactor: FreelancerDetailInteractor())
     private lazy var freelancerView = FreelancerView(self)
     override func viewDidLoad() {

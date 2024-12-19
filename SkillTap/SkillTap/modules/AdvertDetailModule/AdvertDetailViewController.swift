@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AdvertDetailViewController: ViewController {
+class AdvertDetailViewController: UIViewController {
     
     lazy var presenter : ViewToPrensenterAdvertDetailProtocol
     = AdvertDetailPresenter(view: self,

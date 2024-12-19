@@ -24,20 +24,12 @@ final class HomePresenter {
     
     private func fetchCategories() async {
         view?.startLoadignAnimation()
-        do{
-            try await interactor.fetchCategories()
-            view?.stopLoadingAnimation()
-            view?.categoriesCollectionViewRealoadData()
-        }catch{
-            categoryList = []
-            view?.createErrorMessageForCategories(message: TextTheme.errorMessage.text)
-            view?.stopLoadingAnimation()
-            view?.categoriesCollectionViewRealoadData()
-        }
+        await interactor.fetchCategories()
+        view?.stopLoadingAnimation()
+        view?.categoriesCollectionViewRealoadData()
         
     }
 }
-
 
 //MARK: ViewToPrensenterHomeProtocol
 extension HomePresenter : ViewToPrensenterHomeProtocol {
@@ -51,7 +43,6 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
     
         view?.changeTitle(title: TextTheme.homeNavTitle.text)
         view?.categoriesCollectioViewPreapare()
-        
         
         
         Task {
@@ -90,18 +81,24 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         
     }
     
-    
     func onTappedMessageIcon() {
         router.toLastMessageList(view: view)
     }
-    
-   
-
 }
 
 //MARK: InteractorToPresenterHomeProtocol
 extension HomePresenter : InteractorToPresenterHomeProtocol {
+
     func sendCategories(categories: [CategoryData]) {
         categoryList = categories
     }
+    
+    
+    func sendError() {
+        categoryList = []
+        view?.createErrorMessageForCategories(message: TextTheme.errorMessage.text)
+        view?.stopLoadingAnimation()
+        view?.categoriesCollectionViewRealoadData()
+    }
+    
 }

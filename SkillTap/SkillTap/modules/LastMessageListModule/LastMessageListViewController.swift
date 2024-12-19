@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LastMessageListViewController: ViewController {
+class LastMessageListViewController: UIViewController {
 
     private lazy var lastMessageListView = LastMessageListView(self)
      lazy var presenter : ViewToPrensenterLastMessageListProtocol = LastMessageListPresenter(

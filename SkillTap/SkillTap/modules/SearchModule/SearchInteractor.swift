@@ -14,25 +14,28 @@ class SearchInteractor : PresenterToInteractorSearchProtocol {
     
     func fetchAllAdverts() async   {
         do{
-            let response = try await newtorkManager.fetch(target: .adverts, responseClass: [Advert].self)
+            let response = try await newtorkManager
+                .fetch(target: .adverts,
+                       responseClass: [Advert].self)
             presenter?.sendAdverts(adverts: response)
             
         }catch{
-           
+            fatalError("Error Adverts \(error.localizedDescription)")
         }
     }
     
     
     func fetchAllFreelancers() async  {
         do{
-            let response = try await newtorkManager.fetch(target: .feelancer, responseClass: [Freelancer].self)
+            let response = try await newtorkManager
+                .fetch(target: .feelancer,
+                       responseClass: [Freelancer].self)
             presenter?.sendFreelancr(freelancers: response)
             
         }catch{
-            
+            fatalError("Error Freelancers \(error.localizedDescription)")
         }
 
     }
-    
     
 }
