@@ -21,7 +21,7 @@ class FreelancerCVC: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        layer.cornerRadius = 10
+        layer.cornerRadius = CornerRadiusTheme.small.rawValue
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGray.cgColor
         configureView()

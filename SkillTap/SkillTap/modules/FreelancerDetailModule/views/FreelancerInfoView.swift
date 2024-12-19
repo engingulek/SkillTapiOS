@@ -19,7 +19,7 @@ class FreelancerInfoView : UIView {
         super.init(frame: frame)
         configureView()
         backgroundColor = .white
-        layer.cornerRadius = 10
+        layer.cornerRadius = CornerRadiusTheme.small.rawValue
     }
     
     required init?(coder: NSCoder) {

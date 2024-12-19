@@ -10,12 +10,10 @@ import SnapKit
 class MessageCVC: UICollectionViewCell {
     static  let identifier : String  = "sentMessageCellIdentifier"
     private lazy var textMessage:UILabel = UILabel.cellTitleUILabel(color: ColorTheme.secondaryColor.color)
-    private lazy var docDowloadAbleImage : UIImageView = UIImageView.middleIcon(
-        systemName: "arrow.down.doc.fill",
-        tintColor: .white)
+    private lazy var docDowloadAbleImage : UIImageView = UIImageView.docDowloadAbleIcon()
     private let bubbleView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = CornerRadiusTheme.xsmall.rawValue
         view.clipsToBounds = true
         view.backgroundColor = .black
         return view

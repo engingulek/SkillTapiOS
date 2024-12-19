@@ -21,7 +21,7 @@ class AdvertDetailInfoView : UIView {
      
        
         backgroundColor = .white
-        layer.cornerRadius = 10
+        layer.cornerRadius = CornerRadiusTheme.small.rawValue
         descTitleLabel.text = "Advert Description"
     }
     

@@ -17,7 +17,7 @@ class AdvertCVC: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
-        layer.cornerRadius = 10
+        layer.cornerRadius = CornerRadiusTheme.small.rawValue
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGray.cgColor
         backgroundColor = .white
@@ -30,7 +30,7 @@ class AdvertCVC: UICollectionViewCell {
     
     private func configureView(){
         contentView.addSubview(advertImage)
-        advertImage.layer.cornerRadius = 10
+        advertImage.layer.cornerRadius = CornerRadiusTheme.small.rawValue
         advertImage.clipsToBounds = true
         advertImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(5)
@@ -61,8 +61,6 @@ class AdvertCVC: UICollectionViewCell {
              make.bottom.equalToSuperview().offset(-5)
             
          }
-        
-       
     }
     
     func configureData(advert:Advert){

@@ -87,7 +87,6 @@
 		7DEB22182CFB95860006DF74 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22172CFB95860006DF74 /* ColorTheme.swift */; };
 		7DEB221A2CFB97010006DF74 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */; };
 		7DEB221C2CFB9E450006DF74 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */; };
-		7DEB22242CFBAB6E0006DF74 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB22232CFBAB6E0006DF74 /* BannerView.swift */; };
 		7DFF7E382D13641000B12FF3 /* CornerRadiusTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFF7E372D13641000B12FF3 /* CornerRadiusTheme.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,7 +179,6 @@
 		7DEB22172CFB95860006DF74 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		7DEB22192CFB97010006DF74 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		7DEB221B2CFB9E450006DF74 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
-		7DEB22232CFBAB6E0006DF74 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		7DFF7E372D13641000B12FF3 /* CornerRadiusTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -464,7 +462,6 @@
 			isa = PBXGroup;
 			children = (
 				7D77AE282CFCAA9E00A011A3 /* theme */,
-				7DEB22222CFBAB530006DF74 /* combinedViews */,
 				7DEB21F72CFB86370006DF74 /* extensions */,
 				7DEB21F42CFB85C20006DF74 /* Ables.swift */,
 			);
@@ -491,14 +488,6 @@
 				7DEB220C2CFB8B220006DF74 /* BaseView.swift */,
 			);
 			path = corekits;
-			sourceTree = "<group>";
-		};
-		7DEB22222CFBAB530006DF74 /* combinedViews */ = {
-			isa = PBXGroup;
-			children = (
-				7DEB22232CFBAB6E0006DF74 /* BannerView.swift */,
-			);
-			path = combinedViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -690,7 +679,6 @@
 				7DB11EEB2D13254A00EFAA9B /* FreelancerDetailInteractor.swift in Sources */,
 				7D77AE252CFCA08400A011A3 /* UICollectionView+Extensions.swift in Sources */,
 				7DEB220D2CFB8B220006DF74 /* BaseView.swift in Sources */,
-				7DEB22242CFBAB6E0006DF74 /* BannerView.swift in Sources */,
 				7D5DB6C12D04D7E100CB7F68 /* AdvertDetailView.swift in Sources */,
 				7D0DC5BD2D07109D009B0B8A /* LastMessageListProtocols.swift in Sources */,
 				7DB11EE92D13240000EFAA9B /* FreelancerDetail.swift in Sources */,

@@ -11,17 +11,18 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    static func middleIcon(systemName:String,tintColor:UIColor = .black) -> UIImageView {
-        let imageView = UIImageView()
-        imageView.image = .init(systemName: systemName)?
-            .withTintColor(tintColor, renderingMode: .alwaysOriginal)
-        return imageView
-    }
     
     static func magnifyingglassIcon() -> UIImageView {
         let imageView = UIImageView()
         imageView.image = .init(systemName: "magnifyingglass")?
             .withTintColor(.black, renderingMode: .alwaysOriginal)
+        return imageView
+    }
+    
+    static func docDowloadAbleIcon() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.image = .init(systemName: "arrow.down.doc.fill")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
         return imageView
     }
     

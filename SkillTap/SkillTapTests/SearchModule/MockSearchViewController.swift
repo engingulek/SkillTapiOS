@@ -127,12 +127,6 @@ class MockSearchViewController : PresenterToViewSearchProtocol {
          invokedpushViewControllerAbleCount += 1
     }
     
-    
 
-    
-    func popViewControllerAble() {
-        
-    }
-    
     
 }

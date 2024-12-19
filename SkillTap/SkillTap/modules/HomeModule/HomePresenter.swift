@@ -81,13 +81,9 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
         
     }
     
-    
     func onTappedMessageIcon() {
         router.toLastMessageList(view: view)
     }
-    
-   
-
 }
 
 //MARK: InteractorToPresenterHomeProtocol

@@ -52,11 +52,7 @@ protocol PresenterToViewSearchProtocol : AnyObject,SearchKits{
     
     func advertsCollectionViewReload()
     func freelancerCollectionViewReload()
-    
-    
-    
-    
-    
+
 }
 
 //MARK: PresenterToInteractorSearchProtocol

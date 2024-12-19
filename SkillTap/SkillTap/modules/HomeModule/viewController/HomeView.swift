@@ -60,7 +60,8 @@ class HomeView : BaseView<HomeViewController> {
         }
         
         messageIcon.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTappedMessageIcon))
+        let tapGesture = UITapGestureRecognizer(target: self, 
+                                                action: #selector(onTappedMessageIcon))
         messageIcon.addGestureRecognizer(tapGesture)
         addSubview(messageIcon)
         messageIcon.snp.makeConstraints { make in
@@ -96,7 +97,8 @@ class HomeView : BaseView<HomeViewController> {
             make.trailing.equalToSuperview().offset(10)
         }
         
-        let searchTapGesture = UITapGestureRecognizer(target: self, action: #selector(searchViewTapped))
+        let searchTapGesture = UITapGestureRecognizer(target: self, 
+                                                      action: #selector(searchViewTapped))
         searchLigtLabel.isUserInteractionEnabled = true
         searchLigtLabel.addGestureRecognizer(searchTapGesture)
         

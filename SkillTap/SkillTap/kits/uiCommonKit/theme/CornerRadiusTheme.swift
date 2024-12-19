@@ -9,7 +9,12 @@ import Foundation
 
 enum CornerRadiusTheme : CGFloat {
     
+    /// is 5
+    case xsmall = 5
     /// is 10
     case small = 10
+    
+    /// 20
+    case medium = 20
     
 }

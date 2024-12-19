@@ -112,15 +112,6 @@ class MockHomeViewController : PresenterToViewHomeProtocol{
          invokedstopLoadingAnimationCount += 1
     }
     
-    
-    
-    func popViewControllerAble() {
-        
-    }
-    
-    
-    
-    
-    
+
     
 }

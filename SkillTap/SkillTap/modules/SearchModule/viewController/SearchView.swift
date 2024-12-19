@@ -18,7 +18,7 @@ class SearchView : BaseView<SearchViewController> {
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 2
         view.backgroundColor = .white
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = CornerRadiusTheme.small.rawValue
         return view
     }()
     
@@ -41,25 +41,36 @@ class SearchView : BaseView<SearchViewController> {
        }
     
     
-    private lazy var searchIcon : UIImageView = UIImageView.middleIcon(systemName: "magnifyingglass")
+    private lazy var searchIcon : UIImageView = UIImageView.magnifyingglassIcon()
     
     private lazy var searchTextField : UITextField = UITextField.searchTextField()
     override func setupView() {
         super.setupView()
         configureView()
+        
         advertsCollectionView.isHidden = false
         freelancerCollectionView.isHidden = true
-        searchTextField.addTarget(self, action: #selector(searchTextFieldEditChanged(_:)), for: .editingChanged)
-        advertsCollectionView.register(AdvertCVC.self, forCellWithReuseIdentifier: AdvertCVC.identifier)
-        freelancerCollectionView.register(FreelancerCVC.self, forCellWithReuseIdentifier: FreelancerCVC.identifier)
+        
+        searchTextField.addTarget(self, 
+                                  action: #selector(searchTextFieldEditChanged(_:)),
+                                  for: .editingChanged)
+        
+        advertsCollectionView.register(AdvertCVC.self, 
+                                       forCellWithReuseIdentifier: AdvertCVC.identifier)
+        freelancerCollectionView.register(FreelancerCVC.self, 
+                                          forCellWithReuseIdentifier: FreelancerCVC.identifier)
     }
     
     @objc private func searchTextFieldEditChanged(_ textField: UITextField) {
         presenter?.onChangedSearctTextField(text: textField.text)
     }
     
-    private lazy var advertsCollectionView = UICollectionView.primaryCollectionView(tag:0,scroolDirection: .vertical)
-    private lazy var freelancerCollectionView = UICollectionView.primaryCollectionView(tag:1,scroolDirection: .vertical)
+    private lazy var advertsCollectionView = UICollectionView
+        .primaryCollectionView(tag:0,
+                               scroolDirection: .vertical)
+    private lazy var freelancerCollectionView = UICollectionView
+        .primaryCollectionView(tag:1,
+                               scroolDirection: .vertical)
     
     
 
@@ -121,10 +132,6 @@ class SearchView : BaseView<SearchViewController> {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-    
-        
-       
-    
     }
     
     
@@ -165,7 +172,4 @@ class SearchView : BaseView<SearchViewController> {
     func freelancerCollectionViewReloadData(){
         freelancerCollectionView.reloadData()
     }
-    
- 
- 
 }
