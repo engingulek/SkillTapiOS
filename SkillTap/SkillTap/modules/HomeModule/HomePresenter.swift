@@ -82,7 +82,7 @@ extension HomePresenter : ViewToPrensenterHomeProtocol {
     }
     
     func onTappedMessageIcon() {
-        router.toLastMessageList(view: view)
+        router.toRoomList(view: view)
     }
 }
 

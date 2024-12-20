@@ -30,8 +30,8 @@ extension HomeRouter : PresenterToRouterHomeProtocol {
         view?.pushViewControllerAble(viewController, animated: true)
     }
     
-    func toLastMessageList(view: PresenterToViewHomeProtocol?) {
-        let viewController = LastMessageListViewController()
+    func toRoomList(view: PresenterToViewHomeProtocol?) {
+        let viewController = RoomListRouter.createModule()
         view?.pushViewControllerAble(viewController, animated: true)
     }
     
