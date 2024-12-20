@@ -46,5 +46,5 @@ protocol InteractorToPresenterRoomListProtocol{
 
 //MARK: PresenterToRouterRoomListProtocol
 protocol PresenterToRouterRoomListProtocol{
-    func toMessage(view:PresenterToViewRoomListProtocol?)
+    func toMessage(view:PresenterToViewRoomListProtocol?,id:String,nameSurname:String)
 }

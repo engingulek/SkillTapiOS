@@ -7,6 +7,10 @@
 
 import UIKit
 import SnapKit
+
+
+
+
 class MessageCVC: UICollectionViewCell {
     static  let identifier : String  = "sentMessageCellIdentifier"
     private lazy var textMessage:UILabel = UILabel.cellTitleUILabel(color: ColorTheme.secondaryColor.color)
@@ -51,20 +55,12 @@ class MessageCVC: UICollectionViewCell {
         }
     }
     
-    func configureData(message:MessageData){
+    func configureData(message:MessageResponse){
         textMessage.text = message.message
     }
     
     func convertMessageType(messageType:MessageType) {
         switch messageType {
-        case .text:
-            bubbleView.addSubview(textMessage)
-            textMessage.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.leading.equalToSuperview().offset(15)
-                make.bottom.equalToSuperview().offset(-5)
-                make.trailing.equalToSuperview().offset(-15)
-            }
         case .file:
             bubbleView.addSubview(docDowloadAbleImage)
             docDowloadAbleImage.snp.makeConstraints { make in
@@ -74,7 +70,17 @@ class MessageCVC: UICollectionViewCell {
                 make.trailing.equalToSuperview().offset(-15)
                 make.size.equalTo(50)
             }
+        case .text:
+            bubbleView.addSubview(textMessage)
+            textMessage.snp.makeConstraints { make in
+                make.top.equalToSuperview().offset(5)
+                make.leading.equalToSuperview().offset(15)
+                make.bottom.equalToSuperview().offset(-5)
+                make.trailing.equalToSuperview().offset(-15)
+            }
         }
+       
+       
     }
     
     required init?(coder: NSCoder) {

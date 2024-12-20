@@ -11,58 +11,61 @@ enum MessagePositonType {
     case sender
     case receiver
 }
+enum MessageType {
+    case file
+    case text
+}
 
 class MessagePresenter {
     weak var view : PresenterToViewMessageProtocol?
-    private var messageList : [MessageData] = []
-    init(view: PresenterToViewMessageProtocol?) {
-        self.view = view
-    }
-    
-    
-}
+    private var messages : [MessageResponse] = []
+    private let interactor : PresenterToInteractorMessageProtocol
 
+    init(view: PresenterToViewMessageProtocol?,interactor:PresenterToInteractorMessageProtocol) {
+        self.view = view
+        self.interactor = interactor
+    }
+}
 
 extension MessagePresenter : ViewToPrensenterMessageProtocol {
  
-    
     func viewDidLoad() {
         view?.setBackColorAble(color: ColorTheme.secondaryColor.color)
         view?.messageCollectionViewPrepare()
         view?.messageCollectionViewRealoaData()
-        view?.changeTitle(title: "user name")
+    }
+    
+    func getRoomId(id: String,nameSurname:String) {
+        if id.hasPrefix("-") {
+          let  messageId = String(id.dropFirst())
+            interactor.fetchMessage(id: messageId)
+        }
         
-        messageList = [
-            .init(id: 1, message: "hi", messageType: .text, date: ""),
-            .init(id: 1, message: "I want a app", messageType: .text, date: ""),
-            
-                .init(id: 2, message: "ok", messageType: .text, date: ""),
-            .init(id: 2, message: "url", messageType: .file, date: "")
-             
-            
-        ]
+        view?.changeTitle(title: nameSurname)
+    
     }
     
     func numberOfItemsIn() -> Int {
-        return messageList.count
+        return messages.count
     }
     
     func cellForItem(at indexPath: IndexPath) -> (position:MessagePositonType,
-                                                  messageData:MessageData,
+                                                  messageData:MessageResponse,
+                                                  messageType:MessageType,
                                                   backColor:String) {
         let position:MessagePositonType
         let backColor:String
-        let message = messageList[indexPath.item]
+        let message = messages[indexPath.item]
+        let messageType: MessageType
+        
+        position = message.userId == "1" ? .receiver : .sender
+        backColor = message.userId == "1" ?
+        ColorTheme.thirdColor.color : ColorTheme.primaryColor.color
+        
+        messageType = message.type == "file" ? .file : .text
        
-        if message.id == 1 {
-            position = .receiver
-            backColor = ColorTheme.thirdColor.color
-           
-        }else{
-            position = .sender
-            backColor = ColorTheme.primaryColor.color
-        }
-        return (position,message,backColor)
+        
+        return (position,message,messageType,backColor)
       
     }
     
@@ -70,6 +73,12 @@ extension MessagePresenter : ViewToPrensenterMessageProtocol {
     func sizeForItemAt(width: CGFloat, height: CGFloat) -> CGSize {
         return CGSize(width: width, height:height / 18)
     }
-    
-    
+}
+
+
+extension MessagePresenter : InteractorToPresenterMessageProtocol {
+    func sendMessageList(messageList: [MessageResponse]) {
+        messages = messageList.sorted(by: { $0.timestamp < $1.timestamp })
+        view?.messageCollectionViewRealoaData()
+    }
 }

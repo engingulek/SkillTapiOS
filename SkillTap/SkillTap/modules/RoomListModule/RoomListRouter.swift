@@ -20,8 +20,8 @@ class RoomListRouter {
 }
 
 extension RoomListRouter : PresenterToRouterRoomListProtocol {
-    func toMessage(view: PresenterToViewRoomListProtocol?) {
-        let viewController = MessageRouter.createModule()
+    func toMessage(view: PresenterToViewRoomListProtocol?,id:String,nameSurname:String) {
+        let viewController = MessageRouter.createModule(id: id,nameSurname: nameSurname)
         view?.pushViewControllerAble(viewController, animated: true)
     }
 

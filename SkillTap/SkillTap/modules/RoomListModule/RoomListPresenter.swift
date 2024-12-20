@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 final class RoomListPresenter {
     weak var view : PresenterToViewRoomListProtocol?
     private var router : PresenterToRouterRoomListProtocol
@@ -42,7 +44,9 @@ extension RoomListPresenter : ViewToPrensenterRoomListProtocol {
     }
     
     func didSelectItem(at indexPath: IndexPath) {
-        router.toMessage(view: view)
+        let id = rooms[indexPath.item].id
+        let nameSurname = rooms[indexPath.item].userName
+        router.toMessage(view: view,id: id,nameSurname: nameSurname)
     }
     
     func sizeForItemAt(width: CGFloat, height: CGFloat) -> CGSize {

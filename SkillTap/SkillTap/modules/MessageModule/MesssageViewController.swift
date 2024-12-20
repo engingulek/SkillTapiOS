@@ -10,7 +10,7 @@ import SnapKit
 
 class MesssageViewController: UIViewController {
    private lazy var messageView = MessageView(self)
-    lazy var presenter : ViewToPrensenterMessageProtocol = MessagePresenter(view: self)
+    lazy var presenter : ViewToPrensenterMessageProtocol = MessagePresenter(view: self,interactor: MessageInteractor())
     override func viewDidLoad() {
         super.viewDidLoad()
        view = messageView
@@ -33,7 +33,7 @@ extension MesssageViewController : UICollectionViewDelegate, UICollectionViewDat
             messagePositon: item.position,
             backColor: item.backColor)
         cell.configureData(message: item.messageData)
-        cell.convertMessageType(messageType: item.messageData.messageType)
+        cell.convertMessageType(messageType: item.messageType)
         return cell
     }
 }
