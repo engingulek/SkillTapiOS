@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 typealias HomeKits = UIViewAble & SegueAble & NavConUIAble
 
 //MARK: ViewToPrensenterHomeProtocol
@@ -66,5 +67,5 @@ protocol InteractorToPresenterHomeProtocol{
 //MARK: PresenterToRouterHomeProtocol
 protocol PresenterToRouterHomeProtocol {
     func toSearchView(view:PresenterToViewHomeProtocol?)
-    func toLastMessageList(view:PresenterToViewHomeProtocol?)
+    func toRoomList(view:PresenterToViewHomeProtocol?)
 }

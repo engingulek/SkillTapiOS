@@ -27,4 +27,15 @@ extension UIButton {
         button.addAction(action, for: .touchUpInside)
         return button
     }
+    
+    
+    static func arrowMessageButton(action:UIAction) -> UIButton {
+        let button =  UIButton(type: .system)
+        let symbolConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .regular)
+        let symbolImage = UIImage(systemName: "arrowtriangle.forward.square.fill", withConfiguration: symbolConfig)
+        button.setImage(symbolImage, for: .normal)
+        button.tintColor = UIColor(hex: ColorTheme.thirdColor.color)
+        button.addAction(action, for: .touchUpInside)
+        return button
+    }
 }

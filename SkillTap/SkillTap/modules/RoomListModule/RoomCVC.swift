@@ -7,8 +7,8 @@
 
 import UIKit
 
-class LastMessageCVC: UICollectionViewCell {
-    static  let identifier : String  = "lastMessageCellIndentifier"
+class RoomCVC: UICollectionViewCell {
+    static  let identifier : String  = "roomcvcIndentifier"
     private lazy var userImage : UIImageView = UIImageView()
     private lazy var userName : UILabel = UILabel.cellTitleUILabel()
     private lazy var lastMessageLabel : UILabel = UILabel.lightMiddleLabel()
@@ -17,12 +17,10 @@ class LastMessageCVC: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        userImage.backgroundColor  = .red
+        userImage.backgroundColor  = .black
         userImage.contentMode = .scaleAspectFill
         userImage.clipsToBounds = true
-        userName.text = "User Name"
-        lastMessageLabel.text = "last message"
-        dateLabel.text = "Yesterday"
+        
         configure()
     }
     
@@ -56,6 +54,37 @@ class LastMessageCVC: UICollectionViewCell {
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(userName.snp.top)
             make.trailing.equalToSuperview().offset(-10)
+        }
+    }
+    
+    func configureData(room:RoomResponse){
+        userImage.setImageWithKigfisher(with: room.userImageUrl)
+        userName.text = room.userName
+        lastMessageLabel.text = room.lastMessage
+        let date = convertDate(times: room.date)
+        dateLabel.text = date
+    }
+    
+    
+    private func convertDate(times:Int) -> String{
+        let calendar = Calendar.current
+        let messageDate =  Date(timeIntervalSince1970: TimeInterval(times))
+        let component = calendar.dateComponents([.day], from: messageDate, to: Date.now)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let messageDateFormatter = dateFormatter.string(from: messageDate)
+        let dayDif = component.day ?? -1
+       
+        switch dayDif {
+        case 0:
+            return "Today"
+        case 1:
+            return "Yesterday"
+        default:
+            print(dayDif)
+            return messageDateFormatter
+            
         }
     }
     

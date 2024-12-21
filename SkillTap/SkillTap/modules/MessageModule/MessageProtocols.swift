@@ -16,10 +16,14 @@ protocol ViewToPrensenterMessageProtocol{
     func viewDidLoad()
     func numberOfItemsIn() -> Int
     func cellForItem(at indexPath:IndexPath) ->  (position:MessagePositonType,
-                                                  messageData:MessageData,backColor:String) 
+                                                  messageData:MessageResponse,
+                                                  backColor:String)
     func sizeForItemAt(width:CGFloat,
                        height:CGFloat) -> CGSize
     
+    func getRoomId(id:String,nameSurname:String)
+    
+    func sendMessageAction(message:String)
 
     
     
@@ -36,15 +40,19 @@ protocol PresenterToViewMessageProtocol : AnyObject,MesssageKits{
 
 //MARK: PresenterToInteractorMessageProtocol
 protocol PresenterToInteractorMessageProtocol {
-    
+    func fetchMessage(id:String)
+    func sendMessage(roomId:String,message:[String:Any])
+    func updateRoom(userId:String,roomId:String,updateValue:[String:Any])
 }
 
 //MARK: InteractorToPresenterMessageProtocol
 protocol InteractorToPresenterMessageProtocol{
+    func sendMessageList(messageList:[MessageResponse])
     
 }
 
+
 //MARK: PresenterToRouterSubCategoryProtocol
 protocol PresenterToRouterMessageProtocol {
-   
+    
 }

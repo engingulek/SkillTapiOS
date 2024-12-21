@@ -8,20 +8,20 @@
 import Foundation
 import UIKit
 import SnapKit
-class LastMessageListView : BaseView<LastMessageListViewController> {
-    private lazy var lastMessageListCollectionView : UICollectionView = UICollectionView
+class RoomListView : BaseView<RoomListViewController> {
+    private lazy var roomListCollectionView : UICollectionView = UICollectionView
         .primaryCollectionView(scroolDirection: .vertical)
     
     override func setupView() {
         super.setupView()
         configureView()
-        lastMessageListCollectionView.register(LastMessageCVC.self, forCellWithReuseIdentifier: LastMessageCVC.identifier)
+        roomListCollectionView.register(RoomCVC.self, forCellWithReuseIdentifier: RoomCVC.identifier)
     }
     
     
     private func configureView() {
-        addSubview(lastMessageListCollectionView)
-        lastMessageListCollectionView.snp.makeConstraints { make in
+        addSubview(roomListCollectionView)
+        roomListCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
@@ -33,12 +33,12 @@ class LastMessageListView : BaseView<LastMessageListViewController> {
     
     
     func lastMessageListCollectionViewPrepare() {
-        lastMessageListCollectionView.delegate = controller
-        lastMessageListCollectionView.dataSource = controller
+        roomListCollectionView.delegate = controller
+        roomListCollectionView.dataSource = controller
     }
     
     func lastMessageListCollectionViewRealoaData(){
-        lastMessageListCollectionView.reloadData()
+        roomListCollectionView.reloadData()
     }
     
     

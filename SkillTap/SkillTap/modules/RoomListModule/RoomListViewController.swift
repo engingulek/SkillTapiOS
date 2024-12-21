@@ -7,12 +7,13 @@
 
 import UIKit
 
-class LastMessageListViewController: UIViewController {
+class RoomListViewController: UIViewController {
 
-    private lazy var lastMessageListView = LastMessageListView(self)
-     lazy var presenter : ViewToPrensenterLastMessageListProtocol = LastMessageListPresenter(
+    private lazy var lastMessageListView = RoomListView(self)
+     lazy var presenter : ViewToPrensenterRoomListProtocol = RoomListPresenter(
         view: self,
-        router: LastMessageListRouter())
+        router: RoomListRouter(),
+        interactor: RoomListInteractor())
     override func viewDidLoad() {
         super.viewDidLoad()
         view = lastMessageListView
@@ -21,15 +22,15 @@ class LastMessageListViewController: UIViewController {
     }
 }
 
-extension LastMessageListViewController : PresenterToViewLastMessageListProtocol {
-    func lastMessageListCollectionViewPrepare() {
+extension RoomListViewController : PresenterToViewRoomListProtocol {
+    func roomListCollectionViewPrepare() {
         DispatchQueue.main.async {[weak self] in
             guard let self = self else {return}
             lastMessageListView.lastMessageListCollectionViewPrepare()
         }
     }
     
-    func lastMessageListCollectionViewRealoaData() {
+    func roomListCollectionViewRealoaData() {
         DispatchQueue.main.async {[weak self] in
             guard let self = self else {return}
             lastMessageListView.lastMessageListCollectionViewRealoaData()
@@ -39,14 +40,15 @@ extension LastMessageListViewController : PresenterToViewLastMessageListProtocol
     
 }
 
-extension LastMessageListViewController : UICollectionViewDelegate,UICollectionViewDataSource {
+extension RoomListViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.numberOfItemsIn()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LastMessageCVC.identifier, for: indexPath) as? LastMessageCVC else {return UICollectionViewCell()}
-        presenter.cellForItem(at: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoomCVC.identifier, for: indexPath) as? RoomCVC else {return UICollectionViewCell()}
+        let room = presenter.cellForItem(at: indexPath)
+        cell.configureData(room: room)
         return cell
     }
     
@@ -56,7 +58,7 @@ extension LastMessageListViewController : UICollectionViewDelegate,UICollectionV
 }
 
 
-extension LastMessageListViewController: UICollectionViewDelegateFlowLayout {
+extension RoomListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return  presenter.sizeForItemAt(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         
