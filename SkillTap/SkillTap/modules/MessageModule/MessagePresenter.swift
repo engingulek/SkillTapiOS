@@ -11,15 +11,12 @@ enum MessagePositonType {
     case sender
     case receiver
 }
-enum MessageType {
-    case file
-    case text
-}
 
 class MessagePresenter {
     weak var view : PresenterToViewMessageProtocol?
     private var messages : [MessageResponse] = []
     private let interactor : PresenterToInteractorMessageProtocol
+    private var roomId:String = ""
 
     init(view: PresenterToViewMessageProtocol?,interactor:PresenterToInteractorMessageProtocol) {
         self.view = view
@@ -37,8 +34,9 @@ extension MessagePresenter : ViewToPrensenterMessageProtocol {
     
     func getRoomId(id: String,nameSurname:String) {
         if id.hasPrefix("-") {
-          let  messageId = String(id.dropFirst())
-            interactor.fetchMessage(id: messageId)
+           roomId = String(id.dropFirst())
+            interactor.fetchMessage(id: roomId)
+            
         }
         
         view?.changeTitle(title: nameSurname)
@@ -51,21 +49,21 @@ extension MessagePresenter : ViewToPrensenterMessageProtocol {
     
     func cellForItem(at indexPath: IndexPath) -> (position:MessagePositonType,
                                                   messageData:MessageResponse,
-                                                  messageType:MessageType,
+                                                
                                                   backColor:String) {
         let position:MessagePositonType
         let backColor:String
         let message = messages[indexPath.item]
-        let messageType: MessageType
+     
         
         position = message.userId == "1" ? .receiver : .sender
         backColor = message.userId == "1" ?
         ColorTheme.thirdColor.color : ColorTheme.primaryColor.color
         
-        messageType = message.type == "file" ? .file : .text
+      
        
         
-        return (position,message,messageType,backColor)
+        return (position,message,backColor)
       
     }
     
@@ -73,10 +71,35 @@ extension MessagePresenter : ViewToPrensenterMessageProtocol {
     func sizeForItemAt(width: CGFloat, height: CGFloat) -> CGSize {
         return CGSize(width: width, height:height / 18)
     }
+    
+    func sendMessageAction(message: String) {
+        let messageData : [String:Any] = [
+            "message":message,
+            "timestamp" : Int(Date.now.timeIntervalSince1970),
+            "userId":"1"
+        
+        ]
+        
+        let roomUpdate : [String:Any] = [
+            "lastMessage" : message,
+            "date" :Int(Date.now.timeIntervalSince1970),
+        ]
+        
+        interactor.sendMessage(
+            roomId: roomId,
+            message: messageData)
+        
+        interactor.updateRoom(
+            userId: "1",
+            roomId: "-\(roomId)",
+            updateValue: roomUpdate)
+      
+    }
 }
 
 
 extension MessagePresenter : InteractorToPresenterMessageProtocol {
+
     func sendMessageList(messageList: [MessageResponse]) {
         messages = messageList.sorted(by: { $0.timestamp < $1.timestamp })
         view?.messageCollectionViewRealoaData()

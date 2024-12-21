@@ -13,8 +13,10 @@ class MesssageViewController: UIViewController {
     lazy var presenter : ViewToPrensenterMessageProtocol = MessagePresenter(view: self,interactor: MessageInteractor())
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageView.presenter = presenter
        view = messageView
         presenter.viewDidLoad()
+        
       
     }
 }
@@ -33,7 +35,7 @@ extension MesssageViewController : UICollectionViewDelegate, UICollectionViewDat
             messagePositon: item.position,
             backColor: item.backColor)
         cell.configureData(message: item.messageData)
-        cell.convertMessageType(messageType: item.messageType)
+   
         return cell
     }
 }

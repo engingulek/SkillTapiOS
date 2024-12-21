@@ -28,15 +28,23 @@ class MessageCVC: UICollectionViewCell {
         configureView()
         
     }
-
+    
     private func configureView(){
         addSubview(bubbleView)
         bubbleView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(5)
-
+            
             make.bottom.equalToSuperview().offset(-5)
         }
-       
+        
+        bubbleView.addSubview(textMessage)
+        textMessage.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(5)
+            make.leading.equalToSuperview().offset(15)
+            make.bottom.equalToSuperview().offset(-5)
+            make.trailing.equalToSuperview().offset(-15)
+        }
+        
     }
     
     func changeViewAccordindMessagePostion(messagePositon:MessagePositonType,
@@ -58,30 +66,7 @@ class MessageCVC: UICollectionViewCell {
     func configureData(message:MessageResponse){
         textMessage.text = message.message
     }
-    
-    func convertMessageType(messageType:MessageType) {
-        switch messageType {
-        case .file:
-            bubbleView.addSubview(docDowloadAbleImage)
-            docDowloadAbleImage.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.leading.equalToSuperview().offset(15)
-                make.bottom.equalToSuperview().offset(-5)
-                make.trailing.equalToSuperview().offset(-15)
-                make.size.equalTo(50)
-            }
-        case .text:
-            bubbleView.addSubview(textMessage)
-            textMessage.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(5)
-                make.leading.equalToSuperview().offset(15)
-                make.bottom.equalToSuperview().offset(-5)
-                make.trailing.equalToSuperview().offset(-15)
-            }
-        }
-       
-       
-    }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

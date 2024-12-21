@@ -8,7 +8,3 @@
 import Foundation
 import Firebase
 
-protocol FirebaseTargetType{
-  
-    var path:DatabaseReference {get}
-}

@@ -22,7 +22,6 @@ class MessageInteractor : PresenterToInteractorMessageProtocol {
                     let message = MessageResponse(
                         id: message.key,
                         message: data["message"] as? String ?? "",
-                        type: data["type"] as? String ?? "",
                         userId: data["userId"] as? String ?? "",
                         timestamp: data["timestamp"] as? Int ?? 0
                     )
@@ -35,7 +34,42 @@ class MessageInteractor : PresenterToInteractorMessageProtocol {
             }
         }
         
+        
     }
+    
+    func sendMessage(
+        roomId:String,
+        message: [String : Any]) {
+        firebaseManager.set(target: .room(roomId),
+                            value: message) { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print("Error \(failure)")
+            }
+        }
+    }
+    
+    func updateRoom(
+        userId:String,
+        roomId: String,
+        updateValue: [String:Any]) {
+        firebaseManager.update(
+            target: .updateRoom(userId, roomId),
+            value: updateValue) { result in
+                switch result {
+                case .success(let success):
+                    print(success)
+                case .failure(let failure):
+                    print("Error \(failure)")
+                }
+            }
+    }
+    
+  
+
+    
     
     
 }

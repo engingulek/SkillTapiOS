@@ -10,7 +10,6 @@ import Foundation
 struct MessageResponse{
     var id:String
     var message: String
-    var type: String
     var userId: String
     var timestamp:Int
 
