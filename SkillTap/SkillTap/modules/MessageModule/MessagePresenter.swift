@@ -79,7 +79,6 @@ extension MessagePresenter : ViewToPrensenterMessageProtocol {
             "userId":"1"
         
         ]
-        
         let roomUpdate : [String:Any] = [
             "lastMessage" : message,
             "date" :Int(Date.now.timeIntervalSince1970),

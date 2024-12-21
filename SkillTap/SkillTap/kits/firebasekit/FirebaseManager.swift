@@ -23,22 +23,22 @@ protocol FirebaseManagerProtocol {
         completion: @escaping (Result<[String:AnyObject], FirebaseError>) -> Void
     )
     
-   func set(
-    target:FirebaseSetPath,
-    value:[String:Any],
-    completion: @escaping (Result<String, FirebaseError>) -> Void
-    
-   )
+    func set(
+        target:FirebaseSetPath,
+        value:[String:Any],
+        completion: @escaping (Result<String, FirebaseError>) -> Void
+        
+    )
     
     func update(
         target:FirebaseSetPath,
         value:[String:Any],
-completion: @escaping (Result<String, FirebaseError>) -> Void)
+        completion: @escaping (Result<String, FirebaseError>) -> Void)
 }
 
 class FirebaseManager: FirebaseManagerProtocol {
     
-  
+    
     func fetch(target: FirebasePath,
                completion: @escaping (Result<[String:AnyObject], FirebaseError>) -> Void) {
         let ref = target.path
@@ -52,7 +52,7 @@ class FirebaseManager: FirebaseManagerProtocol {
         }
     }
     
-    func set(target: FirebaseSetPath, 
+    func set(target: FirebaseSetPath,
              value:[String:Any],
              completion: @escaping (Result<String, FirebaseError>) -> Void) {
         
@@ -64,11 +64,11 @@ class FirebaseManager: FirebaseManagerProtocol {
             
             completion(.success("success"))
             
-          
+            
         }
     }
     
-    func update(target: FirebaseSetPath, 
+    func update(target: FirebaseSetPath,
                 value: [String : Any],
                 completion: @escaping (Result<String, FirebaseError>) -> Void) {
         let ref = target.path
@@ -81,8 +81,5 @@ class FirebaseManager: FirebaseManagerProtocol {
         }
         
     }
-    
-    
-    
 }
 

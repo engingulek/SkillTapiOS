@@ -8,9 +8,6 @@
 import UIKit
 import SnapKit
 
-
-
-
 class MessageCVC: UICollectionViewCell {
     static  let identifier : String  = "sentMessageCellIdentifier"
     private lazy var textMessage:UILabel = UILabel.cellTitleUILabel(color: ColorTheme.secondaryColor.color)
@@ -26,7 +23,6 @@ class MessageCVC: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
-        
     }
     
     private func configureView(){
@@ -66,7 +62,7 @@ class MessageCVC: UICollectionViewCell {
     func configureData(message:MessageResponse){
         textMessage.text = message.message
     }
-
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

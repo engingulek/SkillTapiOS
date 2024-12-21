@@ -23,8 +23,6 @@ class MessageView : BaseView<MesssageViewController> {
         if !messageText.isEmpty{
             presenter?.sendMessageAction(message: messageText)
             messageTextField.text = ""
-           
-
         }
     }
     
@@ -33,14 +31,12 @@ class MessageView : BaseView<MesssageViewController> {
         configureView()
         setupKeyboardObservers()
         setupTapGestureToDismissKeyboard()
-        messageCollectionView.register(MessageCVC.self, forCellWithReuseIdentifier: MessageCVC.identifier)
-        
+        messageCollectionView.register(MessageCVC.self, 
+                                       forCellWithReuseIdentifier: MessageCVC.identifier)
         
         messageTextField.addTarget(self, 
-                                   action: #selector(messageTextFieldEditChanged), for: .editingChanged)
-        
-        
-        
+                                   action: #selector(messageTextFieldEditChanged), 
+                                   for: .editingChanged)
       
     }
     
@@ -49,13 +45,9 @@ class MessageView : BaseView<MesssageViewController> {
         NotificationCenter.default.removeObserver(self)
     }
     
-    
-    
     @objc private func messageTextFieldEditChanged(_ textField: UITextField){
         guard let text = textField.text else {return}
         messageText = text
-       
-       
     }
     
     
@@ -104,8 +96,14 @@ class MessageView : BaseView<MesssageViewController> {
     
     private func setupKeyboardObservers() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
@@ -129,7 +127,8 @@ class MessageView : BaseView<MesssageViewController> {
     
     @objc private func keyboardWillHide(notification: Notification) {
         guard let userInfo = notification.userInfo,
-              let animationDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+              let animationDuration = userInfo[UIResponder
+                .keyboardAnimationDurationUserInfoKey] as? Double else { return }
         
         textFieldBottomConstraint?.update(inset: 20)
         arrowButtonConstraint?.update(inset: 20)
@@ -148,5 +147,4 @@ class MessageView : BaseView<MesssageViewController> {
     @objc private func dismissKeyboard() {
         endEditing(true)
     }
-    
 }

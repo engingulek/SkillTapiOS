@@ -16,8 +16,6 @@ class MesssageViewController: UIViewController {
         messageView.presenter = presenter
        view = messageView
         presenter.viewDidLoad()
-        
-      
     }
 }
 

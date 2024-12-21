@@ -33,8 +33,6 @@ class MessageInteractor : PresenterToInteractorMessageProtocol {
             
             }
         }
-        
-        
     }
     
     func sendMessage(
@@ -66,11 +64,5 @@ class MessageInteractor : PresenterToInteractorMessageProtocol {
                 }
             }
     }
-    
-  
-
-    
-    
-    
 }
 
