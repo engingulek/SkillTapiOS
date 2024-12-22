@@ -22,8 +22,8 @@ class SearchView : BaseView<SearchViewController> {
         return view
     }()
     
-    private lazy var advertsButton : UIButton = UIButton.basicButton(action: onTappedAdverstButton)
-    private lazy var freelancersButton : UIButton = UIButton.basicButton(action: onTappedFreelancerButton)
+    private lazy var advertsButton = ButtonFactory.createButton(ofType: .basic(action: onTappedAdverstButton))
+    private lazy var freelancersButton = ButtonFactory.createButton(ofType: .basic(action: onTappedFreelancerButton))
     
     
     private lazy var onTappedAdverstButton : UIAction = UIAction { [weak self] _  in
@@ -41,7 +41,7 @@ class SearchView : BaseView<SearchViewController> {
        }
     
     
-    private lazy var searchIcon : UIImageView = UIImageView.magnifyingglassIcon()
+    private lazy var searchIcon : UIImageView = IconFactory.createIcon(ofType: .magnifyingglass)
     
     private lazy var searchTextField : UITextField = UITextField.searchTextField()
     override func setupView() {

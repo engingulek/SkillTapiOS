@@ -10,9 +10,9 @@ import UIKit
 class RoomCVC: UICollectionViewCell {
     static  let identifier : String  = "roomcvcIndentifier"
     private lazy var userImage : UIImageView = UIImageView()
-    private lazy var userName : UILabel = UILabel.cellTitleUILabel()
-    private lazy var lastMessageLabel : UILabel = UILabel.lightMiddleLabel()
-    private lazy var dateLabel : UILabel = UILabel.lightMiddleLabel()
+    private lazy var userName = LabelFactory.createLabel(ofType: .cellTitleUILabel())
+    private lazy var lastMessageLabel = LabelFactory.createLabel(ofType: .lightMiddleLabel)
+    private lazy var dateLabel  = LabelFactory.createLabel(ofType: .lightMiddleLabel)
     
     
     override init(frame: CGRect) {
@@ -82,7 +82,6 @@ class RoomCVC: UICollectionViewCell {
         case 1:
             return "Yesterday"
         default:
-            print(dayDif)
             return messageDateFormatter
             
         }

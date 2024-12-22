@@ -12,7 +12,7 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
     var presenter : ViewToPrensenterAdvertDetailProtocol?
     private lazy var advertBaseImage : UIImageView = UIImageView()
     private lazy var advertDetailInfoView = AdvertDetailInfoView()
-    private lazy var packageIncludeTitleLabel : UILabel = UILabel.middleTitleLabel()
+    private lazy var packageIncludeTitleLabel = LabelFactory.createLabel(ofType: .middleTitleLabel())
    private lazy var packageSegmentedControll: UISegmentedControl = {
         let items = ["Basis", "Standard", "Pro"]
         let control = UISegmentedControl(items: items)
@@ -24,15 +24,14 @@ class AdvertDetailView : BaseView<AdvertDetailViewController> {
     
     
     private lazy var packageDescView : UIView = UIView()
-    private lazy var packageTitle:UILabel = UILabel.middleTitleLabel()
+    private lazy var packageTitle = LabelFactory.createLabel(ofType: .middleTitleLabel())
   
-    private lazy var packagedescLabel : UILabel = UILabel.descUILabel()
-    private lazy var packagePriceLabel : UILabel = UILabel.middleTitleLabel(
-        color: ColorTheme.thirdColor.color)
-    private lazy var errorMessageLabel : UILabel = UILabel.erroeLabel()
+    private lazy var packagedescLabel = LabelFactory.createLabel(ofType: .descUILabel())
+    private lazy var packagePriceLabel  = LabelFactory.createLabel(ofType: .middleTitleLabel(ColorTheme.thirdColor.color))
+    private lazy var errorMessageLabel = LabelFactory.createLabel(ofType: .errorLabel())
     
     
-    private lazy var sendMessageButton : UIButton = UIButton.messageButton(action:sendMessageAction )
+    private lazy var sendMessageButton = ButtonFactory.createButton(ofType: .message(action: sendMessageAction))
     private lazy var sendMessageAction  : UIAction = UIAction { _ in
         self.presenter?.onTappedSendMessageButton()
     }

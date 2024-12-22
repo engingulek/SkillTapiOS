@@ -10,10 +10,10 @@ import UIKit
 import SnapKit
 class FreelancerView : BaseView<FreelancerDetailViewController> {
     private lazy var freelancerInfoView = FreelancerInfoView()
-    private lazy var advertsTitle : UILabel = UILabel.middleTitleLabel()
+    private lazy var advertsTitle = LabelFactory.createLabel(ofType: .middleTitleLabel())
     private lazy var advertsCollectionView : UICollectionView
     = UICollectionView.primaryCollectionView(scroolDirection: .horizontal)
-    private lazy var errorMessageLabel : UILabel = UILabel.erroeLabel()
+    private lazy var errorMessageLabel = LabelFactory.createLabel(ofType: .errorLabel())
     override func setupView() {
         super.setupView()
         configureView()

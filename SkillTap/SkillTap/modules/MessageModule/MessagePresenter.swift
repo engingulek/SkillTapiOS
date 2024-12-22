@@ -33,11 +33,7 @@ extension MessagePresenter : ViewToPrensenterMessageProtocol {
     }
     
     func getRoomId(id: String,nameSurname:String) {
-        if id.hasPrefix("-") {
-           roomId = String(id.dropFirst())
-            interactor.fetchMessage(id: roomId)
-            
-        }
+        interactor.fetchMessage(id: id)
         
         view?.changeTitle(title: nameSurname)
     

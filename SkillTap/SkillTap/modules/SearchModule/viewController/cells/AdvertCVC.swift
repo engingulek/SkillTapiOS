@@ -10,9 +10,10 @@ import SnapKit
 class AdvertCVC: UICollectionViewCell {
     static let identifier : String  = "advertCellIdentifier"
     private lazy var advertImage : UIImageView = UIImageView()
-    private lazy var titleLabel : UILabel = UILabel.cellTitleUILabel()
-    private lazy var priceInfoLabel : UILabel = UILabel.bigPriceInfoLabel()
-    private lazy var detailLabel : UILabel = UILabel.descUILabel()
+    
+    private lazy var titleLabel  = LabelFactory.createLabel(ofType: .cellTitleUILabel())
+    private lazy var priceInfoLabel = LabelFactory.createLabel(ofType: .bigPriceInfoLabel)
+    private lazy var detailLabel = LabelFactory.createLabel(ofType: .descUILabel())
 
     override init(frame: CGRect) {
         super.init(frame: frame)

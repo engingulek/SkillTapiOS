@@ -11,13 +11,10 @@ class CategoryCVC: UICollectionViewCell {
     static  let identifier : String  = "categoryCellIdentifier"
     
     
-    private lazy var categoryLabel : UILabel = UILabel.middleTitleLabel(
-        color: ColorTheme.secondaryColor.color)
+    private lazy var categoryLabel = LabelFactory.createLabel(ofType: .middleTitleLabel(ColorTheme.secondaryColor.color))
     private lazy var categoryImage : UIImageView = UIImageView()
-    private lazy var categoryAdvertCount : UILabel = UILabel.xSmallLabelLignt(
-        color: ColorTheme.secondaryColor.color)
-    private lazy var categoryFreelancerCount : UILabel = UILabel.xSmallLabelLignt(
-        color: ColorTheme.secondaryColor.color)
+    private lazy var categoryAdvertCount = LabelFactory.createLabel(ofType: .xSmallLabelLignt(ColorTheme.secondaryColor.color))
+    private lazy var categoryFreelancerCount = LabelFactory.createLabel(ofType: .xSmallLabelLignt(ColorTheme.secondaryColor.color))
     
     override init(frame: CGRect) {
         super.init(frame: frame)

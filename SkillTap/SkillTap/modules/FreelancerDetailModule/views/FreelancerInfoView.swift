@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 class FreelancerInfoView : UIView {
     private lazy var freelancerProfilImage : UIImageView = UIImageView()
-    private lazy var freelancerTitle : UILabel = UILabel.middleTitleLabel()
-    private lazy var freelancerSubTitle : UILabel = UILabel.lightMiddleLabel()
-    private lazy var ratingImage : UIImageView = UIImageView.ratingImage()
-    private lazy var ratingLabel : UILabel = UILabel.middleTitleLabel(color: ColorTheme.ratingColor.color)
-    private lazy var descLabel : UILabel = UILabel.descUILabel(lineLimit: 5)
+    private lazy var freelancerTitle = LabelFactory.createLabel(ofType: .middleTitleLabel())
+    private lazy var freelancerSubTitle = LabelFactory.createLabel(ofType: .lightMiddleLabel)
+    private lazy var ratingImage = IconFactory.createIcon(ofType: .rating)
+    private lazy var ratingLabel = LabelFactory.createLabel(ofType: .middleTitleLabel(ColorTheme.ratingColor.color))
+    private lazy var descLabel = LabelFactory.createLabel(ofType: .descUILabel(5))
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()

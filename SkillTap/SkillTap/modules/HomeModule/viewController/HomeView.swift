@@ -11,9 +11,9 @@ import UIKit
 class HomeView : BaseView<HomeViewController> {
     var presenter : ViewToPrensenterHomeProtocol?
   
-    private lazy var titleLabel : UILabel = UILabel.xltitleUILabel(bold: true)
-    private lazy var subTitleLabel : UILabel = UILabel.largeTitleUILabel(bold: false)
-    private lazy var categoryTitleLabel : UILabel = UILabel.largeTitleUILabel(bold: true)
+    private lazy var titleLabel = LabelFactory.createLabel(ofType: .xltitleLabel(true))
+    private lazy var subTitleLabel = LabelFactory.createLabel(ofType: .largeTitleUILabel(false))
+    private lazy var categoryTitleLabel = LabelFactory.createLabel(ofType: .largeTitleUILabel(true))
     private lazy var searchView : UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.black.cgColor
@@ -23,11 +23,11 @@ class HomeView : BaseView<HomeViewController> {
         return view
     }()
     
-    private lazy var searchIcon : UIImageView = UIImageView.magnifyingglassIcon()
-    private lazy var searchLigtLabel : UILabel = UILabel.lightMiddleLabel()
-    private lazy var messageIcon : UIImageView = UIImageView.messageBubbleIcon()
-    private lazy var errorIcon : UIImageView = UIImageView.errorIcon()
-    private lazy var errorLabel : UILabel = UILabel.erroeLabel()
+    private lazy var searchIcon = IconFactory.createIcon(ofType: .magnifyingglass)
+    private lazy var searchLigtLabel = LabelFactory.createLabel(ofType: .lightMiddleLabel)
+    private lazy var messageIcon = IconFactory.createIcon(ofType: .messageBubble)
+    private lazy var errorIcon = IconFactory.createIcon(ofType: .error)
+    private lazy var errorLabel  = LabelFactory.createLabel(ofType: .errorLabel())
     
     private lazy var loadingAnimation : UIActivityIndicatorView = UIActivityIndicatorView.baseActivityIndicator()
     

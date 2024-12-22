@@ -15,7 +15,7 @@ class MessageView : BaseView<MesssageViewController> {
     private var arrowButtonConstraint : Constraint?
     private lazy var messageCollectionView : UICollectionView =
     UICollectionView.primaryCollectionView(scroolDirection: .vertical)
-    private lazy var arrowSendMessageButton : UIButton = UIButton.arrowMessageButton(action: sendMessageAction)
+    private lazy var arrowSendMessageButton = ButtonFactory.createButton(ofType: .arrowMessage(action: sendMessageAction))
     private lazy var messageText : String = ""
     
     private lazy var sendMessageAction  : UIAction = UIAction { [weak self] _ in

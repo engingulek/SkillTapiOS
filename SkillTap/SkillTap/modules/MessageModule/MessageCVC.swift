@@ -10,8 +10,8 @@ import SnapKit
 
 class MessageCVC: UICollectionViewCell {
     static  let identifier : String  = "sentMessageCellIdentifier"
-    private lazy var textMessage:UILabel = UILabel.cellTitleUILabel(color: ColorTheme.secondaryColor.color)
-    private lazy var docDowloadAbleImage : UIImageView = UIImageView.docDowloadAbleIcon()
+    private lazy var textMessage = LabelFactory.createLabel(ofType: .cellTitleUILabel(ColorTheme.secondaryColor.color))
+   
     private let bubbleView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = CornerRadiusTheme.xsmall.rawValue

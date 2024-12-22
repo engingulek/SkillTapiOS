@@ -13,7 +13,6 @@ class FreelancerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-        //TODO: move to presenter
        
         
     }

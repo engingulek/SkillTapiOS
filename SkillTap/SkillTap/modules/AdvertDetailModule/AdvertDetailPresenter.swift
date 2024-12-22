@@ -48,7 +48,6 @@ extension AdvertDetailPresenter : ViewToPrensenterAdvertDetailProtocol {
     }
     
     func onTappedSendMessageButton() {
-        print("On Tapppedm message button")
         router.toMessage(view: view)
     }
 }

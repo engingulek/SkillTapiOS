@@ -11,11 +11,11 @@ import SnapKit
 class FreelancerCVC: UICollectionViewCell {
     static let identifier : String  = "freelancerCellIdenfier"
     private lazy var freelancerImage : UIImageView = UIImageView()
-    private lazy var freelancerTitleLabel : UILabel = UILabel.cellTitleUILabel()
-    private lazy var freelancerSubTitleLabel : UILabel = UILabel.lightMiddleLabel()
-    private lazy var freelancerDescLabel : UILabel = UILabel.descUILabel()
-    private lazy var ratingImage : UIImageView = UIImageView.ratingImage()
-    private lazy var ratingLabel : UILabel = UILabel.middleTitleLabel(color: ColorTheme.ratingColor.color)
+    private lazy var freelancerTitleLabel = LabelFactory.createLabel(ofType: .cellTitleUILabel())
+    private lazy var freelancerSubTitleLabel  = LabelFactory.createLabel(ofType: .lightMiddleLabel)
+    private lazy var freelancerDescLabel = LabelFactory.createLabel(ofType: .descUILabel())
+    private lazy var ratingImage = IconFactory.createIcon(ofType: .rating)
+    private lazy var ratingLabel  = LabelFactory.createLabel(ofType: .middleTitleLabel(ColorTheme.ratingColor.color))
     
     
     override init(frame: CGRect) {

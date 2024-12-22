@@ -10,10 +10,10 @@ import UIKit
 import SnapKit
 class AdvertDetailInfoView : UIView {
     private lazy var advertOwnerProfilImage : UIImageView = UIImageView()
-    private lazy var advertOwnerUsername : UILabel = UILabel.middleTitleLabel()
-    private lazy var advertOwnerSubtitle:  UILabel = UILabel.lightMiddleLabel()
-    private lazy var descLabel : UILabel = UILabel.descUILabel(lineLimit: .zero)
-    private lazy var descTitleLabel : UILabel = UILabel.middleTitleLabel()
+    private lazy var advertOwnerUsername = LabelFactory.createLabel(ofType: .middleTitleLabel())
+    private lazy var advertOwnerSubtitle = LabelFactory.createLabel(ofType: .lightMiddleLabel)
+    private lazy var descLabel = LabelFactory.createLabel(ofType: .descUILabel())
+    private lazy var descTitleLabel = LabelFactory.createLabel(ofType: .middleTitleLabel())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
